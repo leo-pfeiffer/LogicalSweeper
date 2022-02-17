@@ -14,6 +14,10 @@ public class View {
         return view;
     }
 
+    public void uncover(Coord coord, char value) {
+        this.view[coord.getRow()][coord.getCol()] = value;
+    }
+
     public int getSize() {
         return this.view.length;
     }

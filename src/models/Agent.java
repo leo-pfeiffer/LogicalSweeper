@@ -8,12 +8,10 @@ public abstract class Agent {
         this.view = view;
     }
 
-    public Coord getNextProbeCoord() {
-        throw new RuntimeException("Not implemented");
-    }
+    public abstract Coord probe();
 
-    public void probe(Coord coord) {
-        throw new RuntimeException("Not implemented");
+    public void uncover(Coord coord, char value) {
+        this.view.uncover(coord, value);
     }
 
     public boolean hasDied() {

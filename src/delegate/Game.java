@@ -21,8 +21,9 @@ public class Game {
 
     public void run() {
         while (!isGameOver()) {
-            Coord cell = agent.getNextProbeCoord();
-            agent.probe(cell);
+            Coord cell = agent.probe();
+            // todo uncover all cells if cell = '0'
+            agent.uncover(cell, world.getCell(cell));
         }
 
         if (agent.hasWon()) {
