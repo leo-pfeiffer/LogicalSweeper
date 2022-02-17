@@ -1,7 +1,7 @@
 SRC_FILES := $(shell find ./src/* -name '*.java')
 TEST_FILES := $(shell find ./test/* -name '*java')
 EVAL_FILES := $(shell find ./evaluation/* -name '*java')
-LIB := ./lib/*
+LIB := ./libs/*
 CLASSPATH := $(LIB):src:test:evaluation
 STACSCHECK := /cs/studres/CS5011/Practicals/A2/Tests
 
