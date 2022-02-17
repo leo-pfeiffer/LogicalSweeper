@@ -1,4 +1,4 @@
-
+package models;
 /*
  * CS5011 A2 Starter code
  * This enum class holds the various boards to be played
@@ -63,9 +63,72 @@ public enum World {
 	;
 
 
-	public char[][] map;
+	public final char[][] map;
+	private final int size;
 
 	World(char[][] map) {
 		this.map = map;
+		this.size = map.length;
+	}
+
+	public char getCell(Coord coord) {
+		assert coord.getCol() < this.size;
+		assert coord.getRow() < this.size;
+		return this.map[coord.getRow()][coord.getCol()];
+	}
+
+	public boolean isBlocked(Coord coord) {
+		char cell = this.getCell(coord);
+		return cell == 'b';
+	}
+
+	public boolean isMine(Coord coord) {
+		char cell = this.getCell(coord);
+		return cell == 'm';
+	}
+
+	public boolean isHint(Coord coord) {
+		return !this.isBlocked(coord) && !this.isMine(coord);
+	}
+
+	public int getSize() {
+		return this.size;
+	}
+
+	public char[][] createNewView() {
+		int size = this.getSize();
+		char[][] view = new char[size][size];
+
+		// uncover blocked cells
+		for (int row = 0; row < size; row++) {
+			for (int col = 0; col < size; col ++) {
+				Coord coord = new Coord(row, col);
+				if (this.isBlocked(coord)) {
+					view[row][col] = 'b';
+				} else {
+					view[row][col] = '*';
+				}
+			}
+		}
+
+		// uncover hints (top-left and middle cells)
+		view[0][0] = this.getCell(new Coord(0, 0));
+		int m = size / 2;
+		view[m][m] = this.getCell(new Coord(m, m));
+
+		return view;
+	}
+
+	public int getMineCount() {
+		int count = 0;
+		for (int row = 0; row < size; row++) {
+			for (int col = 0; col < size; col ++) {
+				Coord coord = new Coord(row, col);
+				if (this.isMine(coord)) {
+					count++;
+				}
+			}
+		}
+		return count;
 	}
 }
