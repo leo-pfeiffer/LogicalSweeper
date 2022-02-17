@@ -95,7 +95,7 @@ public enum World {
 		return this.size;
 	}
 
-	public char[][] createNewView() {
+	public View createNewView() {
 		int size = this.getSize();
 		char[][] view = new char[size][size];
 
@@ -116,7 +116,7 @@ public enum World {
 		int m = size / 2;
 		view[m][m] = this.getCell(new Coord(m, m));
 
-		return view;
+		return new View(view, this.getMineCount());
 	}
 
 	public int getMineCount() {

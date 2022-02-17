@@ -27,4 +27,58 @@ public class View {
     public int getMineCount() {
         return mineCount;
     }
+
+    public boolean allUncovered() {
+        for (int i = 0; i < this.getSize(); i++) {
+            for (int j = 0; j < this.getSize(); j++) {
+                if (this.getCell(new Coord(i, j)) == '?') {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public boolean uncoveredMine() {
+        for (int i = 0; i < this.getSize(); i++) {
+            for (int j = 0; j < this.getSize(); j++) {
+                if (this.getCell(new Coord(i, j)) == 'm') {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        }
+        if (!(o instanceof View)) {
+            return false;
+        }
+
+        View other = (View) o;
+        if (this.getSize() != other.getSize()) {
+            return false;
+        }
+        for (int i = 0; i < this.getSize(); i++) {
+            for (int j = 0; j < this.getSize(); j++) {
+                if (this.getCell(new Coord(i, j)) != other.getCell(new Coord(i, j))) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public int hashCode() {
+        int result = 0;
+        for (int i = 0; i < this.getSize(); i++) {
+            for (int j = 0; j < this.getSize(); j++) {
+                result = 31 * result + this.getCell(new Coord(i, j));
+            }
+        }
+        return result;
+    }
 }
