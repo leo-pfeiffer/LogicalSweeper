@@ -1,6 +1,5 @@
 package models;
 
-import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
@@ -11,25 +10,25 @@ public class ViewTest {
 
     @Test
     public void testGetView() {
-        View view = new View(world.createNewView(), world.getMineCount());
-        assertArrayEquals(view.getView(), world.createNewView());
+        View view = world.createNewView();
+        assertEquals(view, world.createNewView());
     }
 
     @Test
     public void testGetSize() {
-        View view = new View(world.createNewView(), world.getMineCount());
+        View view = world.createNewView();
         assertEquals(view.getSize(), world.getSize());
     }
 
     @Test
     public void testGetMineCount() {
-        View view = new View(world.createNewView(), world.getMineCount());
+        View view = world.createNewView();
         assertEquals(view.getMineCount(), world.getMineCount());
     }
 
     @Test
     public void testGetCell() {
-        View view = new View(world.createNewView(), world.getMineCount());
+        View view = world.createNewView();
         int m = view.getSize() / 2;
         Coord c = new Coord(0, 0);
         Coord d = new Coord(m, m);
