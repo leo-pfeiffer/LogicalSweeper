@@ -19,10 +19,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-#      # Build the project using the make command defined in the Makefile
-#      - name: Build
-#        run: make compile
-#
-#      # Run the tests using the make command defined in the Makefile
-#      - name: Test
-#        run: make test
+      # Build the project using the make command defined in the Makefile
+      - name: Build
+        run: make compile
+
+      # Run the tests using the make command defined in the Makefile
+      - name: Test
+        run: make test
