@@ -2,6 +2,7 @@ import delegate.GameTest;
 import models.AgentFactoryTest;
 import models.BasicAgentTest;
 import models.ViewTest;
+import models.WorldTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
@@ -10,10 +11,11 @@ import org.junit.runners.Suite;
  **/
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
+        GameTest.class,
+        AgentFactoryTest.class,
         BasicAgentTest.class,
         ViewTest.class,
-        GameTest.class,
-        AgentFactoryTest.class
+        WorldTest.class,
 })
 public class TestSuite {
 }
