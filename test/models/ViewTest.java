@@ -32,6 +32,8 @@ public class ViewTest {
         int m = view.getSize() / 2;
         Coord c = new Coord(0, 0);
         Coord d = new Coord(m, m);
+        view.uncover(c, world.getCell(c));
+        view.uncover(d, world.getCell(d));
         assertEquals(view.getCell(c), world.getCell(c));
         assertEquals(view.getCell(d), world.getCell(d));
     }

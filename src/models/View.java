@@ -67,7 +67,7 @@ public class View {
     public boolean uncoveredMine() {
         for (int i = 0; i < this.getSize(); i++) {
             for (int j = 0; j < this.getSize(); j++) {
-                if (this.getCell(new Coord(i, j)) == 'm') {
+                if (this.getCell(new Coord(i, j)) == '-') {
                     return true;
                 }
             }
