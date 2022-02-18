@@ -52,6 +52,8 @@ public class Game {
      * */
     public void run() {
 
+        printStart();
+
         if (verbose) printView();
 
         while (!isGameOver()) {
@@ -67,15 +69,10 @@ public class Game {
                 break;
             }
 
-            if (verbose) printView();
+            if (verbose && !isGameOver()) printView();
         }
 
-        System.out.println("Final map");
-        printView();
-
-        if (agentHasWon()) printAgentWon();
-        else if (agentHasDied()) printAgentDead();
-        else printAgentNotTerminated();
+        printEnd();
     }
 
     /**
@@ -87,16 +84,30 @@ public class Game {
         }
     }
 
+    private void printStart() {
+        printWorld();
+        System.out.println("Start!");
+    }
+
+    private void printEnd() {
+        System.out.println("Final map");
+        printView();
+
+        if (agentHasWon()) printAgentWon();
+        else if (agentHasDied()) printAgentDead();
+        else printAgentNotTerminated();
+    }
+
     private void printAgentNotTerminated() {
-        System.out.println("Result: Agent not terminated");
+        System.out.println("\nResult: Agent not terminated\n");
     }
 
     private void printAgentDead() {
-        System.out.println("Result: Agent dead: found mine");
+        System.out.println("\nResult: Agent dead: found mine\n");
     }
 
     private void printAgentWon() {
-        System.out.println("Result: Agent alive: all solved");
+        System.out.println("\nResult: Agent alive: all solved\n");
     }
 
     public void printView() {

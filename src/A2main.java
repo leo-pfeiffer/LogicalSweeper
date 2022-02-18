@@ -1,45 +1,26 @@
 
 
+import delegate.Game;
 import models.World;
 
 public class A2main {
 
 	public static void main(String[] args) {
 
-		boolean verbose=false;
-		if (args.length>2 && args[2].equals("verbose") ){
-			verbose=true; //prints agent's view at each step if true
-		}
+		String agentName = args[0];
+		String worldName = args[1];
+
+		// parse "verbose" flag
+		boolean verbose = args.length > 2 && args[2].equals("verbose");
 
 		System.out.println("-------------------------------------------\n");
-		System.out.println("Agent " + args[0] + " plays " + args[1] + "\n");
+		System.out.println("Agent " + agentName + " plays " + worldName + "\n");
 
 
-		World world = World.valueOf(args[1]);
+		World world = World.valueOf(worldName);
 
-		char[][] board = world.map;
-		printBoard(board);
-		System.out.println("Start!");
-
-
-		switch (args[0]) {
-		case "P1":
-			//TODO: Part 1
-		case "P2":
-			//TODO: Part 2
-		case "P3":
-			//TODO: Part 3
-		case "P4":
-			//TODO: Part 4
-		case "P5":
-			//TODO: Part 5
-		}
-
-		//templates to print results - copy to appropriate places
-		//System.out.println("\nResult: Agent alive: all solved\n");
-		//System.out.println("\nResult: Agent dead: found mine\n");
-		//System.out.println("\nResult: Agent not terminated\n");
-
+		Game game = new Game(world, agentName, verbose);
+		game.run();
 	}
 
 	//prints the board in the required format - PLEASE DO NOT MODIFY
