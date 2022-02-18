@@ -14,27 +14,44 @@ public class View {
         return view;
     }
 
+    /**
+     * Returns true if the given coord is in the view.
+     * */
     public boolean isInView(Coord coord) {
         int row = coord.getRow();
         int col = coord.getCol();
         return col >= 0 && col < this.getSize() && row >= 0 && row < this.getSize();
     }
 
+    /**
+     * Uncover the field of the given coord.
+     * @param coord The coord of the field to be uncovered.
+     * @param value The value of the field to be uncovered.
+     * */
     public void uncover(Coord coord, char value) {
         if (isInView(coord)) {
             this.view[coord.getRow()][coord.getCol()] = value;
         }
     }
 
+    /**
+     * Get the size of the view.
+     * */
     public int getSize() {
         return this.view.length;
     }
 
+    /**
+     * Returns the value of the cell of the given coord from the view.
+     * */
     public char getCell(Coord coord) {
         if (!isInView(coord)) throw new IllegalArgumentException("Coord not in view");
         return this.view[coord.getRow()][coord.getCol()];
     }
 
+    /**
+     * Returns true if the cell of the given coord is uncovered.
+     * */
     public boolean isUncovered(Coord coord) {
         if (!isInView(coord)) throw new IllegalArgumentException("Coord not in view");
         return this.view[coord.getRow()][coord.getCol()] != '?';
@@ -44,17 +61,9 @@ public class View {
         return mineCount;
     }
 
-    public boolean allUncovered() {
-        for (int i = 0; i < this.getSize(); i++) {
-            for (int j = 0; j < this.getSize(); j++) {
-                if (this.getCell(new Coord(i, j)) == '?') {
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
-
+    /**
+     * Returns true if a mine has been uncovered and false otherwise.
+     * */
     public boolean uncoveredMine() {
         for (int i = 0; i < this.getSize(); i++) {
             for (int j = 0; j < this.getSize(); j++) {
@@ -66,6 +75,7 @@ public class View {
         return false;
     }
 
+    @Override
     public boolean equals(Object o) {
         if (o == this) {
             return true;
@@ -88,6 +98,7 @@ public class View {
         return true;
     }
 
+    @Override
     public int hashCode() {
         int result = 0;
         for (int i = 0; i < this.getSize(); i++) {
