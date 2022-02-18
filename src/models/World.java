@@ -15,6 +15,8 @@ package models;
 
  */
 
+import java.util.ArrayList;
+
 public enum World {
 
 	TEST1(new char[][] {{'0', 'b', 'b'}, {'b', '3', 'b'}, {'m', 'm', 'm'}}), //SPS ok
@@ -71,10 +73,36 @@ public enum World {
 		this.size = map.length;
 	}
 
+	public boolean isInWorld(Coord coord) {
+		int row = coord.getRow();
+		int col = coord.getCol();
+		return col >= 0 && col < this.getSize() && row >= 0 && row < this.getSize();
+	}
+
 	public char getCell(Coord coord) {
-		assert coord.getCol() < this.size;
-		assert coord.getRow() < this.size;
+		if (!isInWorld(coord)) throw new IllegalArgumentException("Coordinates outside the world.");
 		return this.map[coord.getRow()][coord.getCol()];
+	}
+
+	public Coord[] getAdjacentCoords(Coord coord) {
+		if (!isInWorld(coord)) throw new IllegalArgumentException("Coordinates outside the world.");
+
+		ArrayList<Coord> adjacentCoords = new ArrayList<>();
+
+		int row = coord.getRow();
+		int col = coord.getCol();
+
+		for (int i = row - 1; i <= row + 1; i++) {
+			for (int j = col - 1; j <= col + 1; j++) {
+				if (i >= 0 && j >= 0 && (i != row || j != col)) {
+					Coord adjCoord = new Coord(i, j);
+					if (isInWorld(adjCoord)) adjacentCoords.add(adjCoord);
+				}
+			}
+		}
+		Coord[] adjacentCoordsArray = new Coord[adjacentCoords.size()];
+		adjacentCoords.toArray(adjacentCoordsArray);
+		return adjacentCoordsArray;
 	}
 
 	public boolean isBlocked(Coord coord) {
