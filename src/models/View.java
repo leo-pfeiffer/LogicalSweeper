@@ -75,6 +75,21 @@ public class View {
         return false;
     }
 
+    /**
+     * Return the number of uncovered cells in the view.
+     * */
+    public int getUncoveredCount() {
+        int count = 0;
+        for (int i = 0; i < this.getSize(); i++) {
+            for (int j = 0; j < this.getSize(); j++) {
+                if (this.isUncovered(new Coord(i, j))) {
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == this) {
