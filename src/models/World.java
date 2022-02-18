@@ -134,7 +134,7 @@ public enum World {
 				if (this.isBlocked(coord)) {
 					view[row][col] = 'b';
 				} else {
-					view[row][col] = '*';
+					view[row][col] = '?';
 				}
 			}
 		}
