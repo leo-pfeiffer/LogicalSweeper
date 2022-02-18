@@ -7,23 +7,12 @@ public class BasicAgent extends Agent {
     }
 
     private Coord lastProbedCell;
-    private boolean hasWon = false;
 
     @Override
     public Coord probe() {
-        try {
-            Coord nextCoord = this.getNextCoordInOrder();
-            this.lastProbedCell = nextCoord;
-            return nextCoord;
-        } catch (NothingToProbeException e) {
-            this.hasWon = true;
-            throw e;
-        }
-    }
-
-    @Override
-    public boolean hasWon() {
-        return this.hasWon;
+        Coord nextCoord = this.getNextCoordInOrder();
+        this.lastProbedCell = nextCoord;
+        return nextCoord;
     }
 
     private Coord getNextCoordInOrder() {

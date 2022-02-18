@@ -23,6 +23,12 @@ public class BasicAgentTest {
     public void testProbe1() {
         BasicAgent agent = new BasicAgent(world1.createNewView());
         Coord c = agent.probe();
+        assertEquals(new Coord(0, 0), c);
+
+        c = agent.probe();
+        assertEquals(new Coord(1, 1), c);
+
+        c = agent.probe();
         assertEquals(new Coord(2, 0), c);
 
         c = agent.probe();
@@ -37,7 +43,11 @@ public class BasicAgentTest {
     @Test
     public void testProbe2() {
         BasicAgent agent = new BasicAgent(world2.createNewView());
+
         Coord c = agent.probe();
+        assertEquals(new Coord(0, 0), c);
+
+        c = agent.probe();
         assertEquals(new Coord(0, 1), c);
 
         c = agent.probe();
@@ -45,6 +55,9 @@ public class BasicAgentTest {
 
         c = agent.probe();
         assertEquals(new Coord(1, 0), c);
+
+        c = agent.probe();
+        assertEquals(new Coord(1, 1), c);
 
         c = agent.probe();
         assertEquals(new Coord(1, 2), c);

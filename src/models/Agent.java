@@ -8,15 +8,17 @@ public abstract class Agent {
         this.view = view;
     }
 
+    public View getView() {
+        return this.view;
+    }
+
     public abstract Coord probe() throws NothingToProbeException;
 
     public void uncover(Coord coord, char value) {
         this.view.uncover(coord, value);
     }
 
-    public boolean hasDied() {
-        return this.view.uncoveredMine();
+    public int getUncoveredCount() {
+        return this.view.getUncoveredCount();
     }
-
-    public abstract boolean hasWon();
 }
