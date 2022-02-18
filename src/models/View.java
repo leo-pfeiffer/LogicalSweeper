@@ -14,8 +14,16 @@ public class View {
         return view;
     }
 
+    public boolean isInView(Coord coord) {
+        int row = coord.getRow();
+        int col = coord.getCol();
+        return col >= 0 && col < this.getSize() && row >= 0 && row < this.getSize();
+    }
+
     public void uncover(Coord coord, char value) {
-        this.view[coord.getRow()][coord.getCol()] = value;
+        if (isInView(coord)) {
+            this.view[coord.getRow()][coord.getCol()] = value;
+        }
     }
 
     public int getSize() {
@@ -23,9 +31,13 @@ public class View {
     }
 
     public char getCell(Coord coord) {
-        assert coord.getCol() < this.getSize();
-        assert coord.getRow() < this.getSize();
+        if (!isInView(coord)) throw new IllegalArgumentException("Coord not in view");
         return this.view[coord.getRow()][coord.getCol()];
+    }
+
+    public boolean isUncovered(Coord coord) {
+        if (!isInView(coord)) throw new IllegalArgumentException("Coord not in view");
+        return this.view[coord.getRow()][coord.getCol()] != '?';
     }
 
     public int getMineCount() {
