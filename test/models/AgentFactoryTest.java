@@ -7,21 +7,27 @@ import org.junit.Test;
 
 public class AgentFactoryTest {
 
-    String agentName = "P1";
+    String basic = "P1";
+    String beginner = "P2";
     String unknownName = "ABC";
     World world = World.TEST1;
-    Game game = new Game(world, agentName);
 
     @Test
     public void testBasicAgent() {
-        Agent agent = AgentFactory.createAgent(agentName, game, world.createNewView());
+        Agent agent = AgentFactory.createAgent(basic, new Game(world, basic), world.createNewView());
         assert(agent instanceof BasicAgent);
+    }
+
+    @Test
+    public void testBeginnerAgent() {
+        Agent agent = AgentFactory.createAgent(beginner, new Game(world, beginner), world.createNewView());
+        assert(agent instanceof BeginnerAgent);
     }
 
     @Test
     public void testUnknownName() {
         assertThrows(IllegalArgumentException.class, () -> {
-            AgentFactory.createAgent(unknownName, game, world.createNewView());
+            AgentFactory.createAgent(unknownName, new Game(world, basic), world.createNewView());
         });
     }
 }
