@@ -8,7 +8,7 @@ public class AgentFactory {
             case "P1":
                 return new BasicAgent(game, view);
             case "P2":
-                throw new IllegalArgumentException("P2 is not implemented yet");
+                return new BeginnerAgent(game, view);
             case "P3":
                 throw new IllegalArgumentException("P3 is not implemented yet");
             case "P4":
