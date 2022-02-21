@@ -1,21 +1,34 @@
 package models;
 
+import delegate.Game;
+
 public class BasicAgent extends Agent {
 
-    public BasicAgent(View view) {
-        super(view);
+    public BasicAgent(Game game, View view) {
+        super(game, view);
     }
 
     private Coord lastProbedCell;
 
-    @Override
-    public Coord probe() {
-        Coord nextCoord = this.getNextCoordInOrder();
-        this.lastProbedCell = nextCoord;
-        return nextCoord;
+    public Coord probeNext() {
+        Coord cell = this.getNextCoordInOrder();
+        this.lastProbedCell = cell;
+
+        // ask game to probe the cell
+        this.game.probe(cell);
+        return cell;
     }
 
-    private Coord getNextCoordInOrder() {
+    @Override
+    public void playGame() throws NothingToProbeException {
+        // ask the game if the game is still going on (not game over)
+        while (this.game.isPlaying()) {
+            this.probeNext();
+            this.game.printIteration();
+        }
+    }
+
+    public Coord getNextCoordInOrder() {
         int row = 0;
         int col = 0;
 

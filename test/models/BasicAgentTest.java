@@ -16,56 +16,51 @@ public class BasicAgentTest {
 
     @Test
     public void testSetup() {
-        new BasicAgent(world1.createNewView());
+        new BasicAgent(game, world1.createNewView());
     }
 
     @Test
-    public void testProbe1() {
-        BasicAgent agent = new BasicAgent(world1.createNewView());
-        Coord c = agent.probe();
+    public void testGetNextCoordInOrder1() {
+        BasicAgent agent = new BasicAgent(game, world1.createNewView());
+        Coord c = agent.probeNext();
         assertEquals(new Coord(0, 0), c);
 
-        c = agent.probe();
+        c = agent.probeNext();
         assertEquals(new Coord(1, 1), c);
 
-        c = agent.probe();
-        assertEquals(new Coord(2, 0), c);
+        assertThrows(MineFoundException.class, () -> agent.probeNext());
 
-        c = agent.probe();
-        assertEquals(new Coord(2, 1), c);
+        assertThrows(MineFoundException.class, () -> agent.probeNext());
 
-        c = agent.probe();
-        assertEquals(new Coord(2, 2), c);
+        assertThrows(MineFoundException.class, () -> agent.probeNext());
 
-        assertThrows(NothingToProbeException.class, () -> agent.probe());
+        assertThrows(NothingToProbeException.class, () -> agent.probeNext());
     }
 
     @Test
-    public void testProbe2() {
-        BasicAgent agent = new BasicAgent(world2.createNewView());
+    public void testGetNextCoordInOrder2() {
+        BasicAgent agent = new BasicAgent(game, world2.createNewView());
 
-        Coord c = agent.probe();
+        Coord c = agent.probeNext();
         assertEquals(new Coord(0, 0), c);
 
-        c = agent.probe();
+        c = agent.probeNext();
         assertEquals(new Coord(0, 1), c);
 
-        c = agent.probe();
+        c = agent.probeNext();
         assertEquals(new Coord(0, 2), c);
 
-        c = agent.probe();
+        c = agent.probeNext();
         assertEquals(new Coord(1, 0), c);
 
-        c = agent.probe();
+        c = agent.probeNext();
         assertEquals(new Coord(1, 1), c);
 
-        c = agent.probe();
+        c = agent.probeNext();
         assertEquals(new Coord(1, 2), c);
 
-        c = agent.probe();
-        assertEquals(new Coord(2, 2), c);
-
-        assertThrows(NothingToProbeException.class, () -> agent.probe());
+        assertThrows(MineFoundException.class, () -> agent.probeNext());
+        assertThrows(NothingToProbeException.class, () -> agent.probeNext());
     }
 
 }

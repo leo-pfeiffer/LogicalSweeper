@@ -3,6 +3,7 @@ package delegate;
 import models.Agent;
 import models.AgentFactory;
 import models.Coord;
+import models.MineFoundException;
 import models.NothingToProbeException;
 import models.World;
 
@@ -18,7 +19,7 @@ public class Game {
 
     public Game(World world, String agentName, boolean verbose) {
         this.world = world;
-        this.agent = AgentFactory.createAgent(agentName, world.createNewView());
+        this.agent = AgentFactory.createAgent(agentName, this, world.createNewView());
         this.verbose = verbose;
     }
 
@@ -26,9 +27,9 @@ public class Game {
      * Returns true if the game is over and false otherwise.
      * A game is over if the agent has won or if the agent has died.
      * */
-    public boolean isGameOver() {
-        if (agentHasDied()) return true;
-        return agentHasWon();
+    public boolean isPlaying() {
+        if (agentHasDied()) return false;
+        return !agentHasWon();
     }
 
     /**
@@ -47,6 +48,18 @@ public class Game {
         return !agentHasDied() && agent.getUncoveredCount() + world.getMineCount() == world.getCellCount();
     }
 
+    public void probe(Coord cell) {
+        char value = world.getCell(cell);
+        if (value == 'm') {
+            agent.uncover(cell, '-');
+            throw new MineFoundException("Probed mine at " + cell);
+        }
+        else if (value == '0') {
+            uncoverAdjacent(cell);
+        }
+        agent.uncover(cell, value);
+    }
+
     /**
      * Run the game.
      * */
@@ -56,20 +69,27 @@ public class Game {
 
         if (verbose) printView();
 
-        while (!isGameOver()) {
-
-            try {
-                Coord cell = agent.probe();
-                char value = world.getCell(cell);
-                value = value == 'm' ? '-' : value;
-                agent.uncover(cell, value);
-                if (value == '0') uncoverAdjacent(cell);
-            } catch (NothingToProbeException e) {
-                // agent didn't terminate
-                break;
-            }
-
-            if (verbose && !isGameOver()) printView();
+//        while (!isGameOver()) {
+//
+//            try {
+//                Coord cell = agent.probe();
+//                char value = world.getCell(cell);
+//                value = value == 'm' ? '-' : value;
+//                agent.uncover(cell, value);
+//                if (value == '0') uncoverAdjacent(cell);
+//            } catch (NothingToProbeException e) {
+//                // agent didn't terminate
+//                break;
+//            }
+//
+//            printIteration();
+//        }
+        try {
+            this.agent.playGame();
+        } catch (MineFoundException e) {
+            // agent died
+        } catch (NothingToProbeException e) {
+            // agent didn't terminate
         }
 
         printEnd();
@@ -78,10 +98,14 @@ public class Game {
     /**
      * Uncover all adjacent cells to the given cell.
      * */
-    private void uncoverAdjacent(Coord coord) {
+    public void uncoverAdjacent(Coord coord) {
         for (Coord adjacent : world.getAdjacentCoords(coord)) {
             agent.uncover(adjacent, world.getCell(adjacent));
         }
+    }
+
+    public void printIteration() {
+        if (verbose && isPlaying()) printView();
     }
 
     private void printStart() {

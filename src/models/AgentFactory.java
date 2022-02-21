@@ -1,10 +1,12 @@
 package models;
 
+import delegate.Game;
+
 public class AgentFactory {
-    public static Agent createAgent(String agentName, View view) {
+    public static Agent createAgent(String agentName, Game game, View view) {
         switch (agentName) {
             case "P1":
-                return new BasicAgent(view);
+                return new BasicAgent(game, view);
             case "P2":
                 throw new IllegalArgumentException("P2 is not implemented yet");
             case "P3":
