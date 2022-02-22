@@ -2,7 +2,8 @@ package models;
 
 public enum Token {
 
-    DANGER('-'),
+    DANGER('*'),
+    UNCOVERED_MINE('-'),
     MINE('m'),
     BLOCK('b'),
     UNKNOWN('?'),
