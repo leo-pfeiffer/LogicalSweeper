@@ -1,5 +1,7 @@
 package models;
 
+import java.util.ArrayList;
+
 /**
  * An interface for classes wrapping a 2d array of characters.
  * */
@@ -26,5 +28,5 @@ public interface CharMap {
      * Return an array of cells adjacent to the given coordinate.
      * @param coord The coordinate to get the adjacent cells of.
      * */
-    Coord[] getAdjacentCoords(Coord coord);
+    ArrayList<Coord> getAdjacentCoords(Coord coord);
 }
