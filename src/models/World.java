@@ -17,7 +17,7 @@ package models;
 
 import java.util.ArrayList;
 
-public enum World {
+public enum World implements CharMap {
 
 	TEST1(new char[][] {{'0', 'b', 'b'}, {'b', '3', 'b'}, {'m', 'm', 'm'}}), //SPS ok
 	TEST2(new char[][] {{'2', 'm', 'm'}, {'m', '5', 'm'}, {'b', 'b', 'm'}}), //SPS ok
@@ -71,60 +71,30 @@ public enum World {
 		this.size = map.length;
 	}
 
-	public boolean isInWorld(Coord coord) {
-		int row = coord.getRow();
-		int col = coord.getCol();
-		return col >= 0 && col < this.getSize() && row >= 0 && row < this.getSize();
-	}
-
-	public char getCell(Coord coord) {
-		if (!isInWorld(coord)) throw new IllegalArgumentException("Coordinates outside the world.");
-		return this.map[coord.getRow()][coord.getCol()];
-	}
-
-	public Coord[] getAdjacentCoords(Coord coord) {
-		if (!isInWorld(coord)) throw new IllegalArgumentException("Coordinates outside the world.");
-
-		ArrayList<Coord> adjacentCoords = new ArrayList<>();
-
-		int row = coord.getRow();
-		int col = coord.getCol();
-
-		for (int i = row - 1; i <= row + 1; i++) {
-			for (int j = col - 1; j <= col + 1; j++) {
-				if (i >= 0 && j >= 0 && (i != row || j != col)) {
-					Coord adjCoord = new Coord(i, j);
-					if (isInWorld(adjCoord)) adjacentCoords.add(adjCoord);
-				}
-			}
-		}
-		Coord[] adjacentCoordsArray = new Coord[adjacentCoords.size()];
-		adjacentCoords.toArray(adjacentCoordsArray);
-		return adjacentCoordsArray;
-	}
-
-	public boolean isBlocked(Coord coord) {
-		char cell = this.getCell(coord);
-		return cell == 'b';
-	}
-
-	public boolean isMine(Coord coord) {
-		char cell = this.getCell(coord);
-		return cell == 'm';
-	}
-
-	public boolean isHint(Coord coord) {
-		return !this.isBlocked(coord) && !this.isMine(coord);
-	}
-
+	@Override
 	public int getSize() {
 		return this.size;
 	}
 
-	public int getCellCount() {
-		return this.size * this.size;
+	@Override
+	public boolean containsCoord(Coord coord) {
+		return GameBoardUtils.containsCoord(coord, this.getSize());
 	}
 
+	@Override
+	public char getCell(Coord coord) {
+		return GameBoardUtils.getCell(coord, this.map);
+	}
+
+	@Override
+	public ArrayList<Coord> getAdjacentCoords(Coord coord) {
+		return GameBoardUtils.getAdjacentCoords(coord, this.map);
+	}
+
+	/**
+	 * Create a new View of the world map, uncovering all blocked cells and counting
+	 * the total number of mines.
+	 * */
 	public View createNewView() {
 		int size = this.getSize();
 		char[][] view = new char[size][size];
@@ -133,27 +103,22 @@ public enum World {
 		for (int row = 0; row < size; row++) {
 			for (int col = 0; col < size; col ++) {
 				Coord coord = new Coord(row, col);
-				if (this.isBlocked(coord)) {
-					view[row][col] = 'b';
+				char cell = this.getCell(coord);
+				if (cell == Token.BLOCK.getChar()) {
+					view[row][col] = Token.BLOCK.getChar();
 				} else {
-					view[row][col] = '?';
+					view[row][col] = Token.UNKNOWN.getChar();
 				}
 			}
 		}
 
-		return new View(view, this.getMineCount());
+		return new View(view, this.countMines());
 	}
 
-	public int getMineCount() {
-		int count = 0;
-		for (int row = 0; row < size; row++) {
-			for (int col = 0; col < size; col ++) {
-				Coord coord = new Coord(row, col);
-				if (this.isMine(coord)) {
-					count++;
-				}
-			}
-		}
-		return count;
+	/**
+	 * Count the number of mines in the map.
+	 * */
+	public int countMines() {
+		return GameBoardUtils.countOccurrence(Token.MINE.getChar(), this.map);
 	}
 }
