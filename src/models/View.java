@@ -1,26 +1,43 @@
 package models;
 
-public class View {
+import java.util.ArrayList;
 
-    private final char[][] view;
+public class View implements CharMap {
+
+    private final char[][] map;
     private final int mineCount;
 
     public View(char[][] view, int mineCount) {
-        this.view = view;
+        this.map = view;
         this.mineCount = mineCount;
     }
 
-    public char[][] getView() {
-        return view;
+    public char[][] getMap() {
+        return map;
     }
 
-    /**
-     * Returns true if the given coord is in the view.
-     * */
-    public boolean isInView(Coord coord) {
-        int row = coord.getRow();
-        int col = coord.getCol();
-        return col >= 0 && col < this.getSize() && row >= 0 && row < this.getSize();
+    public int getMineCount() {
+        return mineCount;
+    }
+
+    @Override
+    public int getSize() {
+        return this.map.length;
+    }
+
+    @Override
+    public boolean containsCoord(Coord coord) {
+        return GameBoardUtils.containsCoord(coord, this.getSize());
+    }
+
+    @Override
+    public char getCell(Coord coord) {
+        return GameBoardUtils.getCell(coord, this.map);
+    }
+
+    @Override
+    public ArrayList<Coord> getAdjacentCoords(Coord coord) {
+        return GameBoardUtils.getAdjacentCoords(coord, this.map);
     }
 
     /**
@@ -29,65 +46,80 @@ public class View {
      * @param value The value of the field to be uncovered.
      * */
     public void uncover(Coord coord, char value) {
-        if (isInView(coord)) {
-            this.view[coord.getRow()][coord.getCol()] = value;
+        if (containsCoord(coord)) {
+            this.map[coord.getRow()][coord.getCol()] = value;
         }
     }
 
     /**
-     * Get the size of the view.
+     * Flag a cell as containing a danger.
+     * @param coord The coord of the cell to be flagged.
      * */
-    public int getSize() {
-        return this.view.length;
+    public void flagDanger(Coord coord) {
+        if (containsCoord(coord)) {
+            this.map[coord.getRow()][coord.getCol()] = Token.DANGER.getChar();
+        }
     }
 
     /**
-     * Returns the value of the cell of the given coord from the view.
+     * Count the number of flagged dangers in an arraylist of cells.
      * */
-    public char getCell(Coord coord) {
-        if (!isInView(coord)) throw new IllegalArgumentException("Coord not in view");
-        return this.view[coord.getRow()][coord.getCol()];
+    public int countDangers(ArrayList<Coord> cells) {
+        return GameBoardUtils.countOccurrence(Token.DANGER.getChar(), cells, this.map);
+    }
+
+    /**
+     * Count the number of unknowns (uncovered & unmarked) in an arraylist of cells.
+     * */
+    public int countUnknowns(ArrayList<Coord> cells) {
+        return GameBoardUtils.countOccurrence(Token.UNKNOWN.getChar(), cells, this.map);
     }
 
     /**
      * Returns true if the cell of the given coord is uncovered.
      * */
     public boolean isUncovered(Coord coord) {
-        if (!isInView(coord)) throw new IllegalArgumentException("Coord not in view");
-        return this.view[coord.getRow()][coord.getCol()] != '?';
+        return !this.isUnknown(coord);
     }
 
-    public int getMineCount() {
-        return mineCount;
+    /**
+     * Returns true if the cell of the given coord is unmarked and covered.
+     * */
+    public boolean isUnknown(Coord coord) {
+        return GameBoardUtils.cellIsToken(Token.UNKNOWN.getChar(), coord, this.map);
     }
 
     /**
      * Returns true if a mine has been uncovered and false otherwise.
      * */
-    public boolean uncoveredMine() {
-        for (int i = 0; i < this.getSize(); i++) {
-            for (int j = 0; j < this.getSize(); j++) {
-                if (this.getCell(new Coord(i, j)) == '-') {
-                    return true;
-                }
-            }
+    public boolean hasProbedMine() {
+        for (Coord c : GameBoardUtils.getAllCoords(this.getSize())) {
+            if (this.getCell(c) == Token.UNCOVERED_MINE.getChar()) return true;
         }
         return false;
     }
 
     /**
      * Return the number of uncovered cells in the view.
+     * A cell counts as uncovered if it is NOT unknown.
      * */
     public int getUncoveredCount() {
         int count = 0;
-        for (int i = 0; i < this.getSize(); i++) {
-            for (int j = 0; j < this.getSize(); j++) {
-                if (this.isUncovered(new Coord(i, j))) {
-                    count++;
-                }
-            }
+        for (Coord c : GameBoardUtils.getAllCoords(this.getSize())) {
+            if (this.isUncovered(c)) count++;
         }
         return count;
+    }
+
+    /**
+     * Return an arraylist of all the coordinates of the cells that are unmarked and covered
+     * */
+    public ArrayList<Coord> getUnknownCells() {
+        ArrayList<Coord> coords = new ArrayList<>();
+        for (Coord c : GameBoardUtils.getAllCoords(this.getSize())) {
+            if (this.isUnknown(c)) coords.add(c);
+        }
+        return coords;
     }
 
     @Override
