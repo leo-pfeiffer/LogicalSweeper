@@ -122,6 +122,17 @@ public class View implements CharMap {
         return coords;
     }
 
+    /**
+     * Return an arraylist of all the coordinates of the cells that are uncovered
+     * */
+    public ArrayList<Coord> getUncoveredCells() {
+        ArrayList<Coord> coords = new ArrayList<>();
+        for (Coord c : GameBoardUtils.getAllCoords(this.getSize())) {
+            if (this.isUncovered(c)) coords.add(c);
+        }
+        return coords;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == this) {
