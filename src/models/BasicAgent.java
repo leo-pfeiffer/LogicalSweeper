@@ -2,6 +2,9 @@ package models;
 
 import delegate.Game;
 
+/*
+* BasicAgent naively probing cells in order.
+**/
 public class BasicAgent extends Agent {
 
     public BasicAgent(Game game, View view) {
@@ -28,20 +31,28 @@ public class BasicAgent extends Agent {
         }
     }
 
+    /**
+     * Return the next coordinate to probe.
+     * */
     public Coord getNextCoordInOrder() {
         int row = 0;
         int col = 0;
 
+        // if we have probed a cell before, move the row and col to the next cell
         if (lastProbedCell != null) {
+
+            // move one cell to the right
             col = lastProbedCell.getCol() + 1;
             row = lastProbedCell.getRow();
 
+            // if we're beyond the board with, go to first cell of next row
             if (col > this.view.getSize() - 1) {
                 row++;
                 col = 0;
             }
         }
 
+        // look for the next cell that is not yet probed and return it
         while (row < this.view.getSize()) {
             while (col < this.view.getSize()) {
                 Coord newCoord = new Coord(row, col);
@@ -52,6 +63,7 @@ public class BasicAgent extends Agent {
             row++;
         }
 
+        // there are no more cells to probe
         throw new NothingToProbeException("No more cells to probe.");
     }
 }
