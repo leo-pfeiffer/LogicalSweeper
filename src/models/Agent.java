@@ -6,6 +6,7 @@ public abstract class Agent {
 
     protected final View view;
     protected final Game game;
+    protected boolean canTerminate = true;
 
     public Agent(Game game, View view) {
         this.view = view;
@@ -24,5 +25,13 @@ public abstract class Agent {
 
     public int getUncoveredCount() {
         return this.view.getUncoveredCount();
+    }
+
+    public int getMineCount() {
+        return this.view.getMineCount();
+    }
+
+    public boolean isCanTerminate() {
+        return canTerminate;
     }
 }
