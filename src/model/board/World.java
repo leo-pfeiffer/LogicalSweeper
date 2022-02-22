@@ -1,4 +1,4 @@
-package models;
+package model.board;
 /*
  * CS5011 A2 Starter code
  * This enum class holds the various boards to be played

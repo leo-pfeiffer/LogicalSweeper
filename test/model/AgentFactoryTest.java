@@ -1,8 +1,13 @@
-package models;
+package model;
 
 import static org.junit.Assert.assertThrows;
 
 import delegate.Game;
+import model.agent.Agent;
+import model.agent.AgentFactory;
+import model.agent.BasicAgent;
+import model.agent.BeginnerAgent;
+import model.board.World;
 import org.junit.Test;
 
 public class AgentFactoryTest {

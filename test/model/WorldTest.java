@@ -1,4 +1,4 @@
-package models;
+package model;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -6,7 +6,8 @@ import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import model.board.Coord;
+import model.board.World;
 import org.junit.Test;
 
 public class WorldTest {

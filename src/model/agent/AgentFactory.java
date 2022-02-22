@@ -1,6 +1,7 @@
-package models;
+package model.agent;
 
 import delegate.Game;
+import model.board.View;
 
 public class AgentFactory {
     public static Agent createAgent(String agentName, Game game, View view) {

@@ -4,7 +4,7 @@ package delegate;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-import models.World;
+import model.board.World;
 import org.junit.Test;
 
 public class GameTest {

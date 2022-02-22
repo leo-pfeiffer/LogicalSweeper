@@ -1,4 +1,4 @@
-package models;
+package model.board;
 
 import java.util.Objects;
 

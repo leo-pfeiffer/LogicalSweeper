@@ -1,6 +1,8 @@
-package models;
+package model.agent;
 
 import delegate.Game;
+import model.board.Coord;
+import model.board.View;
 
 /*
 * BasicAgent naively probing cells in order.

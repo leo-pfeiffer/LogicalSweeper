@@ -1,9 +1,9 @@
 import delegate.GameTest;
-import models.AgentFactoryTest;
-import models.BasicAgentTest;
-import models.BeginnerAgentTest;
-import models.ViewTest;
-import models.WorldTest;
+import model.AgentFactoryTest;
+import model.BasicAgentTest;
+import model.BeginnerAgentTest;
+import model.ViewTest;
+import model.WorldTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 

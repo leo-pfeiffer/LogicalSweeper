@@ -1,7 +1,7 @@
 
 
 import delegate.Game;
-import models.World;
+import model.board.World;
 
 public class A2main {
 

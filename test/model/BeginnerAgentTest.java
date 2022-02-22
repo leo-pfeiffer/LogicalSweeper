@@ -1,9 +1,11 @@
-package models;
+package model;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import delegate.Game;
+import model.agent.BeginnerAgent;
+import model.board.World;
 import org.junit.Test;
 
 public class BeginnerAgentTest {

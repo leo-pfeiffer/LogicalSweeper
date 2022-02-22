@@ -1,4 +1,4 @@
-package models;
+package model.agent;
 
 /**
  * Exception that is thrown when an agent has no more cells to probe.

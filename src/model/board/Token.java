@@ -1,4 +1,4 @@
-package models;
+package model.board;
 
 public enum Token {
 

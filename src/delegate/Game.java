@@ -1,13 +1,13 @@
 package delegate;
 
-import models.Agent;
-import models.AgentFactory;
-import models.BasicAgent;
-import models.Coord;
-import models.MineFoundException;
-import models.NothingToProbeException;
-import models.Token;
-import models.World;
+import model.agent.Agent;
+import model.agent.AgentFactory;
+import model.agent.BasicAgent;
+import model.board.Coord;
+import model.agent.MineFoundException;
+import model.agent.NothingToProbeException;
+import model.board.Token;
+import model.board.World;
 
 public class Game {
 

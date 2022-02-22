@@ -1,7 +1,10 @@
-package models;
+package model;
 
 import static org.junit.Assert.assertEquals;
 
+import model.board.Coord;
+import model.board.View;
+import model.board.World;
 import org.junit.Test;
 
 public class ViewTest {

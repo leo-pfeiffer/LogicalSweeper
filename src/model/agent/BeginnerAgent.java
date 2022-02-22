@@ -1,7 +1,9 @@
-package models;
+package model.agent;
 
 import java.util.ArrayList;
 import delegate.Game;
+import model.board.Coord;
+import model.board.View;
 
 /**
  * BeginnerAgent using Single Point Strategy
