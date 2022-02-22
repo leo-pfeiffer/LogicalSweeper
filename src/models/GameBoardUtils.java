@@ -20,7 +20,7 @@ public abstract class GameBoardUtils {
         return map[coord.getRow()][coord.getCol()];
     }
 
-    public static Coord[] getAdjacentCoords(Coord coord, char[][] map) {
+    public static ArrayList<Coord> getAdjacentCoords(Coord coord, char[][] map) {
 
         if (!GameBoardUtils.containsCoord(coord, map.length)) {
             throw new IllegalArgumentException("Coordinates outside the map.");
@@ -41,9 +41,7 @@ public abstract class GameBoardUtils {
                 }
             }
         }
-        Coord[] adjacentCoordsArray = new Coord[adjacentCoords.size()];
-        adjacentCoords.toArray(adjacentCoordsArray);
-        return adjacentCoordsArray;
+        return adjacentCoords;
     }
 
     public static int countOccurrence(char token, ArrayList<Coord> cells, char[][] map) {
