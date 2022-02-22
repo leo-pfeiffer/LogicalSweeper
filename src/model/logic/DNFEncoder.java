@@ -8,29 +8,40 @@ import org.logicng.formulas.Literal;
 
 public class DNFEncoder {
 
-    private static final FormulaFactory f = new FormulaFactory();
+    private final FormulaFactory f;
 
+    public DNFEncoder() {
+        this(new FormulaFactory());
+    }
+
+    public DNFEncoder(FormulaFactory f) {
+        this.f = f;
+    }
+
+    /**
+     * @param cells The neighbors of the cell to be encoded.
+     * @param clue The clue of the cell to be encoded
+     * */
     public Formula encode(String[] cells, int clue) {
         ArrayList<BooleanArray> permutations = booleanPermutations(cells.length, clue);
+        ArrayList<Formula> formulae = new ArrayList<>();
 
-        Formula formula = null;
         for (BooleanArray permutation : permutations) {
-            Formula nextFormula = encode(cells, permutation);
-            formula = formula == null ? nextFormula : f.or(formula, nextFormula);
+            formulae.add(encode(cells, permutation));
         }
 
-        return formula;
+        return f.or(formulae);
     }
 
     public Formula encode(String[] cells, BooleanArray permutation) {
 
-        Formula formula = null;
+        ArrayList<Formula> literals = new ArrayList<>();
+
         for (int i = 0; i < cells.length; i++) {
-            Literal nextLiteral = f.literal(cells[i], permutation.get(i));
-            formula = formula == null ? nextLiteral : f.and(formula, nextLiteral);
+            literals.add(f.literal(cells[i], permutation.get(i)));
         }
 
-        return formula;
+        return f.and(literals);
     }
 
     public ArrayList<BooleanArray> booleanPermutations(int numNbrs, int clue) {
@@ -52,7 +63,6 @@ public class DNFEncoder {
      * */
     private HashSet<BooleanArray> permutations(BooleanArray arr, int size, HashSet<BooleanArray> permutations) {
         if (size == 1) {
-            System.out.println(arr + " " + arr.hashCode());
             permutations.add(new BooleanArray(arr));
         }
         for (int i = 0; i < size; i++) {
@@ -66,5 +76,4 @@ public class DNFEncoder {
         }
         return permutations;
     }
-
 }
