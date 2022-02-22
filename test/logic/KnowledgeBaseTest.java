@@ -1,4 +1,4 @@
-package model;
+package logic;
 
 import model.board.View;
 import model.logic.KnowledgeBase;

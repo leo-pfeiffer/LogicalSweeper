@@ -1,4 +1,7 @@
 import delegate.GameTest;
+import logic.DNFEncoderTest;
+import logic.EntailmentCheckerTest;
+import logic.KnowledgeBaseTest;
 import model.AgentFactoryTest;
 import model.BasicAgentTest;
 import model.BeginnerAgentTest;
@@ -12,10 +15,13 @@ import org.junit.runners.Suite;
  **/
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-        GameTest.class,
         AgentFactoryTest.class,
         BasicAgentTest.class,
         BeginnerAgentTest.class,
+        DNFEncoderTest.class,
+        EntailmentCheckerTest.class,
+        GameTest.class,
+        KnowledgeBaseTest.class,
         ViewTest.class,
         WorldTest.class,
 })

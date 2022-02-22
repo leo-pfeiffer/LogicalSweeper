@@ -1,4 +1,4 @@
-package model;
+package logic;
 
 import model.logic.DNFEncoder;
 import org.junit.Test;
