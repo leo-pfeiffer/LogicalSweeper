@@ -23,7 +23,7 @@ public class ViewTest {
     @Test
     public void testGetMineCount() {
         View view = world.createNewView();
-        assertEquals(view.getMineCount(), world.getMineCount());
+        assertEquals(view.getMineCount(), world.countMines());
     }
 
     @Test
