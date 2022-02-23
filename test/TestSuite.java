@@ -5,6 +5,7 @@ import logic.KnowledgeBaseTest;
 import model.AgentFactoryTest;
 import model.BasicAgentTest;
 import model.BeginnerAgentTest;
+import model.IntermediateAgentTest;
 import model.ViewTest;
 import model.WorldTest;
 import org.junit.runner.RunWith;
@@ -21,6 +22,7 @@ import org.junit.runners.Suite;
         DNFEncoderTest.class,
         EntailmentCheckerTest.class,
         GameTest.class,
+        IntermediateAgentTest.class,
         KnowledgeBaseTest.class,
         ViewTest.class,
         WorldTest.class,
