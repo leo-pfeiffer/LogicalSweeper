@@ -5,8 +5,8 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
-import model.logic.BooleanArray;
-import model.logic.DNFEncoder;
+import logic.BooleanArray;
+import logic.DNFEncoder;
 import org.junit.Test;
 import org.logicng.formulas.Formula;
 import org.logicng.formulas.FormulaFactory;

@@ -1,4 +1,4 @@
-package model.logic;
+package logic;
 
 import java.util.ArrayList;
 import model.board.Coord;
@@ -20,10 +20,6 @@ public class KnowledgeBase {
 
     public FormulaFactory getF() {
         return f;
-    }
-
-    public void updateView(View view) {
-        this.view = view;
     }
 
     public Formula getKBU() {

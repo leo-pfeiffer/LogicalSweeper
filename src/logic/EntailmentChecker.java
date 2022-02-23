@@ -1,4 +1,4 @@
-package model.logic;
+package logic;
 
 import org.logicng.formulas.Formula;
 import org.logicng.formulas.FormulaFactory;

@@ -4,9 +4,8 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import model.board.View;
-import model.logic.DNFEncoder;
-import model.logic.EntailmentChecker;
-import model.logic.KnowledgeBase;
+import logic.EntailmentChecker;
+import logic.KnowledgeBase;
 import org.junit.Test;
 import org.logicng.formulas.FormulaFactory;
 

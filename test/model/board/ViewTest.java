@@ -1,4 +1,4 @@
-package model;
+package model.board;
 
 import static org.junit.Assert.assertEquals;
 

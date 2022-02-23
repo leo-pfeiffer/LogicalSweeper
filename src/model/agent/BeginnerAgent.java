@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import delegate.Game;
 import model.board.Coord;
 import model.board.View;
-import model.logic.SinglePointStrategy;
+import logic.SinglePointStrategy;
 
 /**
  * BeginnerAgent using Single Point Strategy

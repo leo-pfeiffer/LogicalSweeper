@@ -1,4 +1,4 @@
-package model;
+package model.agent;
 
 import static org.junit.Assert.assertThrows;
 

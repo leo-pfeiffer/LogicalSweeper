@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import delegate.Game;
 import model.board.Coord;
 import model.board.View;
-import model.logic.SATStrategy;
-import model.logic.SinglePointStrategy;
+import logic.SATStrategy;
+import logic.SinglePointStrategy;
 
 public class IntermediateAgent extends Agent {
 

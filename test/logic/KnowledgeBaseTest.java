@@ -1,7 +1,7 @@
 package logic;
 
 import model.board.View;
-import model.logic.KnowledgeBase;
+import logic.KnowledgeBase;
 import org.junit.Test;
 
 public class KnowledgeBaseTest {

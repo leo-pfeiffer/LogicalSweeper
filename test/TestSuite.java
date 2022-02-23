@@ -2,12 +2,12 @@ import delegate.GameTest;
 import logic.DNFEncoderTest;
 import logic.EntailmentCheckerTest;
 import logic.KnowledgeBaseTest;
-import model.AgentFactoryTest;
-import model.BasicAgentTest;
-import model.BeginnerAgentTest;
-import model.IntermediateAgentTest;
-import model.ViewTest;
-import model.WorldTest;
+import model.agent.AgentFactoryTest;
+import model.agent.BasicAgentTest;
+import model.agent.BeginnerAgentTest;
+import model.agent.IntermediateAgentTest;
+import model.board.ViewTest;
+import model.board.WorldTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 

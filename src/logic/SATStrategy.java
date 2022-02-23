@@ -1,4 +1,4 @@
-package model.logic;
+package logic;
 
 import model.agent.Agent;
 import model.board.Coord;
