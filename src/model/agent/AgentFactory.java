@@ -1,6 +1,11 @@
 package model.agent;
 
 import delegate.Game;
+import logic.CNFEncoder;
+import logic.CNFKnowledgeBase;
+import logic.DNFEncoder;
+import logic.DNFKnowledgeBase;
+import logic.KnowledgeBase;
 import model.board.View;
 
 public class AgentFactory {
@@ -11,9 +16,9 @@ public class AgentFactory {
             case "P2":
                 return new BeginnerAgent(game, view);
             case "P3":
-                return new IntermediateAgent(game, view);
+                return new IntermediateAgent(game, view, new DNFKnowledgeBase(view));
             case "P4":
-                throw new IllegalArgumentException("P4 is not implemented yet");
+                return new IntermediateAgent(game, view, new CNFKnowledgeBase(view));
             case "P5":
                 throw new IllegalArgumentException("P5 is not implemented yet");
             default:

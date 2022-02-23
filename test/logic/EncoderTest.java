@@ -5,24 +5,36 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
-import logic.BooleanArray;
-import logic.DNFEncoder;
 import org.junit.Test;
 import org.logicng.formulas.Formula;
 import org.logicng.formulas.FormulaFactory;
 
-public class DNFEncoderTest {
+public class EncoderTest {
 
     @Test
-    public void testSetup() {
+    public void testSetupDNFEncoder() {
         new DNFEncoder();
     }
 
     @Test
+    public void testTest() {
+        ArrayList<BooleanArray> permutations = Encoder.booleanPermutations(3, 1);
+
+        CNFEncoder cnf = new CNFEncoder();
+
+        int[] variables = {1, 2, 3};
+        int k = 1;
+        int[][] atMost = cnf.atMost(variables, k);
+        int[][] atLeast = cnf.atLeast(variables, variables.length - k);
+        int[][] exactly = cnf.exactly(variables, k);
+//        boolean result = cnf.solver(exactly);
+        int x = 1;
+    }
+
+    @Test
     public void testBooleanPermutationsOneTrue() {
-        DNFEncoder dnf = new DNFEncoder();
         int numTrueExpected = 1;
-        ArrayList<BooleanArray> permutations = dnf.booleanPermutations(3, numTrueExpected);
+        ArrayList<BooleanArray> permutations = Encoder.booleanPermutations(3, numTrueExpected);
         for (BooleanArray permutation : permutations) {
             int numTrue = 0;
             for (boolean b : permutation.toArray()) {
@@ -34,9 +46,8 @@ public class DNFEncoderTest {
 
     @Test
     public void testBooleanPermutationsSomeTrue() {
-        DNFEncoder dnf = new DNFEncoder();
         int numTrueExpected = 2;
-        ArrayList<BooleanArray> permutations = dnf.booleanPermutations(3, numTrueExpected);
+        ArrayList<BooleanArray> permutations = Encoder.booleanPermutations(3, numTrueExpected);
         for (BooleanArray permutation : permutations) {
             int numTrue = 0;
             for (boolean b : permutation.toArray()) {
@@ -48,9 +59,8 @@ public class DNFEncoderTest {
 
     @Test
     public void testBooleanPermutationsAllTrue() {
-        DNFEncoder dnf = new DNFEncoder();
         int numTrueExpected = 4;
-        ArrayList<BooleanArray> permutations = dnf.booleanPermutations(numTrueExpected, numTrueExpected);
+        ArrayList<BooleanArray> permutations = Encoder.booleanPermutations(numTrueExpected, numTrueExpected);
         assertEquals(permutations.size(), 1);
         for (boolean b : permutations.get(0).toArray()) {
             assertTrue(b);
@@ -59,9 +69,8 @@ public class DNFEncoderTest {
 
     @Test
     public void testBooleanPermutationsNoneTrue() {
-        DNFEncoder dnf = new DNFEncoder();
         int numTrueExpected = 0;
-        ArrayList<BooleanArray> permutations = dnf.booleanPermutations(4, numTrueExpected);
+        ArrayList<BooleanArray> permutations = Encoder.booleanPermutations(4, numTrueExpected);
         assertEquals(permutations.size(), 1);
         for (boolean b : permutations.get(0).toArray()) {
             assertFalse(b);
@@ -151,5 +160,4 @@ public class DNFEncoderTest {
 
         assertEquals(expected, dnf.encode(variables, numTrueExpected));
     }
-
 }
