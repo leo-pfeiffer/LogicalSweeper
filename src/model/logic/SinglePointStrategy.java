@@ -3,46 +3,30 @@ package model.logic;
 import java.util.ArrayList;
 import model.agent.Agent;
 import model.board.Coord;
-import model.board.View;
 
 /**
  * Provide methods for the single point strategy on a view.
  * */
-public class SinglePointStrategy {
-
-    private final View view;
-    private final Agent agent;
+public class SinglePointStrategy extends Strategy {
 
     public SinglePointStrategy(Agent agent) {
-        this.agent = agent;
-        this.view = agent.getView();
+        super(agent);
     }
 
-    /**
-     * Check the currently unknown cells of the agent's view using the single point strategy.
-     * If any changes were made, return true, else false.
-     * */
-    public boolean checkCurrentUnknownCells() {
-        boolean changed = false;
-
-        ArrayList<Coord> unknownCells = this.view.getUnknownCells();
-        for (Coord cell : unknownCells) {
-            // perform the AFN check on the cell and probe if successful
-            if (afnCheck(cell)) {
-                this.agent.probe(cell);
-                changed = true;
-            }
-
-            // perform the AMN check on the cell and flag as danger if successful
-            else if (amnCheck(cell)) {
-                this.view.flagDanger(cell);
-                changed = true;
-            }
-
-            this.agent.printIteration();
+    @Override
+    public boolean check(Coord cell) {
+        // perform the AFN check on the cell and probe if successful
+        if (afnCheck(cell)) {
+            this.agent.probe(cell);
+            return true;
         }
 
-        return changed;
+        // perform the AMN check on the cell and flag as danger if successful
+        else if (amnCheck(cell)) {
+            this.view.flagDanger(cell);
+            return true;
+        }
+        return false;
     }
 
     /**
