@@ -36,4 +36,24 @@ public abstract class Agent {
     public boolean isCanTerminate() {
         return canTerminate;
     }
+
+    public void printIteration() {
+        this.game.printIteration();
+    }
+
+    public void probe(Coord coord) {
+        this.game.probe(coord);
+    }
+
+    /**
+     * Perform the initial safe probes of top left and center cells.
+     * */
+    protected void initialSafeProbes() {
+        Coord topLeft = new Coord(0, 0);
+        Coord center = new Coord(view.getSize() / 2, view.getSize() / 2);
+        game.probe(topLeft);
+        this.game.printIteration();
+        game.probe(center);
+        this.game.printIteration();
+    }
 }
