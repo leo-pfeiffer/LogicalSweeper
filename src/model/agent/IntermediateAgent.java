@@ -2,6 +2,8 @@ package model.agent;
 
 import java.util.ArrayList;
 import delegate.Game;
+import model.agent.exceptions.MineFoundException;
+import model.agent.exceptions.NothingToProbeException;
 import model.board.Coord;
 import model.board.View;
 import logic.SATStrategy;

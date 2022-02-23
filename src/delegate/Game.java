@@ -4,8 +4,8 @@ import model.agent.Agent;
 import model.agent.AgentFactory;
 import model.agent.BasicAgent;
 import model.board.Coord;
-import model.agent.MineFoundException;
-import model.agent.NothingToProbeException;
+import model.agent.exceptions.MineFoundException;
+import model.agent.exceptions.NothingToProbeException;
 import model.board.Token;
 import model.board.World;
 

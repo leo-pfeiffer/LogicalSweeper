@@ -4,9 +4,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
 
 import delegate.Game;
-import model.agent.BasicAgent;
-import model.agent.MineFoundException;
-import model.agent.NothingToProbeException;
+import model.agent.exceptions.MineFoundException;
+import model.agent.exceptions.NothingToProbeException;
 import model.board.Coord;
 import model.board.World;
 import org.junit.Test;
