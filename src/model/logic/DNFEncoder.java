@@ -22,8 +22,8 @@ public class DNFEncoder {
      * @param cells The neighbors of the cell to be encoded.
      * @param clue The clue of the cell to be encoded
      * */
-    public Formula encode(String[] cells, int clue) {
-        ArrayList<BooleanArray> permutations = booleanPermutations(cells.length, clue);
+    public Formula encode(String[] cells, int clue, int numDangers) {
+        ArrayList<BooleanArray> permutations = booleanPermutations(cells.length, clue - numDangers);
         ArrayList<Formula> formulae = new ArrayList<>();
 
         for (BooleanArray permutation : permutations) {
@@ -44,13 +44,13 @@ public class DNFEncoder {
         return f.and(literals);
     }
 
-    public ArrayList<BooleanArray> booleanPermutations(int numNbrs, int clue) {
+    public ArrayList<BooleanArray> booleanPermutations(int size, int numTrue) {
 
-        boolean[] current = new boolean[numNbrs];
-        int cluesUsed = 0;
-        for (int i = 0; i < numNbrs; i++) {
-            current[i] = cluesUsed < clue;
-            cluesUsed++;
+        boolean[] current = new boolean[size];
+        int trueUsed = 0;
+        for (int i = 0; i < size; i++) {
+            current[i] = trueUsed < numTrue;
+            trueUsed++;
         }
 
         HashSet<BooleanArray> permutationSet = permutations(new BooleanArray(current), current.length, new HashSet<>());

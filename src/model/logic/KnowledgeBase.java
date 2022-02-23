@@ -36,8 +36,9 @@ public class KnowledgeBase {
             ArrayList<Coord> unknownNeighbors = this.getUnknownNeighbors(coord);
             String[] literals = this.stringifyLiterals(unknownNeighbors);
             int clue = Character.getNumericValue(this.view.getCell(coord));
+            int numDangers = this.view.countDangers(this.view.getAdjacentCoords(coord));
 
-            formulae.add(encoder.encode(literals, clue));
+            formulae.add(encoder.encode(literals, clue, numDangers));
         }
 
         return f.and(formulae);

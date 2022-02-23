@@ -10,7 +10,7 @@ public class DNFEncoderTest {
     public void testSetup() {
         DNFEncoder dnf = new DNFEncoder();
         String[] cells = {"D1", "D2", "D3", "D4"};
-        Formula formula = dnf.encode(cells, 2);
+        Formula formula = dnf.encode(cells, 2, 0);
         int x = 1;
     }
 
