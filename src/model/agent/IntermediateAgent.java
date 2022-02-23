@@ -2,6 +2,7 @@ package model.agent;
 
 import java.util.ArrayList;
 import delegate.Game;
+import logic.KnowledgeBase;
 import model.agent.exceptions.MineFoundException;
 import model.agent.exceptions.NothingToProbeException;
 import model.board.Coord;
@@ -14,10 +15,10 @@ public class IntermediateAgent extends Agent {
     private final SinglePointStrategy sps;
     private final SATStrategy sat;
 
-    public IntermediateAgent(Game game, View view) {
+    public IntermediateAgent(Game game, View view, KnowledgeBase kb) {
         super(game, view);
         sps = new SinglePointStrategy(this);
-        sat = new SATStrategy(this);
+        sat = new SATStrategy(this, kb);
     }
 
     @Override
