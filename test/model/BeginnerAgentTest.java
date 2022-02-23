@@ -24,7 +24,6 @@ public class BeginnerAgentTest {
     @Test
     public void testWorld1() {
         Game game = new Game(World.TEST1, agentName);
-        new BeginnerAgent(game, World.TEST1.createNewView());
         game.run();
         assertFalse(game.agentHasDied());
         assertTrue(game.agentHasWon());
@@ -37,7 +36,6 @@ public class BeginnerAgentTest {
     @Test
     public void testWorld2() {
         Game game = new Game(World.TEST2, agentName);
-        new BeginnerAgent(game, World.TEST2.createNewView());
         game.run();
         assertFalse(game.agentHasDied());
         assertTrue(game.agentHasWon());
@@ -50,7 +48,6 @@ public class BeginnerAgentTest {
     @Test
     public void testWorld3() {
         Game game = new Game(World.TEST3, agentName);
-        new BeginnerAgent(game, World.TEST3.createNewView());
         game.run();
         assertFalse(game.agentHasDied());
         assertFalse(game.agentHasWon());
@@ -63,7 +60,6 @@ public class BeginnerAgentTest {
     @Test
     public void testWorld4() {
         Game game = new Game(World.TEST4, agentName);
-        new BeginnerAgent(game, World.TEST4.createNewView());
         game.run();
         assertFalse(game.agentHasDied());
         assertFalse(game.agentHasWon());
@@ -76,7 +72,6 @@ public class BeginnerAgentTest {
     @Test
     public void testWorld5() {
         Game game = new Game(World.TEST5, agentName);
-        new BeginnerAgent(game, World.TEST5.createNewView());
         game.run();
         assertFalse(game.agentHasDied());
         assertFalse(game.agentHasWon());
@@ -89,7 +84,6 @@ public class BeginnerAgentTest {
     @Test
     public void testWorld6() {
         Game game = new Game(World.TEST6, agentName);
-        new BeginnerAgent(game, World.TEST6.createNewView());
         game.run();
         assertFalse(game.agentHasDied());
         assertFalse(game.agentHasWon());

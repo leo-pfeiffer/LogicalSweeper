@@ -1,6 +1,8 @@
 package model.agent;
 
+import java.util.ArrayList;
 import delegate.Game;
+import model.board.Coord;
 import model.board.View;
 import model.logic.SinglePointStrategy;
 
@@ -27,7 +29,17 @@ public class BeginnerAgent extends Agent {
 
         // keep searching until all cells are uncovered or early termination
         while (view.getUnknownCells().size() > 0 && changed) {
-            changed = sps.checkCurrentUnknownCells();
+
+            changed = false;
+
+            // changed = sps.checkUnknownCells();
+
+            ArrayList<Coord> unknownCells = this.view.getUnknownCells();
+            for (Coord cell : unknownCells) {
+                changed = sps.check(cell) || changed;
+            }
+
+            this.printIteration();
         }
 
         if (!changed && view.getUnknownCells().size() > 0) {
