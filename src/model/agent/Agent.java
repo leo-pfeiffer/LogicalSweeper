@@ -58,8 +58,8 @@ public abstract class Agent {
         Coord topLeft = new Coord(0, 0);
         Coord center = new Coord(view.getSize() / 2, view.getSize() / 2);
         game.probe(topLeft);
-        this.game.printIteration();
+//        this.game.printIteration();
         game.probe(center);
-        this.game.printIteration();
+//        this.game.printIteration();
     }
 }
