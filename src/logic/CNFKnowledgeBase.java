@@ -10,47 +10,15 @@ import org.sat4j.specs.ContradictionException;
 import org.sat4j.specs.ISolver;
 import org.sat4j.specs.TimeoutException;
 
+/**
+ * Knowledge Base extension using CNF encoding.
+ */
 public class CNFKnowledgeBase extends KnowledgeBase {
 
     private final CNFEncoder encoder = new CNFEncoder();
 
     public CNFKnowledgeBase(View view) {
         super(view);
-    }
-
-    /**
-     * Get the current KBU using CNF encoding
-     * */
-    private int[][] getKBU() {
-
-        // list of cells to consider for the KBU computation (cell with hint and unknown neighbor)
-        ArrayList<Coord> contenders = this.getKBUContenders();
-
-        // initialise list to add the CNF clauses to
-        ArrayList<int[]> clauses = new ArrayList<>();
-
-        for (Coord coord : contenders) {
-
-            // get unknown neighbors and their integer identifiers
-            ArrayList<Coord> unknownNeighbors = this.getUnknownNeighbors(coord);
-            int[] identifiers = getCellIdentifiers(unknownNeighbors);
-
-            // get the number of mines (k) in the unknown cells
-            int clue = Character.getNumericValue(this.view.getCell(coord));
-            int numDangers = this.view.countDangers(this.view.getAdjacentCoords(coord));
-            int k = clue - numDangers;
-
-            // encode that exactly k mines are located in adjacent unknown cells
-            int[][] subClauses = encoder.exactly(identifiers, k);
-            clauses.addAll(Arrays.asList(subClauses));
-        }
-
-        // convert to array of arrays
-        int[][] kb = new int[clauses.size()][];
-        for (int i = 0; i < clauses.size(); i++) {
-            kb[i] = clauses.get(i);
-        }
-        return kb;
     }
 
     @Override
@@ -69,7 +37,7 @@ public class CNFKnowledgeBase extends KnowledgeBase {
 
         // add clauses of the knowledge base
         for (int i = 0; i < NBCLAUSES - 1; i++) {
-            int [] clause = kb[i];
+            int[] clause = kb[i];
 
             try {
                 solver.addClause(new VecInt(clause));
@@ -91,18 +59,51 @@ public class CNFKnowledgeBase extends KnowledgeBase {
     }
 
     /**
+     * Get the current KBU using CNF encoding
+     */
+    private int[][] getKBU() {
+
+        // list of cells to consider for the KBU computation (cell with hint and unknown neighbor)
+        ArrayList<Coord> contenders = this.getKBUContenders();
+
+        // initialise list to add the CNF clauses to
+        ArrayList<int[]> clauses = new ArrayList<>();
+
+        for (Coord coord : contenders) {
+
+            // get unknown neighbors and their integer identifiers
+            ArrayList<Coord> unknownNeighbors = this.getUnknownNeighbors(coord);
+            int[] identifiers = getCellIdentifiers(unknownNeighbors);
+
+            // get the number of mines (k) in the unknown cells
+            int k = getAdjacentRemainingDangerCount(coord);
+
+            // encode that exactly k mines are located in adjacent unknown cells
+            int[][] subClauses = encoder.exactly(identifiers, k);
+            clauses.addAll(Arrays.asList(subClauses));
+        }
+
+        // convert to array of arrays
+        int[][] kb = new int[clauses.size()][];
+        for (int i = 0; i < clauses.size(); i++) {
+            kb[i] = clauses.get(i);
+        }
+        return kb;
+    }
+
+    /**
      * Get the integer identifier for a cell.
      * The integer identifier corresponds to the position of the cell on the board,
      * when counting the cells from top left to bottom right, row by row:
      * identifier = row * width + column + 1
-     * */
+     */
     private int getCellIdentifier(Coord cell) {
         return cell.getRow() * view.getSize() + cell.getCol() + 1;
     }
 
     /**
      * Get the integer identifiers for an array list of cells.
-     * */
+     */
     private int[] getCellIdentifiers(ArrayList<Coord> cells) {
         int[] identifiers = new int[cells.size()];
         for (int i = 0; i < cells.size(); i++) {

@@ -54,4 +54,13 @@ public abstract class KnowledgeBase {
         }
         return unknownNeighbors;
     }
+
+    /**
+     * Get the number of mines in the unknown cells adjacent to coord.
+     * */
+    protected int getAdjacentRemainingDangerCount(Coord coord) {
+        int clue = Character.getNumericValue(this.view.getCell(coord));
+        int numDangers = this.view.countDangers(this.view.getAdjacentCoords(coord));
+        return clue - numDangers;
+    }
 }
