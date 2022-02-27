@@ -3,6 +3,9 @@ package logic;
 import model.agent.Agent;
 import model.board.Coord;
 
+/**
+ * Class representing the SAT Strategy.
+ * */
 public class SATStrategy extends Strategy {
 
     private final KnowledgeBase kb;
@@ -15,13 +18,13 @@ public class SATStrategy extends Strategy {
     @Override
     public boolean check(Coord cell) {
 
-        // KB |= Danger
+        // check if KB |= Danger
         if (!kb.checkEntailment(cell, true)) {
             this.agent.probe(cell);
             return true;
         }
 
-        // KB |= !Danger
+        // check if KB |= !Danger
         else if (!kb.checkEntailment(cell, false)) {
             this.view.flagDanger(cell);
             return true;

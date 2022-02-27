@@ -37,6 +37,9 @@ public class BooleanArray {
         return array.length;
     }
 
+    /**
+     * Swap the elements at the indices idx1 and idx2.
+     * */
     public void swap(int idx1, int idx2) {
         boolean temp = this.array[idx1];
         this.array[idx1] = this.array[idx2];
@@ -56,6 +59,7 @@ public class BooleanArray {
         return Arrays.hashCode(array);
     }
 
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("[");

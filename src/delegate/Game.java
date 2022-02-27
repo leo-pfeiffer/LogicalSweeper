@@ -9,6 +9,9 @@ import model.agent.exceptions.NothingToProbeException;
 import model.board.Token;
 import model.board.World;
 
+/**
+ * Class representing the DangerSweeper game.
+ * */
 public class Game {
 
     private final World world;
@@ -62,17 +65,26 @@ public class Game {
         }
     }
 
-    public char probe(Coord cell) {
+    /**
+     * Probe the provided cell, that is un-cover it and proceed based on what the cell contains.
+     * */
+    public void probe(Coord cell) {
+        // evaluate the content of the cell
         char value = world.getCell(cell);
+
+        // mine was probed -> throw exception since agent has died
         if (value == 'm') {
             agent.uncover(cell, Token.UNCOVERED_MINE.getChar());
             throw new MineFoundException("Probed mine at " + cell);
         }
+
+        // cells adjacent to clue 0 are safe
         else if (value == '0') {
             uncoverAdjacent(cell);
         }
+
+        // tell the agent about the un-covered cell
         agent.uncover(cell, value);
-        return value;
     }
 
     /**
@@ -104,6 +116,10 @@ public class Game {
         }
     }
 
+    /**
+     * Print the state of the current iteration.
+     * The state is not printed if the game is over or if verbosity is set to false.
+     * */
     public void printIteration() {
         if (verbose && isPlaying()) printView();
     }
@@ -134,14 +150,17 @@ public class Game {
         System.out.println("\nResult: Agent alive: all solved\n");
     }
 
-    public void printView() {
+    private void printView() {
         Game.printBoard(agent.getView().getMap());
     }
 
-    public void printWorld() {
+    private void printWorld() {
         Game.printBoard(this.world.map);
     }
 
+    /**
+     * Print method as provided by the starter code.
+     * */
     private static void printBoard(char[][] board) {
         System.out.println();
         // first line
