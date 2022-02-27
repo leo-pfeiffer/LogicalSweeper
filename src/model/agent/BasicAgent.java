@@ -27,7 +27,6 @@ public class BasicAgent extends Agent {
 
     @Override
     public void playGame() throws NothingToProbeException {
-        this.initialSafeProbes();
         // ask the game if the game is still going on (not game over)
         while (this.game.isPlaying()) {
             this.probeNext();
