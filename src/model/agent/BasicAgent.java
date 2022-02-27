@@ -31,6 +31,7 @@ public class BasicAgent extends Agent {
         while (this.game.isPlaying()) {
             this.probeNext();
             this.game.printIteration();
+            this.markIterationEnd();
         }
     }
 

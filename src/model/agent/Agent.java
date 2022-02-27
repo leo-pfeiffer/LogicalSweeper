@@ -47,6 +47,10 @@ public abstract class Agent {
         this.game.probe(coord);
     }
 
+    public void markIterationEnd() {
+        this.game.getTracker().incrementNumIterations();
+    }
+
     /**
      * Perform the initial safe probes of top left and center cells.
      * */

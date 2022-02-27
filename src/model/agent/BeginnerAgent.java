@@ -42,6 +42,7 @@ public class BeginnerAgent extends Agent {
             }
 
             this.printIteration();
+            this.markIterationEnd();
         }
 
         if (!changed && view.getUnknownCells().size() > 0) {

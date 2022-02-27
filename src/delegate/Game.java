@@ -1,5 +1,7 @@
 package delegate;
 
+import java.util.ArrayList;
+import model.Tracker;
 import model.agent.Agent;
 import model.agent.AgentFactory;
 import model.agent.BasicAgent;
@@ -17,6 +19,7 @@ public class Game {
     private final World world;
     private final Agent agent;
     private final boolean verbose;
+    private final Tracker tracker;
 
     public Game(World world, String agentName) {
         this(world, agentName, false);
@@ -26,6 +29,7 @@ public class Game {
         this.world = world;
         this.agent = AgentFactory.createAgent(agentName, this, world.createNewView());
         this.verbose = verbose;
+        this.tracker = new Tracker();
     }
 
     /**
@@ -100,10 +104,13 @@ public class Game {
             this.agent.playGame();
         } catch (MineFoundException e) {
             // agent died
+            tracker.setNotAlive();
         } catch (NothingToProbeException e) {
             // agent didn't terminate
+            tracker.setNotTerminated();
         }
 
+        trackUncoverCoverage();
         printEnd();
     }
 
@@ -184,5 +191,16 @@ public class Game {
             System.out.println();
         }
         System.out.println();
+    }
+
+    public Tracker getTracker() {
+        return tracker;
+    }
+
+    private void trackUncoverCoverage() {
+        int unknownLeft = agent.getView().getUnknownCells().size();
+        int cellCount = world.getSize() * world.getSize();
+        double unknownRatio = (double) unknownLeft / (double) cellCount;
+        tracker.setPercentageRemaining(unknownRatio);
     }
 }

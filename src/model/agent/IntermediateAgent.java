@@ -47,6 +47,7 @@ public class IntermediateAgent extends Agent {
             }
 
             this.printIteration();
+            this.markIterationEnd();
         }
 
         if (!changed && view.getUnknownCells().size() > 0) {
