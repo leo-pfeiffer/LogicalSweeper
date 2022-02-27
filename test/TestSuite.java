@@ -1,6 +1,6 @@
 import delegate.GameTest;
 import logic.BooleanArrayTest;
-import logic.EncoderTest;
+import logic.DNFEncoderTest;
 import logic.KnowledgeBaseTest;
 import model.agent.AgentFactoryTest;
 import model.agent.BasicAgentTest;
@@ -20,7 +20,7 @@ import org.junit.runners.Suite;
         BasicAgentTest.class,
         BeginnerAgentTest.class,
         BooleanArrayTest.class,
-        EncoderTest.class,
+        DNFEncoderTest.class,
         GameTest.class,
         IntermediateAgentTest.class,
         KnowledgeBaseTest.class,
