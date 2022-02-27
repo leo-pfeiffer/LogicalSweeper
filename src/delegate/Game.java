@@ -77,14 +77,18 @@ public class Game {
         char value = world.getCell(cell);
 
         // mine was probed -> throw exception since agent has died
-        if (value == 'm') {
+        if (value == Token.MINE.getChar()) {
             agent.uncover(cell, Token.UNCOVERED_MINE.getChar());
             throw new MineFoundException("Probed mine at " + cell);
         }
 
         // cells adjacent to clue 0 are safe
-        else if (value == '0') {
-            uncoverAdjacent(cell);
+        else if (value == Token.ZERO.getChar()) {
+            ArrayList<Coord> queue = new ArrayList<>();
+            queue.add(cell);
+            while (!queue.isEmpty()) {
+                queue = uncoverAdjacent(queue.remove(0));
+            }
         }
 
         // tell the agent about the un-covered cell
@@ -115,12 +119,17 @@ public class Game {
     }
 
     /**
-     * Uncover all adjacent cells to the given cell.
+     * Uncover all adjacent cells to the given cell and returns a list of new cells to be uncovered that are also 0.
      * */
-    public void uncoverAdjacent(Coord coord) {
+    public ArrayList<Coord> uncoverAdjacent(Coord coord) {
+        ArrayList<Coord> queue = new ArrayList<>();
         for (Coord adjacent : world.getAdjacentCoords(coord)) {
+            if (world.getCell(adjacent) == Token.ZERO.getChar() && agent.getView().isUnknown(adjacent)) {
+                queue.add(adjacent);
+            }
             agent.uncover(adjacent, world.getCell(adjacent));
         }
+        return queue;
     }
 
     /**
