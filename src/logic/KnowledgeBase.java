@@ -12,6 +12,12 @@ public abstract class KnowledgeBase {
         this.view = view;
     }
 
+    /**
+     * Check if the current knowledge base entails a variable, i.e. check if
+     * KB |= cell
+     * @param cell The cell whose entailment to check
+     * @param phase True if the positive of the cell should be used, False otherwise
+     * */
     public abstract boolean checkEntailment(Coord cell, boolean phase);
 
     /**
@@ -31,10 +37,12 @@ public abstract class KnowledgeBase {
                 }
             }
         }
-
         return contenders;
     }
 
+    /**
+     * Return an array list of all those neighbors of a cell that are still unknown (uncovered + unmarked).
+     * */
     protected ArrayList<Coord> getUnknownNeighbors(Coord coord) {
         ArrayList<Coord> neighbors = this.view.getAdjacentCoords(coord);
         ArrayList<Coord> unknownNeighbors = new ArrayList<>();
@@ -46,6 +54,4 @@ public abstract class KnowledgeBase {
         }
         return unknownNeighbors;
     }
-
-
 }

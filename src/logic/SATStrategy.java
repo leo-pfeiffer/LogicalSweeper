@@ -15,13 +15,13 @@ public class SATStrategy extends Strategy {
     @Override
     public boolean check(Coord cell) {
 
-        // perform the AFN check on the cell and probe if successful
+        // KB |= Danger
         if (!kb.checkEntailment(cell, true)) {
             this.agent.probe(cell);
             return true;
         }
 
-        // perform the AMN check on the cell and flag as danger if successful
+        // KB |= !Danger
         else if (!kb.checkEntailment(cell, false)) {
             this.view.flagDanger(cell);
             return true;
