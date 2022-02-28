@@ -43,4 +43,9 @@ public class TriGBU extends GameBoardUtils {
             return new ArrayList<>(List.of(new Coord[]{RIGHT, LEFT, UP}));
         }
     }
+
+    @Override
+    public TriGBU newInstance(char[][] map) {
+        return new TriGBU(map);
+    }
 }

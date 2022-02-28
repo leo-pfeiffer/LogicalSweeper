@@ -65,12 +65,23 @@ public enum World implements CharMap {
 
 	public final char[][] map;
 	private final int size;
-	private final GameBoardUtils gbu;
+	private GameBoardUtils gbu;
 
 	World(char[][] map) {
 		this.map = map;
 		this.size = map.length;
-		this.gbu = new RectGBU(map);
+		this.gbu = new RectGBU(this.map);
+	}
+
+	public void setGameMode(String gameMode) {
+		switch (gameMode) {
+			case "rect":
+				this.gbu = new RectGBU(this.map);
+			case "tri":
+				this.gbu = new TriGBU(this.map);
+			default:
+				throw new IllegalArgumentException("Not a valid game mode: " + gameMode);
+		}
 	}
 
 	@Override
@@ -98,6 +109,7 @@ public enum World implements CharMap {
 	 * the total number of mines.
 	 * */
 	public View createNewView() {
+
 		int size = this.getSize();
 		char[][] view = new char[size][size];
 
@@ -114,7 +126,7 @@ public enum World implements CharMap {
 			}
 		}
 
-		RectGBU viewGBU = new RectGBU(view);
+		GameBoardUtils viewGBU = this.gbu.newInstance(view);
 		return new View(view, this.countMines(), viewGBU);
 	}
 

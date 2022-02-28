@@ -33,4 +33,9 @@ public class RectGBU extends GameBoardUtils {
         return adjacentCoords;
     }
 
+    @Override
+    public RectGBU newInstance(char[][] map) {
+        return new RectGBU(map);
+    }
+
 }

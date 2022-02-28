@@ -13,6 +13,10 @@ public abstract class GameBoardUtils {
         this.map = map;
     }
 
+    public abstract ArrayList<Coord> getAdjacentCoords(Coord coord);
+
+    public abstract GameBoardUtils newInstance(char[][] map);
+
     public boolean containsCoord(Coord coord) {
         int mapSize = this.map.length;
         int row = coord.getRow();
@@ -26,8 +30,6 @@ public abstract class GameBoardUtils {
         }
         return this.map[coord.getRow()][coord.getCol()];
     }
-
-    public abstract ArrayList<Coord> getAdjacentCoords(Coord coord);
 
     public int countOccurrence(char token, ArrayList<Coord> cells) {
         int count = 0;
