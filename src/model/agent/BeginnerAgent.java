@@ -1,7 +1,7 @@
 package model.agent;
 
 import java.util.ArrayList;
-import delegate.Game;
+import delegate.ObscuredSweeper;
 import model.agent.exceptions.MineFoundException;
 import model.agent.exceptions.NothingToProbeException;
 import model.board.Coord;
@@ -15,7 +15,7 @@ public class BeginnerAgent extends Agent {
 
     private final SinglePointStrategy sps;
 
-    public BeginnerAgent(Game game, View view) {
+    public BeginnerAgent(ObscuredSweeper game, View view) {
         super(game, view);
         sps = new SinglePointStrategy(this);
     }

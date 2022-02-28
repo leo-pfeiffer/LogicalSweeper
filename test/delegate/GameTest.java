@@ -13,7 +13,7 @@ public class GameTest {
 
     @Test
     public void test1() {
-        Game game = new Game(World.TEST1, basicAgent);
+        ObscuredSweeper game = new ObscuredSweeper(World.TEST1, basicAgent);
         game.run();
         assertTrue(game.agentHasWon());
         assertFalse(game.agentHasDied());
@@ -21,7 +21,7 @@ public class GameTest {
 
     @Test
     public void test2() {
-        Game game = new Game(World.TEST2, basicAgent);
+        ObscuredSweeper game = new ObscuredSweeper(World.TEST2, basicAgent);
         game.run();
         assertFalse(game.agentHasWon());
         assertTrue(game.agentHasDied());
@@ -29,7 +29,7 @@ public class GameTest {
 
     @Test
     public void test3() {
-        Game game = new Game(World.TEST3, basicAgent);
+        ObscuredSweeper game = new ObscuredSweeper(World.TEST3, basicAgent);
         game.run();
         assertFalse(game.agentHasWon());
         assertTrue(game.agentHasDied());
@@ -37,7 +37,7 @@ public class GameTest {
 
     @Test
     public void test4() {
-        Game game = new Game(World.TEST4, basicAgent);
+        ObscuredSweeper game = new ObscuredSweeper(World.TEST4, basicAgent);
         game.run();
         assertFalse(game.agentHasWon());
         assertTrue(game.agentHasDied());
@@ -45,7 +45,7 @@ public class GameTest {
 
     @Test
     public void test5() {
-        Game game = new Game(World.TEST5, basicAgent);
+        ObscuredSweeper game = new ObscuredSweeper(World.TEST5, basicAgent);
         game.run();
         assertFalse(game.agentHasWon());
         assertTrue(game.agentHasDied());
@@ -53,7 +53,7 @@ public class GameTest {
 
     @Test
     public void test6() {
-        Game game = new Game(World.TEST6, basicAgent);
+        ObscuredSweeper game = new ObscuredSweeper(World.TEST6, basicAgent);
         game.run();
         assertTrue(game.agentHasWon());
         assertFalse(game.agentHasDied());

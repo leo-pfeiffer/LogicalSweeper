@@ -1,15 +1,12 @@
 package model.agent;
 
-import delegate.Game;
-import logic.CNFEncoder;
+import delegate.ObscuredSweeper;
 import logic.CNFKnowledgeBase;
-import logic.DNFEncoder;
 import logic.DNFKnowledgeBase;
-import logic.KnowledgeBase;
 import model.board.View;
 
 public class AgentFactory {
-    public static Agent createAgent(String agentName, Game game, View view) {
+    public static Agent createAgent(String agentName, ObscuredSweeper game, View view) {
         switch (agentName) {
             case "P1":
                 return new BasicAgent(game, view);

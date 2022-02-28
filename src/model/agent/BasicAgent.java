@@ -1,6 +1,6 @@
 package model.agent;
 
-import delegate.Game;
+import delegate.ObscuredSweeper;
 import model.agent.exceptions.NothingToProbeException;
 import model.board.Coord;
 import model.board.View;
@@ -10,7 +10,7 @@ import model.board.View;
 **/
 public class BasicAgent extends Agent {
 
-    public BasicAgent(Game game, View view) {
+    public BasicAgent(ObscuredSweeper game, View view) {
         super(game, view);
     }
 

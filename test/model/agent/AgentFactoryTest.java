@@ -2,11 +2,7 @@ package model.agent;
 
 import static org.junit.Assert.assertThrows;
 
-import delegate.Game;
-import model.agent.Agent;
-import model.agent.AgentFactory;
-import model.agent.BasicAgent;
-import model.agent.BeginnerAgent;
+import delegate.ObscuredSweeper;
 import model.board.World;
 import org.junit.Test;
 
@@ -19,20 +15,19 @@ public class AgentFactoryTest {
 
     @Test
     public void testBasicAgent() {
-        Agent agent = AgentFactory.createAgent(basic, new Game(world, basic), world.createNewView());
+        Agent agent = AgentFactory.createAgent(basic, new ObscuredSweeper(world, basic), world.createNewView());
         assert(agent instanceof BasicAgent);
     }
 
     @Test
     public void testBeginnerAgent() {
-        Agent agent = AgentFactory.createAgent(beginner, new Game(world, beginner), world.createNewView());
+        Agent agent = AgentFactory.createAgent(beginner, new ObscuredSweeper(world, beginner), world.createNewView());
         assert(agent instanceof BeginnerAgent);
     }
 
     @Test
     public void testUnknownName() {
-        assertThrows(IllegalArgumentException.class, () -> {
-            AgentFactory.createAgent(unknownName, new Game(world, basic), world.createNewView());
-        });
+        assertThrows(IllegalArgumentException.class, () -> AgentFactory.createAgent(unknownName,
+                new ObscuredSweeper(world, basic), world.createNewView()));
     }
 }

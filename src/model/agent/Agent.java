@@ -1,6 +1,6 @@
 package model.agent;
 
-import delegate.Game;
+import delegate.ObscuredSweeper;
 import model.agent.exceptions.MineFoundException;
 import model.agent.exceptions.NothingToProbeException;
 import model.board.Coord;
@@ -9,10 +9,10 @@ import model.board.View;
 public abstract class Agent {
 
     protected final View view;
-    protected final Game game;
+    protected final ObscuredSweeper game;
     protected boolean canTerminate = true;
 
-    public Agent(Game game, View view) {
+    public Agent(ObscuredSweeper game, View view) {
         this.view = view;
         this.game = game;
     }

@@ -12,20 +12,20 @@ import model.board.Token;
 import model.board.World;
 
 /**
- * Class representing the DangerSweeper game.
+ * Class representing the ObscuredSweeper game.
  * */
-public class Game {
+public class ObscuredSweeper {
 
     private final World world;
     private final Agent agent;
     private final boolean verbose;
     private final Tracker tracker;
 
-    public Game(World world, String agentName) {
+    public ObscuredSweeper(World world, String agentName) {
         this(world, agentName, false);
     }
 
-    public Game(World world, String agentName, boolean verbose) {
+    public ObscuredSweeper(World world, String agentName, boolean verbose) {
         this.world = world;
         this.agent = AgentFactory.createAgent(agentName, this, world.createNewView());
         this.verbose = verbose;
@@ -167,11 +167,11 @@ public class Game {
     }
 
     private void printView() {
-        Game.printBoard(agent.getView().getMap());
+        ObscuredSweeper.printBoard(agent.getView().getMap());
     }
 
     private void printWorld() {
-        Game.printBoard(this.world.map);
+        ObscuredSweeper.printBoard(this.world.map);
     }
 
     /**

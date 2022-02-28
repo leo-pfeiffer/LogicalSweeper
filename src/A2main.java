@@ -1,6 +1,6 @@
 
 
-import delegate.Game;
+import delegate.ObscuredSweeper;
 import model.board.World;
 
 public class A2main {
@@ -19,7 +19,7 @@ public class A2main {
 
 		World world = World.valueOf(worldName);
 
-		Game game = new Game(world, agentName, verbose);
+		ObscuredSweeper game = new ObscuredSweeper(world, agentName, verbose);
 		game.run();
 	}
 

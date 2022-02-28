@@ -3,7 +3,7 @@ package model.agent;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
 
-import delegate.Game;
+import delegate.ObscuredSweeper;
 import model.agent.exceptions.MineFoundException;
 import model.agent.exceptions.NothingToProbeException;
 import model.board.Coord;
@@ -16,7 +16,7 @@ public class BasicAgentTest {
 
     World world1 = World.TEST1;
     World world2 = World.TEST2;
-    Game game = new Game(world1, agentName);
+    ObscuredSweeper game = new ObscuredSweeper(world1, agentName);
 
     @Test
     public void testSetup() {
