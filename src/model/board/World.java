@@ -81,6 +81,9 @@ public enum World implements CharMap {
 			case "tri":
 				this.gbu = new TriGBU(this.map);
 				break;
+			case "hex":
+				this.gbu = new HexGBU(this.map);
+				break;
 			default:
 				throw new IllegalArgumentException("Not a valid game mode: " + gameMode);
 		}
