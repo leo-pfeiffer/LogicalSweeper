@@ -77,8 +77,10 @@ public enum World implements CharMap {
 		switch (gameMode) {
 			case "rect":
 				this.gbu = new RectGBU(this.map);
+				break;
 			case "tri":
 				this.gbu = new TriGBU(this.map);
+				break;
 			default:
 				throw new IllegalArgumentException("Not a valid game mode: " + gameMode);
 		}

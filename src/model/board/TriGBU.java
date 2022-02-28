@@ -1,7 +1,6 @@
 package model.board;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class TriGBU extends GameBoardUtils {
 
@@ -37,11 +36,18 @@ public class TriGBU extends GameBoardUtils {
         Coord LEFT = new Coord(row, col - 1);
         Coord UP = new Coord(row - 1, col);
 
+        ArrayList<Coord> adjacent = new ArrayList<>();
+
         if (getDir(coord) == 0) {
-            return new ArrayList<>(List.of(new Coord[]{RIGHT, DOWN, LEFT}));
+            for (Coord c : new Coord[]{RIGHT, DOWN, LEFT}) {
+                if (this.containsCoord(c)) adjacent.add(c);
+            }
         } else {
-            return new ArrayList<>(List.of(new Coord[]{RIGHT, LEFT, UP}));
+            for (Coord c : new Coord[]{RIGHT, LEFT, UP}) {
+                if (this.containsCoord(c)) adjacent.add(c);
+            }
         }
+        return adjacent;
     }
 
     @Override

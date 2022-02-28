@@ -23,15 +23,15 @@ public class WorldTest {
         assertFalse(world.containsCoord(new Coord(3, 0)));
         assertFalse(world.containsCoord(new Coord(3, 3)));
 
-        assertThrows(IllegalArgumentException.class, () -> world.containsCoord(new Coord(-1, 0)));
-        assertThrows(IllegalArgumentException.class, () -> world.containsCoord(new Coord(0, -1)));
-        assertThrows(IllegalArgumentException.class, () -> world.containsCoord(new Coord(-1, -1)));
+        assertFalse(world.containsCoord(new Coord(-1, 0)));
+        assertFalse(world.containsCoord(new Coord(0, -1)));
+        assertFalse(world.containsCoord(new Coord(-1, -1)));
     }
 
     @Test
     public void testGetAdjacentCoords() {
         World world = World.TEST1;
-        assertThrows(IllegalArgumentException.class, () -> world.containsCoord(new Coord(-1, -1)));
+        assertFalse(world.containsCoord(new Coord(-1, -1)));
 
         ArrayList<Coord> coords1List = world.getAdjacentCoords(new Coord(0, 0));
 

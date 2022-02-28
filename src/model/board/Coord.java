@@ -8,9 +8,6 @@ public class Coord {
     private final int col;
 
     public Coord(int row, int col) {
-        if (row < 0 || col < 0) {
-            throw new IllegalArgumentException("Coordinates must be positive");
-        }
         this.row = row;
         this.col = col;
     }

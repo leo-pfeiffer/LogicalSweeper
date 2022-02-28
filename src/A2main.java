@@ -13,11 +13,23 @@ public class A2main {
 		// parse "verbose" flag
 		boolean verbose = args.length > 2 && args[2].equals("verbose");
 
+		// parse game-mode
+		String gameMode = "";
+		if (verbose && args.length > 3) {
+			gameMode = args[3];
+		} else if (!verbose && args.length > 2) {
+			gameMode = args[2];
+		}
+
 		System.out.println("-------------------------------------------\n");
 		System.out.println("Agent " + agentName + " plays " + worldName + "\n");
 
 
 		World world = World.valueOf(worldName);
+
+		if (!gameMode.equals("")) {
+			world.setGameMode(gameMode);
+		}
 
 		ObscuredSweeper game = new ObscuredSweeper(world, agentName, verbose);
 		game.run();
