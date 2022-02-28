@@ -65,10 +65,12 @@ public enum World implements CharMap {
 
 	public final char[][] map;
 	private final int size;
+	private final GameBoardUtils gbu;
 
 	World(char[][] map) {
 		this.map = map;
 		this.size = map.length;
+		this.gbu = new RectGBU(map);
 	}
 
 	@Override
@@ -78,17 +80,17 @@ public enum World implements CharMap {
 
 	@Override
 	public boolean containsCoord(Coord coord) {
-		return GameBoardUtils.containsCoord(coord, this.getSize());
+		return gbu.containsCoord(coord);
 	}
 
 	@Override
 	public char getCell(Coord coord) {
-		return GameBoardUtils.getCell(coord, this.map);
+		return gbu.getCell(coord);
 	}
 
 	@Override
 	public ArrayList<Coord> getAdjacentCoords(Coord coord) {
-		return GameBoardUtils.getAdjacentCoords(coord, this.map);
+		return gbu.getAdjacentCoords(coord);
 	}
 
 	/**
@@ -112,13 +114,14 @@ public enum World implements CharMap {
 			}
 		}
 
-		return new View(view, this.countMines());
+		RectGBU viewGBU = new RectGBU(view);
+		return new View(view, this.countMines(), viewGBU);
 	}
 
 	/**
 	 * Count the number of mines in the map.
 	 * */
 	public int countMines() {
-		return GameBoardUtils.countOccurrence(Token.MINE.getChar(), this.map);
+		return gbu.countOccurrence(Token.MINE.getChar());
 	}
 }

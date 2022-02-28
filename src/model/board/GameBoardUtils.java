@@ -7,65 +7,51 @@ import java.util.ArrayList;
  * */
 public abstract class GameBoardUtils {
 
-    public static boolean containsCoord(Coord coord, int mapSize) {
+    private final char[][] map;
+
+    public GameBoardUtils(char[][] map) {
+        this.map = map;
+    }
+
+    public boolean containsCoord(Coord coord) {
+        int mapSize = this.map.length;
         int row = coord.getRow();
         int col = coord.getCol();
         return col >= 0 && col < mapSize && row >= 0 && row < mapSize;
     }
 
-    public static char getCell(Coord coord, char[][] map) {
-        if (!GameBoardUtils.containsCoord(coord, map.length)) {
+    public char getCell(Coord coord) {
+        if (!this.containsCoord(coord)) {
             throw new IllegalArgumentException("Coordinates outside the map.");
         }
-        return map[coord.getRow()][coord.getCol()];
+        return this.map[coord.getRow()][coord.getCol()];
     }
 
-    public static ArrayList<Coord> getAdjacentCoords(Coord coord, char[][] map) {
+    public abstract ArrayList<Coord> getAdjacentCoords(Coord coord);
 
-        if (!GameBoardUtils.containsCoord(coord, map.length)) {
-            throw new IllegalArgumentException("Coordinates outside the map.");
-        }
-
-        ArrayList<Coord> adjacentCoords = new ArrayList<>();
-
-        int row = coord.getRow();
-        int col = coord.getCol();
-
-        for (int i = row - 1; i <= row + 1; i++) {
-            for (int j = col - 1; j <= col + 1; j++) {
-                if (i >= 0 && j >= 0 && (i != row || j != col)) {
-                    Coord adjCoord = new Coord(i, j);
-                    if (containsCoord(adjCoord, map.length)) {
-                        adjacentCoords.add(adjCoord);
-                    }
-                }
-            }
-        }
-        return adjacentCoords;
-    }
-
-    public static int countOccurrence(char token, ArrayList<Coord> cells, char[][] map) {
+    public int countOccurrence(char token, ArrayList<Coord> cells) {
         int count = 0;
         for (Coord coord : cells) {
-            if (GameBoardUtils.getCell(coord, map) == token) {
+            if (this.getCell(coord) == token) {
                 count++;
             }
         }
         return count;
     }
 
-    public static int countOccurrence(char token, char[][] map) {
-        return GameBoardUtils.countOccurrence(token, GameBoardUtils.getAllCoords(map.length), map);
+    public int countOccurrence(char token) {
+        return this.countOccurrence(token, this.getAllCoords());
     }
 
-    public static boolean cellIsToken(char token, Coord coord, char[][] map) {
-        if (!GameBoardUtils.containsCoord(coord, map.length)) {
+    public boolean cellIsToken(char token, Coord coord) {
+        if (!this.containsCoord(coord)) {
             throw new IllegalArgumentException("Coordinates outside the map.");
         }
-        return map[coord.getRow()][coord.getCol()] == token;
+        return this.map[coord.getRow()][coord.getCol()] == token;
     }
 
-    public static ArrayList<Coord> getAllCoords(int size) {
+    public ArrayList<Coord> getAllCoords() {
+        int size = this.map.length;
         ArrayList<Coord> coords = new ArrayList<>();
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {

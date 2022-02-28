@@ -6,10 +6,12 @@ public class View implements CharMap {
 
     private final char[][] map;
     private final int mineCount;
+    private final GameBoardUtils gbu;
 
-    public View(char[][] view, int mineCount) {
-        this.map = view;
+    public View(char[][] map, int mineCount, GameBoardUtils gbu) {
+        this.map = map;
         this.mineCount = mineCount;
+        this.gbu = gbu;
     }
 
     public char[][] getMap() {
@@ -27,17 +29,17 @@ public class View implements CharMap {
 
     @Override
     public boolean containsCoord(Coord coord) {
-        return GameBoardUtils.containsCoord(coord, this.getSize());
+        return gbu.containsCoord(coord);
     }
 
     @Override
     public char getCell(Coord coord) {
-        return GameBoardUtils.getCell(coord, this.map);
+        return gbu.getCell(coord);
     }
 
     @Override
     public ArrayList<Coord> getAdjacentCoords(Coord coord) {
-        return GameBoardUtils.getAdjacentCoords(coord, this.map);
+        return gbu.getAdjacentCoords(coord);
     }
 
     /**
@@ -65,14 +67,14 @@ public class View implements CharMap {
      * Count the number of flagged dangers in an arraylist of cells.
      * */
     public int countDangers(ArrayList<Coord> cells) {
-        return GameBoardUtils.countOccurrence(Token.DANGER.getChar(), cells, this.map);
+        return gbu.countOccurrence(Token.DANGER.getChar(), cells);
     }
 
     /**
      * Count the number of unknowns (uncovered & unmarked) in an arraylist of cells.
      * */
     public int countUnknowns(ArrayList<Coord> cells) {
-        return GameBoardUtils.countOccurrence(Token.UNKNOWN.getChar(), cells, this.map);
+        return gbu.countOccurrence(Token.UNKNOWN.getChar(), cells);
     }
 
     /**
@@ -86,14 +88,14 @@ public class View implements CharMap {
      * Returns true if the cell of the given coord is unmarked and covered.
      * */
     public boolean isUnknown(Coord coord) {
-        return GameBoardUtils.cellIsToken(Token.UNKNOWN.getChar(), coord, this.map);
+        return gbu.cellIsToken(Token.UNKNOWN.getChar(), coord);
     }
 
     /**
      * Returns true if a mine has been uncovered and false otherwise.
      * */
     public boolean hasProbedMine() {
-        for (Coord c : GameBoardUtils.getAllCoords(this.getSize())) {
+        for (Coord c : gbu.getAllCoords()) {
             if (this.getCell(c) == Token.UNCOVERED_MINE.getChar()) return true;
         }
         return false;
@@ -105,7 +107,7 @@ public class View implements CharMap {
      * */
     public int getUncoveredCount() {
         int count = 0;
-        for (Coord c : GameBoardUtils.getAllCoords(this.getSize())) {
+        for (Coord c : gbu.getAllCoords()) {
             if (this.isUncovered(c)) count++;
         }
         return count;
@@ -116,7 +118,7 @@ public class View implements CharMap {
      * */
     public ArrayList<Coord> getUnknownCells() {
         ArrayList<Coord> coords = new ArrayList<>();
-        for (Coord c : GameBoardUtils.getAllCoords(this.getSize())) {
+        for (Coord c : gbu.getAllCoords()) {
             if (this.isUnknown(c)) coords.add(c);
         }
         return coords;
@@ -127,7 +129,7 @@ public class View implements CharMap {
      * */
     public ArrayList<Coord> getUncoveredCells() {
         ArrayList<Coord> coords = new ArrayList<>();
-        for (Coord c : GameBoardUtils.getAllCoords(this.getSize())) {
+        for (Coord c : gbu.getAllCoords()) {
             if (this.isUncovered(c)) coords.add(c);
         }
         return coords;
