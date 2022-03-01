@@ -62,4 +62,31 @@ public abstract class GameBoardUtils {
         }
         return coords;
     }
+
+    /**
+     * Create a new View of the world map, uncovering all blocked cells and counting
+     * the total number of mines.
+     * */
+    public View createNewView() {
+
+        int size = this.map.length;
+        char[][] view = new char[size][size];
+
+        // uncover blocked cells
+        for (int row = 0; row < size; row++) {
+            for (int col = 0; col < size; col ++) {
+                Coord coord = new Coord(row, col);
+                char cell = this.getCell(coord);
+                if (cell == Token.BLOCK.getChar()) {
+                    view[row][col] = Token.BLOCK.getChar();
+                } else {
+                    view[row][col] = Token.UNKNOWN.getChar();
+                }
+            }
+        }
+
+        GameBoardUtils viewGBU = this.newInstance(view);
+        int mineCount = this.countOccurrence(Token.MINE.getChar());
+        return new View(view, mineCount, viewGBU);
+    }
 }
