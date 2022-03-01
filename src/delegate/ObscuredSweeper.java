@@ -18,6 +18,7 @@ public class ObscuredSweeper {
 
     private final World world;
     private final Agent agent;
+    private final String agentName;
     private final boolean verbose;
     private final Tracker tracker;
 
@@ -27,6 +28,7 @@ public class ObscuredSweeper {
 
     public ObscuredSweeper(World world, String agentName, boolean verbose) {
         this.world = world;
+        this.agentName = agentName;
         this.agent = AgentFactory.createAgent(agentName, this, world.createNewView());
         this.verbose = verbose;
         this.tracker = new Tracker();
@@ -87,7 +89,8 @@ public class ObscuredSweeper {
             ArrayList<Coord> queue = new ArrayList<>();
             queue.add(cell);
             while (!queue.isEmpty()) {
-                queue = uncoverAdjacent(queue.remove(0));
+                ArrayList<Coord> newElements = uncoverAdjacent(queue.remove(0));
+                queue.addAll(newElements);
             }
         }
 
@@ -141,6 +144,7 @@ public class ObscuredSweeper {
     }
 
     private void printStart() {
+        printGameInfo();
         printWorld();
         System.out.println("Start!");
     }
@@ -152,6 +156,11 @@ public class ObscuredSweeper {
         if (agentHasWon()) printAgentWon();
         else if (agentHasDied()) printAgentDead();
         else printAgentNotTerminated();
+    }
+
+    private void printGameInfo() {
+        System.out.println("-------------------------------------------\n");
+        System.out.println("Agent " + this.agentName + " plays " + this.world.name() + "\n");
     }
 
     private void printAgentNotTerminated() {
