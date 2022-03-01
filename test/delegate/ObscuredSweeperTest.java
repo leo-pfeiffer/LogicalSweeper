@@ -7,9 +7,30 @@ import static org.junit.Assert.assertTrue;
 import model.board.World;
 import org.junit.Test;
 
-public class GameTest {
+/**
+ * Test the ObscuredSweeper class.
+ */
+public class ObscuredSweeperTest {
 
     String basicAgent = "P1";
+
+    public ObscuredSweeper runGame(World world, String agentName) {
+        ObscuredSweeper game = new ObscuredSweeper(world, agentName, false);
+        game.run();
+        return game;
+    }
+
+    @Test
+    public void testRunAllConfigurationsRect() {
+        String[] agentNames = {"P1", "P2", "P3", "P4", "P5"};
+        World[] worlds = World.values();
+        for (String agent : agentNames) {
+            for (World world : worlds) {
+                ObscuredSweeper game = runGame(world, agent);
+                assertFalse(game.isPlaying());
+            }
+        }
+    }
 
     @Test
     public void test1() {

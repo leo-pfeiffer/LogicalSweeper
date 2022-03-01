@@ -5,7 +5,19 @@ import logic.CNFKnowledgeBase;
 import logic.DNFKnowledgeBase;
 import model.board.View;
 
+/**
+ * AgentFactory is a factory class that creates agents
+ */
 public class AgentFactory {
+
+    /**
+     * Create an agent of the given type
+     *
+     * @param agentName The name of the agent.
+     * @param game the game object
+     * @param view the agent view of the game.
+     * @return An agent.
+     */
     public static Agent createAgent(String agentName, ObscuredSweeper game, View view) {
         switch (agentName) {
             case "P1":
@@ -17,7 +29,9 @@ public class AgentFactory {
             case "P4":
                 return new IntermediateAgent(game, view, new CNFKnowledgeBase(view));
             case "P5":
-                throw new IllegalArgumentException("P5 is not implemented yet");
+                // todo assert type of world.
+                assert true;
+                return new IntermediateAgent(game, view, new CNFKnowledgeBase(view));
             default:
                 throw new IllegalArgumentException("Unknown agent type: " + agentName);
         }

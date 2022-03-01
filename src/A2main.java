@@ -21,10 +21,6 @@ public class A2main {
 			gameMode = args[2];
 		}
 
-		System.out.println("-------------------------------------------\n");
-		System.out.println("Agent " + agentName + " plays " + worldName + "\n");
-
-
 		World world = World.valueOf(worldName);
 
 		if (!gameMode.equals("")) {

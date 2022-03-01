@@ -1,4 +1,4 @@
-import delegate.GameTest;
+import delegate.ObscuredSweeperTest;
 import logic.BooleanArrayTest;
 import logic.CNFEncoderTest;
 import logic.DNFEncoderTest;
@@ -23,7 +23,7 @@ import org.junit.runners.Suite;
         BooleanArrayTest.class,
         CNFEncoderTest.class,
         DNFEncoderTest.class,
-        GameTest.class,
+        ObscuredSweeperTest.class,
         IntermediateAgentTest.class,
         KnowledgeBaseTest.class,
         ViewTest.class,
