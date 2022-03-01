@@ -8,7 +8,7 @@ import model.agent.BasicAgentTest;
 import model.agent.BeginnerAgentTest;
 import model.agent.IntermediateAgentTest;
 import model.board.ViewTest;
-import model.board.WorldTest;
+import model.board.RectWorldTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
@@ -27,7 +27,7 @@ import org.junit.runners.Suite;
         IntermediateAgentTest.class,
         KnowledgeBaseTest.class,
         ViewTest.class,
-        WorldTest.class,
+        RectWorldTest.class,
 })
 public class TestSuite {
 }

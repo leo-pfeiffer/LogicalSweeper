@@ -8,11 +8,11 @@ import static org.junit.Assert.assertTrue;
 import java.util.ArrayList;
 import org.junit.Test;
 
-public class WorldTest {
+public class RectWorldTest {
 
     @Test
     public void testIsInWorld() {
-        World world = World.TEST1;
+        RectWorld world = RectWorld.TEST1;
         assertTrue(world.containsCoord(new Coord(0, 0)));
         assertTrue(world.containsCoord(new Coord(0, 2)));
         assertTrue(world.containsCoord(new Coord(1, 1)));
@@ -30,7 +30,7 @@ public class WorldTest {
 
     @Test
     public void testGetAdjacentCoords() {
-        World world = World.TEST1;
+        RectWorld world = RectWorld.TEST1;
         assertFalse(world.containsCoord(new Coord(-1, -1)));
 
         ArrayList<Coord> coords1List = world.getAdjacentCoords(new Coord(0, 0));

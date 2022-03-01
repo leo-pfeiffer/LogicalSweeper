@@ -3,6 +3,7 @@ package model.agent;
 import delegate.ObscuredSweeper;
 import logic.CNFKnowledgeBase;
 import logic.DNFKnowledgeBase;
+import model.board.TriWorld;
 import model.board.View;
 
 /**
@@ -30,8 +31,13 @@ public class AgentFactory {
                 return new IntermediateAgent(game, view, new CNFKnowledgeBase(view));
             case "P5":
                 // todo assert type of world.
-                assert true;
-                return new IntermediateAgent(game, view, new CNFKnowledgeBase(view));
+                String worldType = game.getWorldType();
+                if (worldType.equals(TriWorld.class.getSimpleName())) {
+                    return new IntermediateAgent(game, view, new CNFKnowledgeBase(view));
+                }
+                 else {
+                     throw new IllegalArgumentException("Agent P5 requires world type tri or hex.");
+                }
             default:
                 throw new IllegalArgumentException("Unknown agent type: " + agentName);
         }

@@ -2,14 +2,11 @@ package model.board;
 
 import static org.junit.Assert.assertEquals;
 
-import model.board.Coord;
-import model.board.View;
-import model.board.World;
 import org.junit.Test;
 
 public class ViewTest {
 
-    World world = World.TEST1;
+    RectWorld world = RectWorld.TEST1;
 
     @Test
     public void testGetView() {

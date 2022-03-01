@@ -3,7 +3,7 @@ package model.agent;
 import static org.junit.Assert.assertThrows;
 
 import delegate.ObscuredSweeper;
-import model.board.World;
+import model.board.RectWorld;
 import org.junit.Test;
 
 public class AgentFactoryTest {
@@ -11,7 +11,7 @@ public class AgentFactoryTest {
     String basic = "P1";
     String beginner = "P2";
     String unknownName = "ABC";
-    World world = World.TEST1;
+    RectWorld world = RectWorld.TEST1;
 
     @Test
     public void testBasicAgent() {

@@ -2,6 +2,7 @@
 
 import delegate.ObscuredSweeper;
 import model.board.World;
+import model.board.WorldFactory;
 
 public class A2main {
 
@@ -21,11 +22,7 @@ public class A2main {
 			gameMode = args[2];
 		}
 
-		World world = World.valueOf(worldName);
-
-		if (!gameMode.equals("")) {
-			world.setGameMode(gameMode);
-		}
+		World world = WorldFactory.createWorld(gameMode, worldName);
 
 		ObscuredSweeper game = new ObscuredSweeper(world, agentName, verbose);
 		game.run();

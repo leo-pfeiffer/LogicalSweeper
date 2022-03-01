@@ -180,7 +180,7 @@ public class ObscuredSweeper {
     }
 
     private void printWorld() {
-        ObscuredSweeper.printBoard(this.world.map);
+        ObscuredSweeper.printBoard(this.world.getMap());
     }
 
     /**
@@ -220,5 +220,9 @@ public class ObscuredSweeper {
         int cellCount = world.getSize() * world.getSize();
         double unknownRatio = (double) unknownLeft / (double) cellCount;
         tracker.setPercentageRemaining(unknownRatio);
+    }
+
+    public String getWorldType() {
+        return this.world.getClass().getSimpleName();
     }
 }

@@ -7,15 +7,15 @@ import delegate.ObscuredSweeper;
 import model.agent.exceptions.MineFoundException;
 import model.agent.exceptions.NothingToProbeException;
 import model.board.Coord;
-import model.board.World;
+import model.board.RectWorld;
 import org.junit.Test;
 
 public class BasicAgentTest {
 
     String agentName = "P1";
 
-    World world1 = World.TEST1;
-    World world2 = World.TEST2;
+    RectWorld world1 = RectWorld.TEST1;
+    RectWorld world2 = RectWorld.TEST2;
     ObscuredSweeper game = new ObscuredSweeper(world1, agentName);
 
     @Test
