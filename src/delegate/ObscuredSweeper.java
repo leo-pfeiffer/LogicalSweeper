@@ -143,12 +143,18 @@ public class ObscuredSweeper {
         if (verbose && isPlaying()) printView();
     }
 
+    /**
+     * Prints information at the start of the game
+     * */
     private void printStart() {
         printGameInfo();
         printWorld();
         System.out.println("Start!");
     }
 
+    /**
+     * Prints information at the end of the game
+     */
     private void printEnd() {
         System.out.println("Final map");
         printView();
@@ -158,27 +164,45 @@ public class ObscuredSweeper {
         else printAgentNotTerminated();
     }
 
+    /**
+     * Prints the name of the agent and the name of the world
+     */
     private void printGameInfo() {
         System.out.println("-------------------------------------------\n");
         System.out.println("Agent " + this.agentName + " plays " + this.world.name() + "\n");
     }
 
+    /**
+     * Prints a message indicating that the agent could not terminate
+     */
     private void printAgentNotTerminated() {
         System.out.println("\nResult: Agent not terminated\n");
     }
 
+    /**
+     * Prints a message indicating that the agent has died
+     */
     private void printAgentDead() {
         System.out.println("\nResult: Agent dead: found mine\n");
     }
 
+    /**
+     * Prints a message indicating that the agent won
+     */
     private void printAgentWon() {
         System.out.println("\nResult: Agent alive: all solved\n");
     }
 
+    /**
+     * Prints the current state of the view
+     */
     private void printView() {
         ObscuredSweeper.printBoard(agent.getView().getMap());
     }
 
+    /**
+     * Prints the current state of the world
+     */
     private void printWorld() {
         ObscuredSweeper.printBoard(this.world.getMap());
     }
@@ -211,10 +235,18 @@ public class ObscuredSweeper {
         System.out.println();
     }
 
+    /**
+     * Returns the tracker object
+     *
+     * @return The Tracker object.
+     */
     public Tracker getTracker() {
         return tracker;
     }
 
+    /**
+     * * The function tracks the percentage of the world that is still unknown
+     */
     private void trackUncoverCoverage() {
         int unknownLeft = agent.getView().getUnknownCells().size();
         int cellCount = world.getSize() * world.getSize();
@@ -222,6 +254,11 @@ public class ObscuredSweeper {
         tracker.setPercentageRemaining(unknownRatio);
     }
 
+    /**
+     * Returns the type of world that the player is currently in
+     *
+     * @return The name of the class of the world.
+     */
     public String getWorldType() {
         return this.world.getClass().getSimpleName();
     }
