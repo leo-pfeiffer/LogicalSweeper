@@ -63,7 +63,13 @@ def create_plot(df: pd.DataFrame, file_name: str, title: str, ycol: str):
     plt.xticks(rotation = 90)
     plt.savefig(f"{OUT_FOLDER}{file_name}.png", dpi=300, pad_inches=.15, bbox_inches = 'tight')
 
-def get_reindex_indices(values, opts):
+def get_reindex_indices(values, mode):
+
+    if mode == 'rect':
+        opts = ["SMALL", "MEDIUM", "LARGE"]
+    else:
+        opts = ["TEST", "SMALL", "MEDIUM"]
+
     indices = []
     worlds = set(values)
     for b in opts:
@@ -84,13 +90,8 @@ def get_reindex_indices(values, opts):
 
 
 def make_num_iterations_plot(df, mode):
-    if mode == 'rect':
-        opts = ["SMALL", "MEDIUM", "LARGE"]
-    else:
-        opts = ["TEST", "SMALL", "MEDIUM"]
-
     df_filter = filter_df(df, 'mode', [mode])[['world', 'agent', 'numIterations']].copy()
-    indices = get_reindex_indices(df_filter.world.values, opts)
+    indices = get_reindex_indices(df_filter.world.values, mode)
     df_filter = filter_df(df_filter, 'world', indices).copy()
 
     df2 = df_filter.pivot(index='world', columns='agent', values='numIterations')
@@ -99,13 +100,8 @@ def make_num_iterations_plot(df, mode):
     create_plot(df2, mode + '_num_iterations', "Number of iterations", " ")
 
 def make_perc_remaining_plot(df, mode):
-    if mode == 'rect':
-        opts = ["SMALL", "MEDIUM", "LARGE"]
-    else:
-        opts = ["TEST", "SMALL", "MEDIUM"]
-
     df_filter = filter_df(df, 'mode', [mode])[['world', 'agent', 'percentageRemaining']].copy()
-    indices = get_reindex_indices(df_filter.world.values, opts)
+    indices = get_reindex_indices(df_filter.world.values, mode)
     df_filter = filter_df(df_filter, 'world', indices).copy()
 
     df2 = df_filter.pivot(index='world', columns='agent', values='percentageRemaining')
@@ -113,14 +109,8 @@ def make_perc_remaining_plot(df, mode):
     create_plot(df2, mode + '_perc_remaining', "Percentage remaining", " ")
 
 def table_analysis(df, mode):
-
-    if mode == 'rect':
-        opts = ["SMALL", "MEDIUM", "LARGE"]
-    else:
-        opts = ["TEST", "SMALL", "MEDIUM"]
-
     df_filter = filter_df(df, 'mode', [mode])[['world', 'agent'] + BOOLEANS].copy()
-    indices = get_reindex_indices(df_filter.world.values, opts)
+    indices = get_reindex_indices(df_filter.world.values, mode)
 
     df_piv = df_filter.pivot(index='world', columns='agent', values=BOOLEANS)
     df_piv = df_piv.reindex(indices)
@@ -138,16 +128,15 @@ if __name__ == '__main__':
     set_plt_params()
     data = load(OUT_FOLDER + FILE)
     df = pd.DataFrame(data)
-    # df = df[df.world.apply(lambda x: not x.startswith('TEST'))]
 
-    #make_num_iterations_plot(df, 'rect')
-    #make_perc_remaining_plot(df, 'rect')
+    make_num_iterations_plot(df, 'rect')
+    make_perc_remaining_plot(df, 'rect')
 
-    #make_num_iterations_plot(df, 'tri')
-    #make_perc_remaining_plot(df, 'tri')
+    make_num_iterations_plot(df, 'tri')
+    make_perc_remaining_plot(df, 'tri')
 
-    #make_num_iterations_plot(df, 'hex')
-    #make_perc_remaining_plot(df, 'hex')
+    make_num_iterations_plot(df, 'hex')
+    make_perc_remaining_plot(df, 'hex')
 
     rect_tab = table_analysis(df, 'rect')
     rect_tab.to_csv(OUT_FOLDER + 'rect_tab.csv')
@@ -157,23 +146,3 @@ if __name__ == '__main__':
 
     hex_tab = table_analysis(df, 'hex')
     hex_tab.to_csv(OUT_FOLDER + 'hex_tab.csv')
-
-    # Node Count
-    #make_node_count_plot(df_reg, 'reg')
-    #make_node_count_plot(df_bds, 'bds')
-
-    # Path
-    #make_path_cost_plot(df_reg, 'reg')
-    #make_path_cost_plot(df_bds, 'bds')
-
-    #print("=" * 21 + "RANKING" + "=" * 21)
-
-    #agg_reg = rank(df_reg)
-    #agg_reg.to_csv(OUT_FOLDER + 'reg_rank.csv')
-    #print(agg_reg)
-    #print("=" * 50)
-
-    #agg_bds = rank(df_bds)
-    #agg_bds.to_csv(OUT_FOLDER + 'bds_rank.csv')
-    #print(agg_bds)
-    #print("=" * 50)
