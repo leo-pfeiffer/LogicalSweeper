@@ -9,7 +9,8 @@ import model.board.View;
 import logic.SinglePointStrategy;
 
 /**
- * BeginnerAgent using Single Point Strategy
+ * BeginnerAgent uses
+ * - Single Point Strategy
  * */
 public class BeginnerAgent extends Agent {
 

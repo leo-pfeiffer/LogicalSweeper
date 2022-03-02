@@ -10,6 +10,13 @@ import model.board.View;
 import logic.SATStrategy;
 import logic.SinglePointStrategy;
 
+/**
+ * An intermediate agent uses
+ * - Single Point Strategy
+ * - SAT Strategy
+ *
+ * The type of encoding for the SAT Strategy depends on the KnowledgeBase provided
+ * */
 public class IntermediateAgent extends Agent {
 
     private final SinglePointStrategy sps;
