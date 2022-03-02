@@ -1,0 +1,6 @@
+,terminated,terminated,terminated,terminated,alive,alive,alive,alive
+agent,P1,P2,P3,P4,P1,P2,P3,P4
+world,,,,,,,,
+TEST,True,True,True,True,False,True,True,True
+SMALL,True,False,False,False,False,True,True,True
+MEDIUM,True,False,False,False,False,True,True,True
