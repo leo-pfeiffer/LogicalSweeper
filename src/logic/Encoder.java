@@ -31,6 +31,7 @@ public abstract class Encoder {
 
     /**
      * Generates all permutations of the input array using Heap's algorithm in a recursive manner.
+     * https://en.wikipedia.org/wiki/Heap%27s_algorithm
      * */
     protected static HashSet<BooleanArray> permutations(BooleanArray arr, int size, HashSet<BooleanArray> permutations) {
 

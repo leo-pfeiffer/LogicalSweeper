@@ -69,7 +69,7 @@ public class DNFEncoderTest {
         String[] variables = {"X", "Y", "Z"};
         FormulaFactory f = dnf.getFormulaFactory();
         Formula expected = f.and(f.variable("X"), f.variable("Y"), f.not(f.variable("Z")));
-        assertEquals(expected, dnf.encode(variables, array));
+        assertEquals(expected, dnf.encodePermutation(variables, array));
     }
 
     @Test
@@ -79,7 +79,7 @@ public class DNFEncoderTest {
         String[] variables = {"X", "Y", "Z"};
         FormulaFactory f = dnf.getFormulaFactory();
         Formula expected = f.and(f.variable("X"), f.variable("Y"), f.variable("Z"));
-        assertEquals(expected, dnf.encode(variables, array));
+        assertEquals(expected, dnf.encodePermutation(variables, array));
     }
 
     @Test
@@ -93,7 +93,7 @@ public class DNFEncoderTest {
                 f.not(f.variable("Y")),
                 f.not(f.variable("Z"))
         );
-        assertEquals(expected, dnf.encode(variables, array));
+        assertEquals(expected, dnf.encodePermutation(variables, array));
     }
 
     @Test

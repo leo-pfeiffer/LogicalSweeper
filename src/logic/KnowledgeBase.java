@@ -5,6 +5,9 @@ import model.board.Coord;
 import model.board.Token;
 import model.board.View;
 
+/**
+ * Base class for KnowledgeBase implementations.
+ * */
 public abstract class KnowledgeBase {
     protected final View view;
 
