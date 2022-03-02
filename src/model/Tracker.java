@@ -5,9 +5,16 @@ package model;
  * */
 public class Tracker {
 
+    // flag to indicate whether the agent has terminated.
     private boolean terminated = true;
+
+    // flag to indicate whether the agent is alive.
     private boolean alive = true;
+
+    // percentage of uncovered fields remaining.
     private double percentageRemaining = 1;
+
+    // counter to keep track of the number of iterations.
     private int numIterations = 0;
 
     public boolean isTerminated() {
@@ -35,7 +42,7 @@ public class Tracker {
     }
 
     public void setNotAlive() {
-        this.terminated = false;
+        this.alive = false;
     }
 
     public void setPercentageRemaining(double percentageRemaining) {
