@@ -1,0 +1,226 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > CNFEncoder</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">logic</a>
+</div>
+
+<h1>Coverage Summary for Class: CNFEncoder (logic)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CNFEncoder</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (7/7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (31/31)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package logic;
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;import java.util.ArrayList;
+<i class="no-highlight">4</i>&nbsp;import java.util.List;
+<i class="no-highlight">5</i>&nbsp;
+<b class="fc"><i class="no-highlight">6</i>&nbsp;public class CNFEncoder extends Encoder {</b>
+<i class="no-highlight">7</i>&nbsp;
+<i class="no-highlight">8</i>&nbsp;    /**
+<i class="no-highlight">9</i>&nbsp;     * Create CNF clause for an exactly-k constraint by conjunction of
+<i class="no-highlight">10</i>&nbsp;     * at-most-k and at-least-k.
+<i class="no-highlight">11</i>&nbsp;     * @param variables Integer identifiers of the neighbors of the cell
+<i class="no-highlight">12</i>&nbsp;     * @param k The clue of the cell minus the number of adjacent cells already flagged
+<i class="no-highlight">13</i>&nbsp;     * */
+<i class="no-highlight">14</i>&nbsp;    public int[][] exactly(int[] variables, int k) {
+<i class="no-highlight">15</i>&nbsp;
+<i class="no-highlight">16</i>&nbsp;        // encode at-most-k and at-least-k
+<b class="fc"><i class="no-highlight">17</i>&nbsp;        int[][] atMost = atMost(variables, k);</b>
+<b class="fc"><i class="no-highlight">18</i>&nbsp;        int[][] atLeast = atLeast(variables, k);</b>
+<i class="no-highlight">19</i>&nbsp;
+<i class="no-highlight">20</i>&nbsp;        // take the union of both and return
+<b class="fc"><i class="no-highlight">21</i>&nbsp;        int[][] exactly = new int[atLeast.length + atMost.length][];</b>
+<b class="fc"><i class="no-highlight">22</i>&nbsp;        System.arraycopy(atLeast, 0, exactly, 0, atLeast.length);</b>
+<b class="fc"><i class="no-highlight">23</i>&nbsp;        System.arraycopy(atMost, 0, exactly, atLeast.length, atMost.length);</b>
+<i class="no-highlight">24</i>&nbsp;
+<b class="fc"><i class="no-highlight">25</i>&nbsp;        return exactly;</b>
+<i class="no-highlight">26</i>&nbsp;    }
+<i class="no-highlight">27</i>&nbsp;
+<i class="no-highlight">28</i>&nbsp;    /**
+<i class="no-highlight">29</i>&nbsp;     * Create CNF clause for an at-most-k constraint.
+<i class="no-highlight">30</i>&nbsp;     * We achieve this by encoding &quot;n Choose k+1&quot; combinations.
+<i class="no-highlight">31</i>&nbsp;     * @param variables Integer identifiers of the neighbors of the cell
+<i class="no-highlight">32</i>&nbsp;     * @param k The clue of the cell minus the number of adjacent cells already flagged
+<i class="no-highlight">33</i>&nbsp;     * */
+<i class="no-highlight">34</i>&nbsp;    public int[][] atMost(int[] variables, int k) {
+<b class="fc"><i class="no-highlight">35</i>&nbsp;        return encode(variables, k + 1, true);</b>
+<i class="no-highlight">36</i>&nbsp;    }
+<i class="no-highlight">37</i>&nbsp;
+<i class="no-highlight">38</i>&nbsp;    /**
+<i class="no-highlight">39</i>&nbsp;     * Create CNF clause for an at-least-k constraint.
+<i class="no-highlight">40</i>&nbsp;     * We achieve this by encoding &quot;n Choose n-k+1&quot; combinations.
+<i class="no-highlight">41</i>&nbsp;     * @param variables Integer identifiers of the neighbors of the cell
+<i class="no-highlight">42</i>&nbsp;     * @param k The clue of the cell minus the number of adjacent cells already flagged
+<i class="no-highlight">43</i>&nbsp;     * */
+<i class="no-highlight">44</i>&nbsp;    public int[][] atLeast(int[] variables, int k) {
+<b class="fc"><i class="no-highlight">45</i>&nbsp;        return encode(variables,variables.length - k + 1, false);</b>
+<i class="no-highlight">46</i>&nbsp;    }
+<i class="no-highlight">47</i>&nbsp;
+<i class="no-highlight">48</i>&nbsp;    /**
+<i class="no-highlight">49</i>&nbsp;     * Create a constraint in CNF form restricting the variables to only have k of them
+<i class="no-highlight">50</i>&nbsp;     * be true at the same time.
+<i class="no-highlight">51</i>&nbsp;     * @param variables Integer identifiers of the neighbors of the cell
+<i class="no-highlight">52</i>&nbsp;     * @param k The clue of the cell minus the number of adjacent cells already flagged
+<i class="no-highlight">53</i>&nbsp;     * @param negate Should the negation of the variables be used?
+<i class="no-highlight">54</i>&nbsp;     * */
+<i class="no-highlight">55</i>&nbsp;    public int[][] encode(int[] variables, int k, boolean negate) {
+<b class="fc"><i class="no-highlight">56</i>&nbsp;        int n = variables.length;</b>
+<i class="no-highlight">57</i>&nbsp;
+<i class="no-highlight">58</i>&nbsp;        // generate binomial combinations
+<b class="fc"><i class="no-highlight">59</i>&nbsp;        List&lt;int[]&gt; combinations = generateBinomialCombinations(n, k);</b>
+<i class="no-highlight">60</i>&nbsp;
+<i class="no-highlight">61</i>&nbsp;        // encode the variables by mapping them onto the binomial combinations
+<b class="fc"><i class="no-highlight">62</i>&nbsp;        int[][] encoded = new int[combinations.size()][];</b>
+<i class="no-highlight">63</i>&nbsp;        
+<b class="fc"><i class="no-highlight">64</i>&nbsp;        for (int i = 0; i &lt; combinations.size(); i++) {</b>
+<i class="no-highlight">65</i>&nbsp;
+<b class="fc"><i class="no-highlight">66</i>&nbsp;            int[] combination = combinations.get(i);</b>
+<b class="fc"><i class="no-highlight">67</i>&nbsp;            int[] encodedArr = new int[combination.length];</b>
+<i class="no-highlight">68</i>&nbsp;        
+<i class="no-highlight">69</i>&nbsp;            // map the 1st variable to the integer 0 in the combination
+<i class="no-highlight">70</i>&nbsp;            // map the 2nd variable to the integer 1 ... 
+<b class="fc"><i class="no-highlight">71</i>&nbsp;            for (int j = 0; j &lt; combination.length; j++) {</b>
+<b class="fc"><i class="no-highlight">72</i>&nbsp;                int v = variables[combination[j]];</b>
+<b class="fc"><i class="no-highlight">73</i>&nbsp;                encodedArr[j] = negate ? -v : v;</b>
+<i class="no-highlight">74</i>&nbsp;            }
+<i class="no-highlight">75</i>&nbsp;
+<b class="fc"><i class="no-highlight">76</i>&nbsp;            encoded[i] = encodedArr;</b>
+<i class="no-highlight">77</i>&nbsp;        }
+<i class="no-highlight">78</i>&nbsp;
+<b class="fc"><i class="no-highlight">79</i>&nbsp;        return encoded;</b>
+<i class="no-highlight">80</i>&nbsp;    }
+<i class="no-highlight">81</i>&nbsp;
+<i class="no-highlight">82</i>&nbsp;    /**
+<i class="no-highlight">83</i>&nbsp;     * Generate the binomial combinations (&quot;n Choose k&quot;) recursively.
+<i class="no-highlight">84</i>&nbsp;     * @param n number of variables
+<i class="no-highlight">85</i>&nbsp;     * @param k number of True variables
+<i class="no-highlight">86</i>&nbsp;     * */
+<i class="no-highlight">87</i>&nbsp;    public List&lt;int[]&gt; generateBinomialCombinations(int n, int k) {
+<b class="fc"><i class="no-highlight">88</i>&nbsp;        List&lt;int[]&gt; combinations = new ArrayList&lt;&gt;();</b>
+<b class="fc"><i class="no-highlight">89</i>&nbsp;        binomialCombinationsHelper(combinations, new int[k], 0, n-1, 0);</b>
+<b class="fc"><i class="no-highlight">90</i>&nbsp;        return combinations;</b>
+<i class="no-highlight">91</i>&nbsp;    }
+<i class="no-highlight">92</i>&nbsp;
+<i class="no-highlight">93</i>&nbsp;    /**
+<i class="no-highlight">94</i>&nbsp;     * Helper method for the recursive call of the binomial combination generator method.
+<i class="no-highlight">95</i>&nbsp;     * The algorithm generates all (n choose k) combinations for n integers by
+<i class="no-highlight">96</i>&nbsp;     * recursively traversing the array, at every recursion first including then excluding
+<i class="no-highlight">97</i>&nbsp;     * the current integer.
+<i class="no-highlight">98</i>&nbsp;     * The base case is given by when the current index reaches the end of the temporary array,
+<i class="no-highlight">99</i>&nbsp;     * which has length k.
+<i class="no-highlight">100</i>&nbsp;     * @param combinations The list of binomial combinations
+<i class="no-highlight">101</i>&nbsp;     * @param temp An initially empty array of length k to build the combination
+<i class="no-highlight">102</i>&nbsp;     * @param startIdx First index to consider in the recursive call
+<i class="no-highlight">103</i>&nbsp;     * @param endIdx Last index to consider in the recursive call
+<i class="no-highlight">104</i>&nbsp;     * @param currIdx Index currently being considered
+<i class="no-highlight">105</i>&nbsp;     * */
+<i class="no-highlight">106</i>&nbsp;    private void binomialCombinationsHelper(List&lt;int[]&gt; combinations, int[] temp, int startIdx, int endIdx, int currIdx) {
+<i class="no-highlight">107</i>&nbsp;        // base case: add temp to array of combinations
+<b class="fc"><i class="no-highlight">108</i>&nbsp;        if (currIdx == temp.length) {</b>
+<b class="fc"><i class="no-highlight">109</i>&nbsp;            int[] combination = temp.clone();</b>
+<b class="fc"><i class="no-highlight">110</i>&nbsp;            combinations.add(combination);</b>
+<b class="fc"><i class="no-highlight">111</i>&nbsp;        }</b>
+<i class="no-highlight">112</i>&nbsp;        // recursive steps with two recursive calls:
+<i class="no-highlight">113</i>&nbsp;        // 1. include current index and choose r - 1 more elements
+<i class="no-highlight">114</i>&nbsp;        // 2. exclude current index and choose r more elements
+<b class="fc"><i class="no-highlight">115</i>&nbsp;        else if (startIdx &lt;= endIdx) {</b>
+<b class="fc"><i class="no-highlight">116</i>&nbsp;            temp[currIdx] = startIdx;</b>
+<b class="fc"><i class="no-highlight">117</i>&nbsp;            binomialCombinationsHelper(combinations, temp, startIdx + 1, endIdx, currIdx + 1);</b>
+<b class="fc"><i class="no-highlight">118</i>&nbsp;            binomialCombinationsHelper(combinations, temp, startIdx + 1, endIdx, currIdx);</b>
+<i class="no-highlight">119</i>&nbsp;        }
+<i class="no-highlight">120</i>&nbsp;    }
+<i class="no-highlight">121</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-03-02 17:10</div>
+</div>
+</body>
+</html>

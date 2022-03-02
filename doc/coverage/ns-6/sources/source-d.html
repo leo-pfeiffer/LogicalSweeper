@@ -1,0 +1,145 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > WorldFactory</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">model.board</a>
+</div>
+
+<h1>Coverage Summary for Class: WorldFactory (model.board)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">WorldFactory</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/11)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package model.board;
+<i class="no-highlight">2</i>&nbsp;
+<b class="nc"><i class="no-highlight">3</i>&nbsp;public class WorldFactory {</b>
+<i class="no-highlight">4</i>&nbsp;
+<i class="no-highlight">5</i>&nbsp;    public static World[] getWorlds(String mode) {
+<b class="nc"><i class="no-highlight">6</i>&nbsp;        switch (mode) {</b>
+<i class="no-highlight">7</i>&nbsp;            case &quot;&quot;:
+<i class="no-highlight">8</i>&nbsp;            case &quot;rect&quot;:
+<b class="nc"><i class="no-highlight">9</i>&nbsp;                return RectWorld.values();</b>
+<i class="no-highlight">10</i>&nbsp;            case &quot;tri&quot;:
+<b class="nc"><i class="no-highlight">11</i>&nbsp;                return TriWorld.values();</b>
+<i class="no-highlight">12</i>&nbsp;            case &quot;hex&quot;:
+<b class="nc"><i class="no-highlight">13</i>&nbsp;                return HexWorld.values();</b>
+<i class="no-highlight">14</i>&nbsp;            default:
+<b class="nc"><i class="no-highlight">15</i>&nbsp;                throw new IllegalArgumentException(&quot;Unknown world mode: &quot; + mode);</b>
+<i class="no-highlight">16</i>&nbsp;        }
+<i class="no-highlight">17</i>&nbsp;    }
+<i class="no-highlight">18</i>&nbsp;
+<i class="no-highlight">19</i>&nbsp;    /**
+<i class="no-highlight">20</i>&nbsp;     * Given a mode and a world name, return the appropriate world
+<i class="no-highlight">21</i>&nbsp;     *
+<i class="no-highlight">22</i>&nbsp;     * @param mode The type of world to create.
+<i class="no-highlight">23</i>&nbsp;     * @param worldName The name of the world to create.
+<i class="no-highlight">24</i>&nbsp;     * @return The World object that corresponds to the world name.
+<i class="no-highlight">25</i>&nbsp;     */
+<i class="no-highlight">26</i>&nbsp;    public static World createWorld(String mode, String worldName) {
+<b class="nc"><i class="no-highlight">27</i>&nbsp;        switch (mode) {</b>
+<i class="no-highlight">28</i>&nbsp;            case &quot;&quot;:
+<i class="no-highlight">29</i>&nbsp;            case &quot;rect&quot;:
+<b class="nc"><i class="no-highlight">30</i>&nbsp;                return RectWorld.valueOf(worldName);</b>
+<i class="no-highlight">31</i>&nbsp;            case &quot;tri&quot;:
+<b class="nc"><i class="no-highlight">32</i>&nbsp;                return TriWorld.valueOf(worldName);</b>
+<i class="no-highlight">33</i>&nbsp;            case &quot;hex&quot;:
+<b class="nc"><i class="no-highlight">34</i>&nbsp;                return HexWorld.valueOf(worldName);</b>
+<i class="no-highlight">35</i>&nbsp;            default:
+<b class="nc"><i class="no-highlight">36</i>&nbsp;                throw new IllegalArgumentException(&quot;Unknown world mode: &quot; + mode);</b>
+<i class="no-highlight">37</i>&nbsp;        }
+<i class="no-highlight">38</i>&nbsp;    }
+<i class="no-highlight">39</i>&nbsp;
+<i class="no-highlight">40</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-03-02 17:10</div>
+</div>
+</body>
+</html>

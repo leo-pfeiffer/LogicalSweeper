@@ -1,0 +1,170 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > DNFEncoder</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">logic</a>
+</div>
+
+<h1>Coverage Summary for Class: DNFEncoder (logic)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">DNFEncoder</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (14/14)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package logic;
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;import java.util.ArrayList;
+<i class="no-highlight">4</i>&nbsp;import org.logicng.formulas.Formula;
+<i class="no-highlight">5</i>&nbsp;import org.logicng.formulas.FormulaFactory;
+<i class="no-highlight">6</i>&nbsp;
+<i class="no-highlight">7</i>&nbsp;/**
+<i class="no-highlight">8</i>&nbsp; * Knowledge Base extension using DNF encoding.
+<i class="no-highlight">9</i>&nbsp; */
+<i class="no-highlight">10</i>&nbsp;public class DNFEncoder extends Encoder {
+<i class="no-highlight">11</i>&nbsp;
+<i class="no-highlight">12</i>&nbsp;    private final FormulaFactory f;
+<i class="no-highlight">13</i>&nbsp;
+<i class="no-highlight">14</i>&nbsp;    public DNFEncoder() {
+<b class="fc"><i class="no-highlight">15</i>&nbsp;        this(new FormulaFactory());</b>
+<i class="no-highlight">16</i>&nbsp;    }
+<i class="no-highlight">17</i>&nbsp;
+<b class="fc"><i class="no-highlight">18</i>&nbsp;    public DNFEncoder(FormulaFactory f) {</b>
+<b class="fc"><i class="no-highlight">19</i>&nbsp;        this.f = f;</b>
+<i class="no-highlight">20</i>&nbsp;    }
+<i class="no-highlight">21</i>&nbsp;
+<i class="no-highlight">22</i>&nbsp;    public FormulaFactory getFormulaFactory() {
+<b class="fc"><i class="no-highlight">23</i>&nbsp;        return f;</b>
+<i class="no-highlight">24</i>&nbsp;    }
+<i class="no-highlight">25</i>&nbsp;
+<i class="no-highlight">26</i>&nbsp;    /**
+<i class="no-highlight">27</i>&nbsp;     * Encode a set of variables such that exactly numTrue of them are true in all cases.
+<i class="no-highlight">28</i>&nbsp;     * @param variables The variables to be encoded.
+<i class="no-highlight">29</i>&nbsp;     * @param numTrue The number of TRUE values in the literals.
+<i class="no-highlight">30</i>&nbsp;     * */
+<i class="no-highlight">31</i>&nbsp;    public Formula encode(String[] variables, int numTrue) {
+<i class="no-highlight">32</i>&nbsp;
+<i class="no-highlight">33</i>&nbsp;        // get all permutations of the variables s.t. numTrue of them are true
+<b class="fc"><i class="no-highlight">34</i>&nbsp;        ArrayList&lt;BooleanArray&gt; permutations = booleanPermutations(variables.length, numTrue);</b>
+<i class="no-highlight">35</i>&nbsp;
+<i class="no-highlight">36</i>&nbsp;        // clauses of the final formula
+<b class="fc"><i class="no-highlight">37</i>&nbsp;        ArrayList&lt;Formula&gt; formulae = new ArrayList&lt;&gt;();</b>
+<i class="no-highlight">38</i>&nbsp;
+<i class="no-highlight">39</i>&nbsp;        // encode each permutation and add it to the list
+<b class="fc"><i class="no-highlight">40</i>&nbsp;        for (BooleanArray permutation : permutations) {</b>
+<b class="fc"><i class="no-highlight">41</i>&nbsp;            formulae.add(encodePermutation(variables, permutation));</b>
+<b class="fc"><i class="no-highlight">42</i>&nbsp;        }</b>
+<i class="no-highlight">43</i>&nbsp;
+<b class="fc"><i class="no-highlight">44</i>&nbsp;        return f.or(formulae);</b>
+<i class="no-highlight">45</i>&nbsp;    }
+<i class="no-highlight">46</i>&nbsp;
+<i class="no-highlight">47</i>&nbsp;    /**
+<i class="no-highlight">48</i>&nbsp;     * Given a list of variables and a boolean permutation,
+<i class="no-highlight">49</i>&nbsp;     * encode the permutation as a formula
+<i class="no-highlight">50</i>&nbsp;     *
+<i class="no-highlight">51</i>&nbsp;     * @param variables an array of strings, each of which is a variable name.
+<i class="no-highlight">52</i>&nbsp;     * @param permutation a BooleanArray that represents the permutation.
+<i class="no-highlight">53</i>&nbsp;     * @return The formula that encodes the permutation.
+<i class="no-highlight">54</i>&nbsp;     */
+<i class="no-highlight">55</i>&nbsp;    public Formula encodePermutation(String[] variables, BooleanArray permutation) {
+<i class="no-highlight">56</i>&nbsp;
+<b class="fc"><i class="no-highlight">57</i>&nbsp;        ArrayList&lt;Formula&gt; literals = new ArrayList&lt;&gt;();</b>
+<i class="no-highlight">58</i>&nbsp;
+<b class="fc"><i class="no-highlight">59</i>&nbsp;        for (int i = 0; i &lt; variables.length; i++) {</b>
+<b class="fc"><i class="no-highlight">60</i>&nbsp;            literals.add(f.literal(variables[i], permutation.get(i)));</b>
+<i class="no-highlight">61</i>&nbsp;        }
+<i class="no-highlight">62</i>&nbsp;
+<b class="fc"><i class="no-highlight">63</i>&nbsp;        return f.and(literals);</b>
+<i class="no-highlight">64</i>&nbsp;    }
+<i class="no-highlight">65</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-03-02 17:10</div>
+</div>
+</body>
+</html>

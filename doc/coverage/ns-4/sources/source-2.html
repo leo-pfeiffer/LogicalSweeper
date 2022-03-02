@@ -1,0 +1,152 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > AgentFactory</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">model.agent</a>
+</div>
+
+<h1>Coverage Summary for Class: AgentFactory (model.agent)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">AgentFactory</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    50%
+  </span>
+  <span class="absValue">
+    (1/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    81.8%
+  </span>
+  <span class="absValue">
+    (9/11)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package model.agent;
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;import delegate.ObscuredSweeper;
+<i class="no-highlight">4</i>&nbsp;import logic.CNFKnowledgeBase;
+<i class="no-highlight">5</i>&nbsp;import logic.DNFKnowledgeBase;
+<i class="no-highlight">6</i>&nbsp;import model.board.HexWorld;
+<i class="no-highlight">7</i>&nbsp;import model.board.TriWorld;
+<i class="no-highlight">8</i>&nbsp;import model.board.View;
+<i class="no-highlight">9</i>&nbsp;
+<i class="no-highlight">10</i>&nbsp;/**
+<i class="no-highlight">11</i>&nbsp; * AgentFactory is a factory class that creates agents
+<i class="no-highlight">12</i>&nbsp; */
+<b class="nc"><i class="no-highlight">13</i>&nbsp;public class AgentFactory {</b>
+<i class="no-highlight">14</i>&nbsp;
+<i class="no-highlight">15</i>&nbsp;    /**
+<i class="no-highlight">16</i>&nbsp;     * Create an agent of the given type
+<i class="no-highlight">17</i>&nbsp;     *
+<i class="no-highlight">18</i>&nbsp;     * @param agentName The name of the agent.
+<i class="no-highlight">19</i>&nbsp;     * @param game the game object
+<i class="no-highlight">20</i>&nbsp;     * @param view the agent view of the game.
+<i class="no-highlight">21</i>&nbsp;     * @return An agent.
+<i class="no-highlight">22</i>&nbsp;     */
+<i class="no-highlight">23</i>&nbsp;    public static Agent createAgent(String agentName, ObscuredSweeper game, View view) {
+<b class="fc"><i class="no-highlight">24</i>&nbsp;        switch (agentName) {</b>
+<i class="no-highlight">25</i>&nbsp;            case &quot;P1&quot;:
+<b class="fc"><i class="no-highlight">26</i>&nbsp;                return new BasicAgent(game, view);</b>
+<i class="no-highlight">27</i>&nbsp;            case &quot;P2&quot;:
+<b class="fc"><i class="no-highlight">28</i>&nbsp;                return new BeginnerAgent(game, view);</b>
+<i class="no-highlight">29</i>&nbsp;            case &quot;P3&quot;:
+<b class="fc"><i class="no-highlight">30</i>&nbsp;                return new IntermediateAgent(game, view, new DNFKnowledgeBase(view));</b>
+<i class="no-highlight">31</i>&nbsp;            case &quot;P4&quot;:
+<b class="fc"><i class="no-highlight">32</i>&nbsp;                return new IntermediateAgent(game, view, new CNFKnowledgeBase(view));</b>
+<i class="no-highlight">33</i>&nbsp;
+<i class="no-highlight">34</i>&nbsp;            // todo get rid of P5 since we can just add the worlds to any agent
+<i class="no-highlight">35</i>&nbsp;            case &quot;P5&quot;:
+<b class="fc"><i class="no-highlight">36</i>&nbsp;                String worldType = game.getWorldType();</b>
+<b class="fc"><i class="no-highlight">37</i>&nbsp;                if (worldType.equals(TriWorld.class.getSimpleName()) || worldType.equals(HexWorld.class.getSimpleName())) {</b>
+<b class="fc"><i class="no-highlight">38</i>&nbsp;                    return new IntermediateAgent(game, view, new CNFKnowledgeBase(view));</b>
+<i class="no-highlight">39</i>&nbsp;                }
+<i class="no-highlight">40</i>&nbsp;                 else {
+<b class="nc"><i class="no-highlight">41</i>&nbsp;                     throw new IllegalArgumentException(&quot;Agent P5 requires world type tri or hex.&quot;);</b>
+<i class="no-highlight">42</i>&nbsp;                }
+<i class="no-highlight">43</i>&nbsp;            default:
+<b class="fc"><i class="no-highlight">44</i>&nbsp;                throw new IllegalArgumentException(&quot;Unknown agent type: &quot; + agentName);</b>
+<i class="no-highlight">45</i>&nbsp;        }
+<i class="no-highlight">46</i>&nbsp;    }
+<i class="no-highlight">47</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-03-02 17:10</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > CharMap</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">model.board</a>
+</div>
+
+<h1>Coverage Summary for Class: CharMap (model.board)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">CharMap</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package model.board;
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;import java.util.ArrayList;
+<i class="no-highlight">4</i>&nbsp;
+<i class="no-highlight">5</i>&nbsp;/**
+<i class="no-highlight">6</i>&nbsp; * An interface for classes wrapping a 2d array of characters.
+<i class="no-highlight">7</i>&nbsp; * */
+<i class="no-highlight">8</i>&nbsp;public interface CharMap {
+<i class="no-highlight">9</i>&nbsp;
+<i class="no-highlight">10</i>&nbsp;    /**
+<i class="no-highlight">11</i>&nbsp;     * Get the size of the map.
+<i class="no-highlight">12</i>&nbsp;     * */
+<i class="no-highlight">13</i>&nbsp;    int getSize();
+<i class="no-highlight">14</i>&nbsp;
+<i class="no-highlight">15</i>&nbsp;    /**
+<i class="no-highlight">16</i>&nbsp;     * Returns true if the given coord is in the map.
+<i class="no-highlight">17</i>&nbsp;     * @param coord The coordinate to check.
+<i class="no-highlight">18</i>&nbsp;     * */
+<i class="no-highlight">19</i>&nbsp;    boolean containsCoord(Coord coord);
+<i class="no-highlight">20</i>&nbsp;
+<i class="no-highlight">21</i>&nbsp;    /**
+<i class="no-highlight">22</i>&nbsp;     * Returns the value of the cell of the given coord from the map.
+<i class="no-highlight">23</i>&nbsp;     * @param coord The coordinate to get the value of.
+<i class="no-highlight">24</i>&nbsp;     * */
+<i class="no-highlight">25</i>&nbsp;    char getCell(Coord coord);
+<i class="no-highlight">26</i>&nbsp;
+<i class="no-highlight">27</i>&nbsp;    /**
+<i class="no-highlight">28</i>&nbsp;     * Return an array of cells adjacent to the given coordinate.
+<i class="no-highlight">29</i>&nbsp;     * @param coord The coordinate to get the adjacent cells of.
+<i class="no-highlight">30</i>&nbsp;     * */
+<i class="no-highlight">31</i>&nbsp;    ArrayList&lt;Coord&gt; getAdjacentCoords(Coord coord);
+<i class="no-highlight">32</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-03-02 17:10</div>
+</div>
+</body>
+</html>

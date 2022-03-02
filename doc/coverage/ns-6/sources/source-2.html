@@ -1,0 +1,269 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > GameBoardUtils</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">model.board</a>
+</div>
+
+<h1>Coverage Summary for Class: GameBoardUtils (model.board)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">GameBoardUtils</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (9/9)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    95.9%
+  </span>
+  <span class="absValue">
+    (47/49)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package model.board;
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;import java.util.ArrayList;
+<i class="no-highlight">4</i>&nbsp;
+<i class="no-highlight">5</i>&nbsp;/**
+<i class="no-highlight">6</i>&nbsp; * Util class to provide functionalities for game boards.
+<i class="no-highlight">7</i>&nbsp; * */
+<i class="no-highlight">8</i>&nbsp;public abstract class GameBoardUtils {
+<i class="no-highlight">9</i>&nbsp;
+<i class="no-highlight">10</i>&nbsp;    private final char[][] map;
+<i class="no-highlight">11</i>&nbsp;
+<b class="fc"><i class="no-highlight">12</i>&nbsp;    public GameBoardUtils(char[][] map) {</b>
+<b class="fc"><i class="no-highlight">13</i>&nbsp;        this.map = map;</b>
+<i class="no-highlight">14</i>&nbsp;    }
+<i class="no-highlight">15</i>&nbsp;
+<i class="no-highlight">16</i>&nbsp;    /**
+<i class="no-highlight">17</i>&nbsp;     * This function returns a list of all the coordinates that are adjacent to the given coordinate
+<i class="no-highlight">18</i>&nbsp;     *
+<i class="no-highlight">19</i>&nbsp;     * @param coord The coordinate to get the adjacent coordinates of.
+<i class="no-highlight">20</i>&nbsp;     * @return An ArrayList of Coord objects.
+<i class="no-highlight">21</i>&nbsp;     */
+<i class="no-highlight">22</i>&nbsp;    public abstract ArrayList&lt;Coord&gt; getAdjacentCoords(Coord coord);
+<i class="no-highlight">23</i>&nbsp;
+<i class="no-highlight">24</i>&nbsp;    /**
+<i class="no-highlight">25</i>&nbsp;     * This function creates a new instance of the class that implements the GameBoardUtils interface
+<i class="no-highlight">26</i>&nbsp;     *
+<i class="no-highlight">27</i>&nbsp;     * @param map The map of the game board.
+<i class="no-highlight">28</i>&nbsp;     * @return The new instance of the GameBoardUtils class.
+<i class="no-highlight">29</i>&nbsp;     */
+<i class="no-highlight">30</i>&nbsp;    public abstract GameBoardUtils newInstance(char[][] map);
+<i class="no-highlight">31</i>&nbsp;
+<i class="no-highlight">32</i>&nbsp;    /**
+<i class="no-highlight">33</i>&nbsp;     * Given a coordinate, return true if the coordinate is in the map, and false otherwise
+<i class="no-highlight">34</i>&nbsp;     *
+<i class="no-highlight">35</i>&nbsp;     * @param coord The coordinate to check.
+<i class="no-highlight">36</i>&nbsp;     * @return A boolean value.
+<i class="no-highlight">37</i>&nbsp;     */
+<i class="no-highlight">38</i>&nbsp;    public boolean containsCoord(Coord coord) {
+<b class="fc"><i class="no-highlight">39</i>&nbsp;        int mapSize = this.map.length;</b>
+<b class="fc"><i class="no-highlight">40</i>&nbsp;        int row = coord.getRow();</b>
+<b class="fc"><i class="no-highlight">41</i>&nbsp;        int col = coord.getCol();</b>
+<b class="fc"><i class="no-highlight">42</i>&nbsp;        return col &gt;= 0 &amp;&amp; col &lt; mapSize &amp;&amp; row &gt;= 0 &amp;&amp; row &lt; mapSize;</b>
+<i class="no-highlight">43</i>&nbsp;    }
+<i class="no-highlight">44</i>&nbsp;
+<i class="no-highlight">45</i>&nbsp;    /**
+<i class="no-highlight">46</i>&nbsp;     * Return the cell value at the given coordinates
+<i class="no-highlight">47</i>&nbsp;     *
+<i class="no-highlight">48</i>&nbsp;     * @param coord The coordinates of the cell to get.
+<i class="no-highlight">49</i>&nbsp;     * @return The character at the specified coordinates.
+<i class="no-highlight">50</i>&nbsp;     */
+<i class="no-highlight">51</i>&nbsp;    public char getCell(Coord coord) {
+<b class="fc"><i class="no-highlight">52</i>&nbsp;        if (!this.containsCoord(coord)) {</b>
+<b class="nc"><i class="no-highlight">53</i>&nbsp;            throw new IllegalArgumentException(&quot;Coordinates outside the map.&quot;);</b>
+<i class="no-highlight">54</i>&nbsp;        }
+<b class="fc"><i class="no-highlight">55</i>&nbsp;        return this.map[coord.getRow()][coord.getCol()];</b>
+<i class="no-highlight">56</i>&nbsp;    }
+<i class="no-highlight">57</i>&nbsp;
+<i class="no-highlight">58</i>&nbsp;    /**
+<i class="no-highlight">59</i>&nbsp;     * Given a token and a list of cells, return the number of times the token appears in the list of cells
+<i class="no-highlight">60</i>&nbsp;     *
+<i class="no-highlight">61</i>&nbsp;     * @param token the character you want to count
+<i class="no-highlight">62</i>&nbsp;     * @param cells an array of coordinates
+<i class="no-highlight">63</i>&nbsp;     * @return The number of occurrences of the token in the cells.
+<i class="no-highlight">64</i>&nbsp;     */
+<i class="no-highlight">65</i>&nbsp;    public int countOccurrence(char token, ArrayList&lt;Coord&gt; cells) {
+<b class="fc"><i class="no-highlight">66</i>&nbsp;        int count = 0;</b>
+<b class="fc"><i class="no-highlight">67</i>&nbsp;        for (Coord coord : cells) {</b>
+<b class="fc"><i class="no-highlight">68</i>&nbsp;            if (this.getCell(coord) == token) {</b>
+<b class="fc"><i class="no-highlight">69</i>&nbsp;                count++;</b>
+<i class="no-highlight">70</i>&nbsp;            }
+<b class="fc"><i class="no-highlight">71</i>&nbsp;        }</b>
+<b class="fc"><i class="no-highlight">72</i>&nbsp;        return count;</b>
+<i class="no-highlight">73</i>&nbsp;    }
+<i class="no-highlight">74</i>&nbsp;
+<i class="no-highlight">75</i>&nbsp;    /**
+<i class="no-highlight">76</i>&nbsp;     * Given a token, return the number of times it occurs in the grid
+<i class="no-highlight">77</i>&nbsp;     *
+<i class="no-highlight">78</i>&nbsp;     * @param token the character you want to count
+<i class="no-highlight">79</i>&nbsp;     * @return The number of occurrences of the token in the board.
+<i class="no-highlight">80</i>&nbsp;     */
+<i class="no-highlight">81</i>&nbsp;    public int countOccurrence(char token) {
+<b class="fc"><i class="no-highlight">82</i>&nbsp;        return this.countOccurrence(token, this.getAllCoords());</b>
+<i class="no-highlight">83</i>&nbsp;    }
+<i class="no-highlight">84</i>&nbsp;
+<i class="no-highlight">85</i>&nbsp;    /**
+<i class="no-highlight">86</i>&nbsp;     * Return true if the cell at the given coordinates contains the given token
+<i class="no-highlight">87</i>&nbsp;     *
+<i class="no-highlight">88</i>&nbsp;     * @param token the character that represents the token.
+<i class="no-highlight">89</i>&nbsp;     * @param coord The coordinates of the cell to check.
+<i class="no-highlight">90</i>&nbsp;     * @return A boolean value.
+<i class="no-highlight">91</i>&nbsp;     */
+<i class="no-highlight">92</i>&nbsp;    public boolean cellIsToken(char token, Coord coord) {
+<b class="fc"><i class="no-highlight">93</i>&nbsp;        if (!this.containsCoord(coord)) {</b>
+<b class="nc"><i class="no-highlight">94</i>&nbsp;            throw new IllegalArgumentException(&quot;Coordinates outside the map.&quot;);</b>
+<i class="no-highlight">95</i>&nbsp;        }
+<b class="fc"><i class="no-highlight">96</i>&nbsp;        return this.map[coord.getRow()][coord.getCol()] == token;</b>
+<i class="no-highlight">97</i>&nbsp;    }
+<i class="no-highlight">98</i>&nbsp;
+<i class="no-highlight">99</i>&nbsp;    /**
+<i class="no-highlight">100</i>&nbsp;     * Return a list of all the coordinates in the map
+<i class="no-highlight">101</i>&nbsp;     *
+<i class="no-highlight">102</i>&nbsp;     * @return An ArrayList of Coord objects.
+<i class="no-highlight">103</i>&nbsp;     */
+<i class="no-highlight">104</i>&nbsp;    public ArrayList&lt;Coord&gt; getAllCoords() {
+<b class="fc"><i class="no-highlight">105</i>&nbsp;        int size = this.map.length;</b>
+<b class="fc"><i class="no-highlight">106</i>&nbsp;        ArrayList&lt;Coord&gt; coords = new ArrayList&lt;&gt;();</b>
+<b class="fc"><i class="no-highlight">107</i>&nbsp;        for (int i = 0; i &lt; size; i++) {</b>
+<b class="fc"><i class="no-highlight">108</i>&nbsp;            for (int j = 0; j &lt; size; j++) {</b>
+<b class="fc"><i class="no-highlight">109</i>&nbsp;                coords.add(new Coord(i, j));</b>
+<i class="no-highlight">110</i>&nbsp;            }
+<i class="no-highlight">111</i>&nbsp;        }
+<b class="fc"><i class="no-highlight">112</i>&nbsp;        return coords;</b>
+<i class="no-highlight">113</i>&nbsp;    }
+<i class="no-highlight">114</i>&nbsp;
+<i class="no-highlight">115</i>&nbsp;    /**
+<i class="no-highlight">116</i>&nbsp;     * Create a new View of the world map, uncovering all blocked cells and counting
+<i class="no-highlight">117</i>&nbsp;     * the total number of mines.
+<i class="no-highlight">118</i>&nbsp;     * */
+<i class="no-highlight">119</i>&nbsp;    public View createNewView() {
+<i class="no-highlight">120</i>&nbsp;
+<b class="fc"><i class="no-highlight">121</i>&nbsp;        int size = this.map.length;</b>
+<b class="fc"><i class="no-highlight">122</i>&nbsp;        char[][] view = new char[size][size];</b>
+<i class="no-highlight">123</i>&nbsp;
+<i class="no-highlight">124</i>&nbsp;        // uncover blocked cells
+<b class="fc"><i class="no-highlight">125</i>&nbsp;        for (int row = 0; row &lt; size; row++) {</b>
+<b class="fc"><i class="no-highlight">126</i>&nbsp;            for (int col = 0; col &lt; size; col ++) {</b>
+<b class="fc"><i class="no-highlight">127</i>&nbsp;                Coord coord = new Coord(row, col);</b>
+<b class="fc"><i class="no-highlight">128</i>&nbsp;                char cell = this.getCell(coord);</b>
+<b class="fc"><i class="no-highlight">129</i>&nbsp;                if (cell == Token.BLOCK.getChar()) {</b>
+<b class="fc"><i class="no-highlight">130</i>&nbsp;                    view[row][col] = Token.BLOCK.getChar();</b>
+<i class="no-highlight">131</i>&nbsp;                } else {
+<b class="fc"><i class="no-highlight">132</i>&nbsp;                    view[row][col] = Token.UNKNOWN.getChar();</b>
+<i class="no-highlight">133</i>&nbsp;                }
+<i class="no-highlight">134</i>&nbsp;            }
+<i class="no-highlight">135</i>&nbsp;        }
+<i class="no-highlight">136</i>&nbsp;
+<b class="fc"><i class="no-highlight">137</i>&nbsp;        GameBoardUtils viewGBU = this.newInstance(view);</b>
+<b class="fc"><i class="no-highlight">138</i>&nbsp;        int mineCount = this.countOccurrence(Token.MINE.getChar());</b>
+<b class="fc"><i class="no-highlight">139</i>&nbsp;        return new View(view, mineCount, viewGBU);</b>
+<i class="no-highlight">140</i>&nbsp;    }
+<i class="no-highlight">141</i>&nbsp;
+<i class="no-highlight">142</i>&nbsp;    /**
+<i class="no-highlight">143</i>&nbsp;     * For each cell in the board, if the cell is a number, then the number of mines adjacent to the cell must match the
+<i class="no-highlight">144</i>&nbsp;     * number in the cell
+<i class="no-highlight">145</i>&nbsp;     *
+<i class="no-highlight">146</i>&nbsp;     * @return The return type is boolean.
+<i class="no-highlight">147</i>&nbsp;     */
+<i class="no-highlight">148</i>&nbsp;    public boolean validate() {
+<b class="fc"><i class="no-highlight">149</i>&nbsp;        for (Coord cell : this.getAllCoords()) {</b>
+<b class="fc"><i class="no-highlight">150</i>&nbsp;            if (Character.isDigit(this.getCell(cell))) {</b>
+<b class="fc"><i class="no-highlight">151</i>&nbsp;                int numExpected = Character.getNumericValue(this.getCell(cell));</b>
+<b class="fc"><i class="no-highlight">152</i>&nbsp;                ArrayList&lt;Coord&gt; nbrs = this.getAdjacentCoords(cell);</b>
+<b class="fc"><i class="no-highlight">153</i>&nbsp;                int numActual = 0;</b>
+<b class="fc"><i class="no-highlight">154</i>&nbsp;                for (Coord nbr : nbrs) {</b>
+<b class="fc"><i class="no-highlight">155</i>&nbsp;                    if (this.cellIsToken(Token.MINE.getChar(), nbr)) {</b>
+<b class="fc"><i class="no-highlight">156</i>&nbsp;                        numActual++;</b>
+<i class="no-highlight">157</i>&nbsp;                    }
+<b class="fc"><i class="no-highlight">158</i>&nbsp;                }</b>
+<b class="fc"><i class="no-highlight">159</i>&nbsp;                if (numExpected != numActual) return false;</b>
+<i class="no-highlight">160</i>&nbsp;            }
+<b class="fc"><i class="no-highlight">161</i>&nbsp;        }</b>
+<b class="fc"><i class="no-highlight">162</i>&nbsp;        return true;</b>
+<i class="no-highlight">163</i>&nbsp;    }
+<i class="no-highlight">164</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-03-02 17:10</div>
+</div>
+</body>
+</html>
