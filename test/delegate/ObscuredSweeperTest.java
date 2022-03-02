@@ -1,6 +1,7 @@
 package delegate;
 
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -30,6 +31,7 @@ public class ObscuredSweeperTest {
         for (String agent : agentNames) {
             for (RectWorld world : worlds) {
                 ObscuredSweeper game = runGame(world, agent);
+                assertEquals("RectWorld", game.getWorldType());
                 assertFalse(game.isPlaying());
             }
         }
@@ -37,11 +39,12 @@ public class ObscuredSweeperTest {
 
     @Test
     public void testRunAllConfigurationsTri() {
-        String[] agentNames = {"P1", "P2", "P3", "P4", "P5"};
+        String[] agentNames = {"P1", "P2", "P3", "P4"};
         TriWorld[] worlds = TriWorld.values();
         for (String agent : agentNames) {
             for (TriWorld world : worlds) {
                 ObscuredSweeper game = runGame(world, agent);
+                assertEquals("TriWorld", game.getWorldType());
                 assertFalse(game.isPlaying());
             }
         }
@@ -49,11 +52,12 @@ public class ObscuredSweeperTest {
 
     @Test
     public void testRunAllConfigurationsHex() {
-        String[] agentNames = {"P1", "P2", "P3", "P4", "P5"};
+        String[] agentNames = {"P1", "P2", "P3", "P4"};
         HexWorld[] worlds = HexWorld.values();
         for (String agent : agentNames) {
             for (HexWorld world : worlds) {
                 ObscuredSweeper game = runGame(world, agent);
+                assertEquals("HexWorld", game.getWorldType());
                 assertFalse(game.isPlaying());
             }
         }
