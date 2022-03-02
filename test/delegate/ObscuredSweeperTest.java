@@ -4,6 +4,7 @@ package delegate;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import model.board.HexWorld;
 import model.board.RectWorld;
 import model.board.TriWorld;
 import model.board.World;
@@ -24,7 +25,7 @@ public class ObscuredSweeperTest {
 
     @Test
     public void testRunAllConfigurationsRect() {
-        String[] agentNames = {"P1", "P2", "P3", "P4", "P5"};
+        String[] agentNames = {"P1", "P2", "P3", "P4"};
         RectWorld[] worlds = RectWorld.values();
         for (String agent : agentNames) {
             for (RectWorld world : worlds) {
@@ -40,6 +41,18 @@ public class ObscuredSweeperTest {
         TriWorld[] worlds = TriWorld.values();
         for (String agent : agentNames) {
             for (TriWorld world : worlds) {
+                ObscuredSweeper game = runGame(world, agent);
+                assertFalse(game.isPlaying());
+            }
+        }
+    }
+
+    @Test
+    public void testRunAllConfigurationsHex() {
+        String[] agentNames = {"P1", "P2", "P3", "P4", "P5"};
+        HexWorld[] worlds = HexWorld.values();
+        for (String agent : agentNames) {
+            for (HexWorld world : worlds) {
                 ObscuredSweeper game = runGame(world, agent);
                 assertFalse(game.isPlaying());
             }
