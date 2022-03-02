@@ -1,0 +1,1514 @@
+[
+  {
+    "agent": "P1",
+    "mode": "rect",
+    "world": "TEST1",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.3333333333333333,
+    "numIterations": 1
+  },
+  {
+    "agent": "P1",
+    "mode": "rect",
+    "world": "TEST2",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.5555555555555556,
+    "numIterations": 1
+  },
+  {
+    "agent": "P1",
+    "mode": "rect",
+    "world": "TEST3",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.1111111111111111,
+    "numIterations": 2
+  },
+  {
+    "agent": "P1",
+    "mode": "rect",
+    "world": "TEST4",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.2222222222222222,
+    "numIterations": 1
+  },
+  {
+    "agent": "P1",
+    "mode": "rect",
+    "world": "TEST5",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.2222222222222222,
+    "numIterations": 1
+  },
+  {
+    "agent": "P1",
+    "mode": "rect",
+    "world": "TEST6",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.2222222222222222,
+    "numIterations": 3
+  },
+  {
+    "agent": "P1",
+    "mode": "rect",
+    "world": "SMALL1",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.32,
+    "numIterations": 1
+  },
+  {
+    "agent": "P1",
+    "mode": "rect",
+    "world": "SMALL2",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.52,
+    "numIterations": 3
+  },
+  {
+    "agent": "P1",
+    "mode": "rect",
+    "world": "SMALL3",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.72,
+    "numIterations": 1
+  },
+  {
+    "agent": "P1",
+    "mode": "rect",
+    "world": "SMALL4",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.48,
+    "numIterations": 1
+  },
+  {
+    "agent": "P1",
+    "mode": "rect",
+    "world": "SMALL5",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.2,
+    "numIterations": 3
+  },
+  {
+    "agent": "P1",
+    "mode": "rect",
+    "world": "SMALL6",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.16,
+    "numIterations": 1
+  },
+  {
+    "agent": "P1",
+    "mode": "rect",
+    "world": "SMALL7",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.76,
+    "numIterations": 1
+  },
+  {
+    "agent": "P1",
+    "mode": "rect",
+    "world": "SMALL8",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.56,
+    "numIterations": 1
+  },
+  {
+    "agent": "P1",
+    "mode": "rect",
+    "world": "SMALL9",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.24,
+    "numIterations": 2
+  },
+  {
+    "agent": "P1",
+    "mode": "rect",
+    "world": "SMALL10",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.2,
+    "numIterations": 1
+  },
+  {
+    "agent": "P1",
+    "mode": "rect",
+    "world": "MEDIUM1",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.5714285714285714,
+    "numIterations": 3
+  },
+  {
+    "agent": "P1",
+    "mode": "rect",
+    "world": "MEDIUM2",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.46938775510204084,
+    "numIterations": 2
+  },
+  {
+    "agent": "P1",
+    "mode": "rect",
+    "world": "MEDIUM3",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.6938775510204082,
+    "numIterations": 4
+  },
+  {
+    "agent": "P1",
+    "mode": "rect",
+    "world": "MEDIUM4",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.5306122448979592,
+    "numIterations": 1
+  },
+  {
+    "agent": "P1",
+    "mode": "rect",
+    "world": "MEDIUM5",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.6326530612244898,
+    "numIterations": 2
+  },
+  {
+    "agent": "P1",
+    "mode": "rect",
+    "world": "MEDIUM6",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.3469387755102041,
+    "numIterations": 3
+  },
+  {
+    "agent": "P1",
+    "mode": "rect",
+    "world": "MEDIUM7",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.6326530612244898,
+    "numIterations": 1
+  },
+  {
+    "agent": "P1",
+    "mode": "rect",
+    "world": "MEDIUM8",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.5714285714285714,
+    "numIterations": 4
+  },
+  {
+    "agent": "P1",
+    "mode": "rect",
+    "world": "MEDIUM9",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.6530612244897959,
+    "numIterations": 4
+  },
+  {
+    "agent": "P1",
+    "mode": "rect",
+    "world": "MEDIUM10",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.8163265306122449,
+    "numIterations": 3
+  },
+  {
+    "agent": "P1",
+    "mode": "rect",
+    "world": "LARGE1",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.7407407407407407,
+    "numIterations": 4
+  },
+  {
+    "agent": "P1",
+    "mode": "rect",
+    "world": "LARGE2",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.7283950617283951,
+    "numIterations": 1
+  },
+  {
+    "agent": "P1",
+    "mode": "rect",
+    "world": "LARGE3",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.654320987654321,
+    "numIterations": 1
+  },
+  {
+    "agent": "P1",
+    "mode": "rect",
+    "world": "LARGE4",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.8024691358024691,
+    "numIterations": 2
+  },
+  {
+    "agent": "P1",
+    "mode": "rect",
+    "world": "LARGE5",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.8024691358024691,
+    "numIterations": 5
+  },
+  {
+    "agent": "P1",
+    "mode": "rect",
+    "world": "LARGE6",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.8148148148148148,
+    "numIterations": 1
+  },
+  {
+    "agent": "P1",
+    "mode": "rect",
+    "world": "LARGE7",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.8024691358024691,
+    "numIterations": 4
+  },
+  {
+    "agent": "P1",
+    "mode": "rect",
+    "world": "LARGE8",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.7407407407407407,
+    "numIterations": 5
+  },
+  {
+    "agent": "P1",
+    "mode": "rect",
+    "world": "LARGE9",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.4691358024691358,
+    "numIterations": 3
+  },
+  {
+    "agent": "P1",
+    "mode": "rect",
+    "world": "LARGE10",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.8765432098765432,
+    "numIterations": 4
+  },
+  {
+    "agent": "P1",
+    "mode": "tri",
+    "world": "TEST",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.2222222222222222,
+    "numIterations": 1
+  },
+  {
+    "agent": "P1",
+    "mode": "tri",
+    "world": "SMALL",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.72,
+    "numIterations": 1
+  },
+  {
+    "agent": "P1",
+    "mode": "tri",
+    "world": "MEDIUM",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.9591836734693877,
+    "numIterations": 1
+  },
+  {
+    "agent": "P1",
+    "mode": "hex",
+    "world": "TEST",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.2222222222222222,
+    "numIterations": 1
+  },
+  {
+    "agent": "P1",
+    "mode": "hex",
+    "world": "SMALL",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.64,
+    "numIterations": 2
+  },
+  {
+    "agent": "P1",
+    "mode": "hex",
+    "world": "MEDIUM",
+    "terminated": true,
+    "alive": false,
+    "percentageRemaining": 0.4897959183673469,
+    "numIterations": 3
+  },
+  {
+    "agent": "P2",
+    "mode": "rect",
+    "world": "TEST1",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.0,
+    "numIterations": 1
+  },
+  {
+    "agent": "P2",
+    "mode": "rect",
+    "world": "TEST2",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.0,
+    "numIterations": 1
+  },
+  {
+    "agent": "P2",
+    "mode": "rect",
+    "world": "TEST3",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.3333333333333333,
+    "numIterations": 1
+  },
+  {
+    "agent": "P2",
+    "mode": "rect",
+    "world": "TEST4",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.3333333333333333,
+    "numIterations": 1
+  },
+  {
+    "agent": "P2",
+    "mode": "rect",
+    "world": "TEST5",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.3333333333333333,
+    "numIterations": 1
+  },
+  {
+    "agent": "P2",
+    "mode": "rect",
+    "world": "TEST6",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.5555555555555556,
+    "numIterations": 1
+  },
+  {
+    "agent": "P2",
+    "mode": "rect",
+    "world": "SMALL1",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.24,
+    "numIterations": 2
+  },
+  {
+    "agent": "P2",
+    "mode": "rect",
+    "world": "SMALL2",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.0,
+    "numIterations": 2
+  },
+  {
+    "agent": "P2",
+    "mode": "rect",
+    "world": "SMALL3",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.72,
+    "numIterations": 1
+  },
+  {
+    "agent": "P2",
+    "mode": "rect",
+    "world": "SMALL4",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.32,
+    "numIterations": 3
+  },
+  {
+    "agent": "P2",
+    "mode": "rect",
+    "world": "SMALL5",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.36,
+    "numIterations": 2
+  },
+  {
+    "agent": "P2",
+    "mode": "rect",
+    "world": "SMALL6",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.0,
+    "numIterations": 2
+  },
+  {
+    "agent": "P2",
+    "mode": "rect",
+    "world": "SMALL7",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.0,
+    "numIterations": 5
+  },
+  {
+    "agent": "P2",
+    "mode": "rect",
+    "world": "SMALL8",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.08,
+    "numIterations": 3
+  },
+  {
+    "agent": "P2",
+    "mode": "rect",
+    "world": "SMALL9",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.2,
+    "numIterations": 3
+  },
+  {
+    "agent": "P2",
+    "mode": "rect",
+    "world": "SMALL10",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.04,
+    "numIterations": 2
+  },
+  {
+    "agent": "P2",
+    "mode": "rect",
+    "world": "MEDIUM1",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.4489795918367347,
+    "numIterations": 3
+  },
+  {
+    "agent": "P2",
+    "mode": "rect",
+    "world": "MEDIUM2",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.32653061224489793,
+    "numIterations": 3
+  },
+  {
+    "agent": "P2",
+    "mode": "rect",
+    "world": "MEDIUM3",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.7551020408163265,
+    "numIterations": 1
+  },
+  {
+    "agent": "P2",
+    "mode": "rect",
+    "world": "MEDIUM4",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.40816326530612246,
+    "numIterations": 3
+  },
+  {
+    "agent": "P2",
+    "mode": "rect",
+    "world": "MEDIUM5",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.7959183673469388,
+    "numIterations": 1
+  },
+  {
+    "agent": "P2",
+    "mode": "rect",
+    "world": "MEDIUM6",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.12244897959183673,
+    "numIterations": 7
+  },
+  {
+    "agent": "P2",
+    "mode": "rect",
+    "world": "MEDIUM7",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.6326530612244898,
+    "numIterations": 1
+  },
+  {
+    "agent": "P2",
+    "mode": "rect",
+    "world": "MEDIUM8",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.5918367346938775,
+    "numIterations": 2
+  },
+  {
+    "agent": "P2",
+    "mode": "rect",
+    "world": "MEDIUM9",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.0,
+    "numIterations": 7
+  },
+  {
+    "agent": "P2",
+    "mode": "rect",
+    "world": "MEDIUM10",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.20408163265306123,
+    "numIterations": 3
+  },
+  {
+    "agent": "P2",
+    "mode": "rect",
+    "world": "LARGE1",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.7777777777777778,
+    "numIterations": 1
+  },
+  {
+    "agent": "P2",
+    "mode": "rect",
+    "world": "LARGE2",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.654320987654321,
+    "numIterations": 3
+  },
+  {
+    "agent": "P2",
+    "mode": "rect",
+    "world": "LARGE3",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.13580246913580246,
+    "numIterations": 3
+  },
+  {
+    "agent": "P2",
+    "mode": "rect",
+    "world": "LARGE4",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.8148148148148148,
+    "numIterations": 1
+  },
+  {
+    "agent": "P2",
+    "mode": "rect",
+    "world": "LARGE5",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.6790123456790124,
+    "numIterations": 1
+  },
+  {
+    "agent": "P2",
+    "mode": "rect",
+    "world": "LARGE6",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.8148148148148148,
+    "numIterations": 1
+  },
+  {
+    "agent": "P2",
+    "mode": "rect",
+    "world": "LARGE7",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.49382716049382713,
+    "numIterations": 3
+  },
+  {
+    "agent": "P2",
+    "mode": "rect",
+    "world": "LARGE8",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.7901234567901234,
+    "numIterations": 1
+  },
+  {
+    "agent": "P2",
+    "mode": "rect",
+    "world": "LARGE9",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.24691358024691357,
+    "numIterations": 3
+  },
+  {
+    "agent": "P2",
+    "mode": "rect",
+    "world": "LARGE10",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.12345679012345678,
+    "numIterations": 4
+  },
+  {
+    "agent": "P2",
+    "mode": "tri",
+    "world": "TEST",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.0,
+    "numIterations": 2
+  },
+  {
+    "agent": "P2",
+    "mode": "tri",
+    "world": "SMALL",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.52,
+    "numIterations": 3
+  },
+  {
+    "agent": "P2",
+    "mode": "tri",
+    "world": "MEDIUM",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.5102040816326531,
+    "numIterations": 2
+  },
+  {
+    "agent": "P2",
+    "mode": "hex",
+    "world": "TEST",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.0,
+    "numIterations": 1
+  },
+  {
+    "agent": "P2",
+    "mode": "hex",
+    "world": "SMALL",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.36,
+    "numIterations": 3
+  },
+  {
+    "agent": "P2",
+    "mode": "hex",
+    "world": "MEDIUM",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.30612244897959184,
+    "numIterations": 2
+  },
+  {
+    "agent": "P3",
+    "mode": "rect",
+    "world": "TEST1",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.0,
+    "numIterations": 1
+  },
+  {
+    "agent": "P3",
+    "mode": "rect",
+    "world": "TEST2",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.0,
+    "numIterations": 1
+  },
+  {
+    "agent": "P3",
+    "mode": "rect",
+    "world": "TEST3",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.0,
+    "numIterations": 1
+  },
+  {
+    "agent": "P3",
+    "mode": "rect",
+    "world": "TEST4",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.0,
+    "numIterations": 1
+  },
+  {
+    "agent": "P3",
+    "mode": "rect",
+    "world": "TEST5",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.0,
+    "numIterations": 2
+  },
+  {
+    "agent": "P3",
+    "mode": "rect",
+    "world": "TEST6",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.5555555555555556,
+    "numIterations": 1
+  },
+  {
+    "agent": "P3",
+    "mode": "rect",
+    "world": "SMALL1",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.0,
+    "numIterations": 3
+  },
+  {
+    "agent": "P3",
+    "mode": "rect",
+    "world": "SMALL2",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.0,
+    "numIterations": 1
+  },
+  {
+    "agent": "P3",
+    "mode": "rect",
+    "world": "SMALL3",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.64,
+    "numIterations": 2
+  },
+  {
+    "agent": "P3",
+    "mode": "rect",
+    "world": "SMALL4",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.32,
+    "numIterations": 2
+  },
+  {
+    "agent": "P3",
+    "mode": "rect",
+    "world": "SMALL5",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.0,
+    "numIterations": 2
+  },
+  {
+    "agent": "P3",
+    "mode": "rect",
+    "world": "SMALL6",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.0,
+    "numIterations": 1
+  },
+  {
+    "agent": "P3",
+    "mode": "rect",
+    "world": "SMALL7",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.0,
+    "numIterations": 2
+  },
+  {
+    "agent": "P3",
+    "mode": "rect",
+    "world": "SMALL8",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.08,
+    "numIterations": 3
+  },
+  {
+    "agent": "P3",
+    "mode": "rect",
+    "world": "SMALL9",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.2,
+    "numIterations": 2
+  },
+  {
+    "agent": "P3",
+    "mode": "rect",
+    "world": "SMALL10",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.04,
+    "numIterations": 2
+  },
+  {
+    "agent": "P3",
+    "mode": "rect",
+    "world": "MEDIUM1",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.42857142857142855,
+    "numIterations": 2
+  },
+  {
+    "agent": "P3",
+    "mode": "rect",
+    "world": "MEDIUM2",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.32653061224489793,
+    "numIterations": 2
+  },
+  {
+    "agent": "P3",
+    "mode": "rect",
+    "world": "MEDIUM3",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.0,
+    "numIterations": 2
+  },
+  {
+    "agent": "P3",
+    "mode": "rect",
+    "world": "MEDIUM4",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.3673469387755102,
+    "numIterations": 2
+  },
+  {
+    "agent": "P3",
+    "mode": "rect",
+    "world": "MEDIUM5",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.08163265306122448,
+    "numIterations": 4
+  },
+  {
+    "agent": "P3",
+    "mode": "rect",
+    "world": "MEDIUM6",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.04081632653061224,
+    "numIterations": 3
+  },
+  {
+    "agent": "P3",
+    "mode": "rect",
+    "world": "MEDIUM7",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.12244897959183673,
+    "numIterations": 2
+  },
+  {
+    "agent": "P3",
+    "mode": "rect",
+    "world": "MEDIUM8",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.5102040816326531,
+    "numIterations": 2
+  },
+  {
+    "agent": "P3",
+    "mode": "rect",
+    "world": "MEDIUM9",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.0,
+    "numIterations": 3
+  },
+  {
+    "agent": "P3",
+    "mode": "rect",
+    "world": "MEDIUM10",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.0,
+    "numIterations": 2
+  },
+  {
+    "agent": "P3",
+    "mode": "rect",
+    "world": "LARGE1",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.7283950617283951,
+    "numIterations": 2
+  },
+  {
+    "agent": "P3",
+    "mode": "rect",
+    "world": "LARGE2",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.41975308641975306,
+    "numIterations": 6
+  },
+  {
+    "agent": "P3",
+    "mode": "rect",
+    "world": "LARGE3",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.13580246913580246,
+    "numIterations": 2
+  },
+  {
+    "agent": "P3",
+    "mode": "rect",
+    "world": "LARGE4",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.7407407407407407,
+    "numIterations": 2
+  },
+  {
+    "agent": "P3",
+    "mode": "rect",
+    "world": "LARGE5",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.35802469135802467,
+    "numIterations": 3
+  },
+  {
+    "agent": "P3",
+    "mode": "rect",
+    "world": "LARGE6",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.1111111111111111,
+    "numIterations": 5
+  },
+  {
+    "agent": "P3",
+    "mode": "rect",
+    "world": "LARGE7",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.07407407407407407,
+    "numIterations": 5
+  },
+  {
+    "agent": "P3",
+    "mode": "rect",
+    "world": "LARGE8",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.2345679012345679,
+    "numIterations": 3
+  },
+  {
+    "agent": "P3",
+    "mode": "rect",
+    "world": "LARGE9",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.24691358024691357,
+    "numIterations": 2
+  },
+  {
+    "agent": "P3",
+    "mode": "rect",
+    "world": "LARGE10",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.1111111111111111,
+    "numIterations": 4
+  },
+  {
+    "agent": "P3",
+    "mode": "tri",
+    "world": "TEST",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.0,
+    "numIterations": 2
+  },
+  {
+    "agent": "P3",
+    "mode": "tri",
+    "world": "SMALL",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.52,
+    "numIterations": 2
+  },
+  {
+    "agent": "P3",
+    "mode": "tri",
+    "world": "MEDIUM",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.5102040816326531,
+    "numIterations": 2
+  },
+  {
+    "agent": "P3",
+    "mode": "hex",
+    "world": "TEST",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.0,
+    "numIterations": 1
+  },
+  {
+    "agent": "P3",
+    "mode": "hex",
+    "world": "SMALL",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.36,
+    "numIterations": 2
+  },
+  {
+    "agent": "P3",
+    "mode": "hex",
+    "world": "MEDIUM",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.30612244897959184,
+    "numIterations": 2
+  },
+  {
+    "agent": "P4",
+    "mode": "rect",
+    "world": "TEST1",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.0,
+    "numIterations": 1
+  },
+  {
+    "agent": "P4",
+    "mode": "rect",
+    "world": "TEST2",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.0,
+    "numIterations": 1
+  },
+  {
+    "agent": "P4",
+    "mode": "rect",
+    "world": "TEST3",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.0,
+    "numIterations": 1
+  },
+  {
+    "agent": "P4",
+    "mode": "rect",
+    "world": "TEST4",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.0,
+    "numIterations": 1
+  },
+  {
+    "agent": "P4",
+    "mode": "rect",
+    "world": "TEST5",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.0,
+    "numIterations": 2
+  },
+  {
+    "agent": "P4",
+    "mode": "rect",
+    "world": "TEST6",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.5555555555555556,
+    "numIterations": 1
+  },
+  {
+    "agent": "P4",
+    "mode": "rect",
+    "world": "SMALL1",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.0,
+    "numIterations": 3
+  },
+  {
+    "agent": "P4",
+    "mode": "rect",
+    "world": "SMALL2",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.0,
+    "numIterations": 1
+  },
+  {
+    "agent": "P4",
+    "mode": "rect",
+    "world": "SMALL3",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.64,
+    "numIterations": 2
+  },
+  {
+    "agent": "P4",
+    "mode": "rect",
+    "world": "SMALL4",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.32,
+    "numIterations": 2
+  },
+  {
+    "agent": "P4",
+    "mode": "rect",
+    "world": "SMALL5",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.0,
+    "numIterations": 2
+  },
+  {
+    "agent": "P4",
+    "mode": "rect",
+    "world": "SMALL6",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.0,
+    "numIterations": 1
+  },
+  {
+    "agent": "P4",
+    "mode": "rect",
+    "world": "SMALL7",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.0,
+    "numIterations": 2
+  },
+  {
+    "agent": "P4",
+    "mode": "rect",
+    "world": "SMALL8",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.08,
+    "numIterations": 3
+  },
+  {
+    "agent": "P4",
+    "mode": "rect",
+    "world": "SMALL9",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.2,
+    "numIterations": 2
+  },
+  {
+    "agent": "P4",
+    "mode": "rect",
+    "world": "SMALL10",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.04,
+    "numIterations": 2
+  },
+  {
+    "agent": "P4",
+    "mode": "rect",
+    "world": "MEDIUM1",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.42857142857142855,
+    "numIterations": 2
+  },
+  {
+    "agent": "P4",
+    "mode": "rect",
+    "world": "MEDIUM2",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.32653061224489793,
+    "numIterations": 2
+  },
+  {
+    "agent": "P4",
+    "mode": "rect",
+    "world": "MEDIUM3",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.0,
+    "numIterations": 2
+  },
+  {
+    "agent": "P4",
+    "mode": "rect",
+    "world": "MEDIUM4",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.3673469387755102,
+    "numIterations": 2
+  },
+  {
+    "agent": "P4",
+    "mode": "rect",
+    "world": "MEDIUM5",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.08163265306122448,
+    "numIterations": 4
+  },
+  {
+    "agent": "P4",
+    "mode": "rect",
+    "world": "MEDIUM6",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.04081632653061224,
+    "numIterations": 3
+  },
+  {
+    "agent": "P4",
+    "mode": "rect",
+    "world": "MEDIUM7",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.12244897959183673,
+    "numIterations": 2
+  },
+  {
+    "agent": "P4",
+    "mode": "rect",
+    "world": "MEDIUM8",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.5102040816326531,
+    "numIterations": 2
+  },
+  {
+    "agent": "P4",
+    "mode": "rect",
+    "world": "MEDIUM9",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.0,
+    "numIterations": 3
+  },
+  {
+    "agent": "P4",
+    "mode": "rect",
+    "world": "MEDIUM10",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.0,
+    "numIterations": 2
+  },
+  {
+    "agent": "P4",
+    "mode": "rect",
+    "world": "LARGE1",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.7283950617283951,
+    "numIterations": 2
+  },
+  {
+    "agent": "P4",
+    "mode": "rect",
+    "world": "LARGE2",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.41975308641975306,
+    "numIterations": 6
+  },
+  {
+    "agent": "P4",
+    "mode": "rect",
+    "world": "LARGE3",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.13580246913580246,
+    "numIterations": 2
+  },
+  {
+    "agent": "P4",
+    "mode": "rect",
+    "world": "LARGE4",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.7407407407407407,
+    "numIterations": 2
+  },
+  {
+    "agent": "P4",
+    "mode": "rect",
+    "world": "LARGE5",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.35802469135802467,
+    "numIterations": 3
+  },
+  {
+    "agent": "P4",
+    "mode": "rect",
+    "world": "LARGE6",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.1111111111111111,
+    "numIterations": 5
+  },
+  {
+    "agent": "P4",
+    "mode": "rect",
+    "world": "LARGE7",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.07407407407407407,
+    "numIterations": 5
+  },
+  {
+    "agent": "P4",
+    "mode": "rect",
+    "world": "LARGE8",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.2345679012345679,
+    "numIterations": 3
+  },
+  {
+    "agent": "P4",
+    "mode": "rect",
+    "world": "LARGE9",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.24691358024691357,
+    "numIterations": 2
+  },
+  {
+    "agent": "P4",
+    "mode": "rect",
+    "world": "LARGE10",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.1111111111111111,
+    "numIterations": 4
+  },
+  {
+    "agent": "P4",
+    "mode": "tri",
+    "world": "TEST",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.0,
+    "numIterations": 2
+  },
+  {
+    "agent": "P4",
+    "mode": "tri",
+    "world": "SMALL",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.52,
+    "numIterations": 2
+  },
+  {
+    "agent": "P4",
+    "mode": "tri",
+    "world": "MEDIUM",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.5102040816326531,
+    "numIterations": 2
+  },
+  {
+    "agent": "P4",
+    "mode": "hex",
+    "world": "TEST",
+    "terminated": true,
+    "alive": true,
+    "percentageRemaining": 0.0,
+    "numIterations": 1
+  },
+  {
+    "agent": "P4",
+    "mode": "hex",
+    "world": "SMALL",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.36,
+    "numIterations": 2
+  },
+  {
+    "agent": "P4",
+    "mode": "hex",
+    "world": "MEDIUM",
+    "terminated": false,
+    "alive": true,
+    "percentageRemaining": 0.30612244897959184,
+    "numIterations": 2
+  }
+]

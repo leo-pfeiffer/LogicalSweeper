@@ -1,0 +1,50 @@
+[
+  {
+    "agent": "P1",
+    "mode": "rect"
+  },
+  {
+    "agent": "P1",
+    "mode": "tri"
+  },
+  {
+    "agent": "P1",
+    "mode": "hex"
+  },
+  {
+    "agent": "P2",
+    "mode": "rect"
+  },
+  {
+    "agent": "P2",
+    "mode": "tri"
+  },
+  {
+    "agent": "P2",
+    "mode": "hex"
+  },
+  {
+    "agent": "P3",
+    "mode": "rect"
+  },
+  {
+    "agent": "P3",
+    "mode": "tri"
+  },
+  {
+    "agent": "P3",
+    "mode": "hex"
+  },
+  {
+    "agent": "P4",
+    "mode": "rect"
+  },
+  {
+    "agent": "P4",
+    "mode": "tri"
+  },
+  {
+    "agent": "P4",
+    "mode": "hex"
+  }
+]

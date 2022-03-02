@@ -262,4 +262,12 @@ public class ObscuredSweeper {
     public String getWorldType() {
         return this.world.getClass().getSimpleName();
     }
+
+
+    /**
+     * Returns the name of the world
+     *
+     * @return The name of the world.
+     */
+    public String getWorldName() {return this.world.name();}
 }
