@@ -2,6 +2,9 @@ package model.board;
 
 import java.util.Objects;
 
+/**
+ * Wrapper for the coordinates of a two-dimensional map
+ * */
 public class Coord {
 
     private final int row;

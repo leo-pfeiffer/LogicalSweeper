@@ -2,6 +2,9 @@ package model.board;
 
 import java.util.HashSet;
 
+/**
+ * Enum for the possible Tokens of the ObscuredSweeper game
+ * */
 public enum Token {
 
     DANGER('*'),

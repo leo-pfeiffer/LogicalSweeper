@@ -2,6 +2,9 @@ package model.board;
 
 import java.util.ArrayList;
 
+/**
+ * GameBoardUtils implementation for triangular grids
+ * */
 public class TriGBU extends GameBoardUtils {
 
     public TriGBU(char[][] map) {

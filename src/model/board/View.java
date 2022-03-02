@@ -2,6 +2,9 @@ package model.board;
 
 import java.util.ArrayList;
 
+/**
+ * Agent's view of a world map.
+ * */
 public class View implements CharMap {
 
     private final char[][] map;
