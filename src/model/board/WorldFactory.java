@@ -10,7 +10,7 @@ public class WorldFactory {
             case "tri":
                 return TriWorld.valueOf(worldName);
             case "hex":
-                throw new RuntimeException("Not implemented yet.");
+                return HexWorld.valueOf(worldName);
             default:
                 throw new IllegalArgumentException("Unknown world mode: " + mode);
         }

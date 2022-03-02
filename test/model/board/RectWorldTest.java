@@ -61,4 +61,11 @@ public class RectWorldTest {
         assertTrue(coords3List.contains(new Coord(1, 1)));
         assertTrue(coords3List.contains(new Coord(1, 2)));
     }
+
+    @Test
+    public void testValidity() {
+        for (World w : RectWorld.values()) {
+            assertTrue(w.validate());
+        }
+    }
 }

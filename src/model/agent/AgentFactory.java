@@ -3,6 +3,7 @@ package model.agent;
 import delegate.ObscuredSweeper;
 import logic.CNFKnowledgeBase;
 import logic.DNFKnowledgeBase;
+import model.board.HexWorld;
 import model.board.TriWorld;
 import model.board.View;
 
@@ -32,7 +33,7 @@ public class AgentFactory {
             case "P5":
                 // todo assert type of world.
                 String worldType = game.getWorldType();
-                if (worldType.equals(TriWorld.class.getSimpleName())) {
+                if (worldType.equals(TriWorld.class.getSimpleName()) || worldType.equals(HexWorld.class.getSimpleName())) {
                     return new IntermediateAgent(game, view, new CNFKnowledgeBase(view));
                 }
                  else {

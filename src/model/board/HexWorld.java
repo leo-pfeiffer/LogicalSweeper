@@ -6,33 +6,33 @@ import java.util.ArrayList;
  * Worlds for triangular grids.
  * Two hints are given at indexes [0][0] and [length/2][length/2]
  * */
-public enum TriWorld implements World {
+public enum HexWorld implements World {
 
 	// sps ok
 	TEST(new char[][] {
-			{'0', '0', '1'},
-			{'0', '1', 'm'},
-			{'m', '1', 'b'}
+			{'0', '1', 'b'},
+			{'0', '2', 'm'},
+			{'1', 'm', '2'}
 	}),
 
 	// sps not ok
 	SMALL(new char[][] {
-			{'0', '1', 'm', 'b', '0'},
-			{'0', '1', '1', 'b', '0'},
-			{'1', 'm', '3', 'm', '1'},
-			{'0', '1', 'm', '2', '0'},
-			{'m', '1', '1', 'm', '1'}
+			{'0', '1', 'b', '2', 'b'},
+			{'0', '2', 'm', '3', 'm'},
+			{'1', 'm', '4', 'm', '2'},
+			{'1', '4', 'm', '4', '1'},
+			{'1', 'm', 'm', 'm', '1'}
 	}),
 
 	// sps not ok
 	MEDIUM(new char[][] {
-			{'1', 'm', '1', '0', '1', '1', 'm'},
-			{'0', '1', '0', '1', 'm', '1', '1'},
-			{'1', 'm', '1', '0', '0', '0', '0'},
-			{'1', 'm', '1', '0', '0', '0', '0'},
-			{'0', '2', 'm', '1', '0', '0', '0'},
-			{'1', 'm', '3', 'm', '2', 'm', '1'},
-			{'0', '2', 'm', '2', '0', '1', '0'}
+			{'0', '1', 'b', '2', 'b', '1', 'b'},
+			{'0', '1', 'm', '2', 'm', '2', '0'},
+			{'0', '0', '1', '0', '2', 'm', '2'},
+			{'0', '1', '0', '0', '1', '3', 'm'},
+			{'1', 'm', '2', '1', '1', 'm', '2'},
+			{'1', '3', 'm', '2', '1', '2', '1'},
+			{'1', 'm', '3', 'm', '2', 'm', '1'}
 	}),
 	;
 
@@ -41,10 +41,10 @@ public enum TriWorld implements World {
 	private final int size;
 	private final GameBoardUtils gbu;
 
-	TriWorld(char[][] map) {
+	HexWorld(char[][] map) {
 		this.map = map;
 		this.size = map.length;
-		this.gbu = new TriGBU(this.map);
+		this.gbu = new HexGBU(this.map);
 	}
 
 	@Override

@@ -89,4 +89,21 @@ public abstract class GameBoardUtils {
         int mineCount = this.countOccurrence(Token.MINE.getChar());
         return new View(view, mineCount, viewGBU);
     }
+
+    public boolean validate() {
+        for (Coord cell : this.getAllCoords()) {
+            if (Character.isDigit(this.getCell(cell))) {
+                int numExpected = Character.getNumericValue(this.getCell(cell));
+                ArrayList<Coord> nbrs = this.getAdjacentCoords(cell);
+                int numActual = 0;
+                for (Coord nbr : nbrs) {
+                    if (this.cellIsToken(Token.MINE.getChar(), nbr)) {
+                        numActual++;
+                    }
+                }
+                if (numExpected != numActual) return false;
+            }
+        }
+        return true;
+    }
 }

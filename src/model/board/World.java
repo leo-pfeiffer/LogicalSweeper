@@ -5,4 +5,5 @@ public interface World extends CharMap {
     char[][] getMap();
     View createNewView();
     int countMines();
+    boolean validate();
 }

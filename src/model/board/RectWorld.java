@@ -114,4 +114,10 @@ public enum RectWorld implements World {
 	public int countMines() {
 		return gbu.countOccurrence(Token.MINE.getChar());
 	}
+
+	@Override
+	public boolean validate() {
+		return this.gbu.validate();
+	}
+
 }
