@@ -30,8 +30,9 @@ public class AgentFactory {
                 return new IntermediateAgent(game, view, new DNFKnowledgeBase(view));
             case "P4":
                 return new IntermediateAgent(game, view, new CNFKnowledgeBase(view));
+
+            // todo get rid of P5 since we can just add the worlds to any agent
             case "P5":
-                // todo assert type of world.
                 String worldType = game.getWorldType();
                 if (worldType.equals(TriWorld.class.getSimpleName()) || worldType.equals(HexWorld.class.getSimpleName())) {
                     return new IntermediateAgent(game, view, new CNFKnowledgeBase(view));
