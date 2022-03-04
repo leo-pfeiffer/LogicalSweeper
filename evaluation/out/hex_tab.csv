@@ -1,6 +1,6 @@
-,terminated,terminated,terminated,terminated,alive,alive,alive,alive
-agent,P1,P2,P3,P4,P1,P2,P3,P4
+agent,P1,P1,P2,P2,P3,P3,P4,P4
+,alive,terminated,alive,terminated,alive,terminated,alive,terminated
 world,,,,,,,,
-TEST,True,True,True,True,False,True,True,True
-SMALL,True,False,False,False,False,True,True,True
-MEDIUM,True,False,False,False,False,True,True,True
+TEST,False,True,True,True,True,True,True,True
+SMALL,False,True,True,False,True,False,True,False
+MEDIUM,False,True,True,False,True,False,True,False

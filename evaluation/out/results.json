@@ -6,7 +6,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.3333333333333333,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 0
   },
   {
     "agent": "P1",
@@ -15,7 +16,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.5555555555555556,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 3
   },
   {
     "agent": "P1",
@@ -24,7 +26,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.1111111111111111,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 0
   },
   {
     "agent": "P1",
@@ -33,7 +36,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.2222222222222222,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 0
   },
   {
     "agent": "P1",
@@ -42,7 +46,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.2222222222222222,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 0
   },
   {
     "agent": "P1",
@@ -51,7 +56,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.2222222222222222,
-    "numIterations": 3
+    "numIterations": 3,
+    "runTime": 0
   },
   {
     "agent": "P1",
@@ -60,7 +66,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.32,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 0
   },
   {
     "agent": "P1",
@@ -69,7 +76,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.52,
-    "numIterations": 3
+    "numIterations": 3,
+    "runTime": 1
   },
   {
     "agent": "P1",
@@ -78,7 +86,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.72,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 0
   },
   {
     "agent": "P1",
@@ -87,7 +96,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.48,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 0
   },
   {
     "agent": "P1",
@@ -96,7 +106,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.2,
-    "numIterations": 3
+    "numIterations": 3,
+    "runTime": 0
   },
   {
     "agent": "P1",
@@ -105,7 +116,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.16,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 0
   },
   {
     "agent": "P1",
@@ -114,7 +126,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.76,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 0
   },
   {
     "agent": "P1",
@@ -123,7 +136,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.56,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 0
   },
   {
     "agent": "P1",
@@ -132,7 +146,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.24,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 0
   },
   {
     "agent": "P1",
@@ -141,7 +156,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.2,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 1
   },
   {
     "agent": "P1",
@@ -150,7 +166,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.5714285714285714,
-    "numIterations": 3
+    "numIterations": 3,
+    "runTime": 1
   },
   {
     "agent": "P1",
@@ -159,7 +176,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.46938775510204084,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 1
   },
   {
     "agent": "P1",
@@ -168,7 +186,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.6938775510204082,
-    "numIterations": 4
+    "numIterations": 4,
+    "runTime": 0
   },
   {
     "agent": "P1",
@@ -177,7 +196,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.5306122448979592,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 0
   },
   {
     "agent": "P1",
@@ -186,7 +206,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.6326530612244898,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 0
   },
   {
     "agent": "P1",
@@ -195,7 +216,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.3469387755102041,
-    "numIterations": 3
+    "numIterations": 3,
+    "runTime": 0
   },
   {
     "agent": "P1",
@@ -204,7 +226,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.6326530612244898,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 0
   },
   {
     "agent": "P1",
@@ -213,7 +236,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.5714285714285714,
-    "numIterations": 4
+    "numIterations": 4,
+    "runTime": 0
   },
   {
     "agent": "P1",
@@ -222,7 +246,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.6530612244897959,
-    "numIterations": 4
+    "numIterations": 4,
+    "runTime": 1
   },
   {
     "agent": "P1",
@@ -231,7 +256,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.8163265306122449,
-    "numIterations": 3
+    "numIterations": 3,
+    "runTime": 0
   },
   {
     "agent": "P1",
@@ -240,7 +266,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.7407407407407407,
-    "numIterations": 4
+    "numIterations": 4,
+    "runTime": 0
   },
   {
     "agent": "P1",
@@ -249,7 +276,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.7283950617283951,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 0
   },
   {
     "agent": "P1",
@@ -258,7 +286,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.654320987654321,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 0
   },
   {
     "agent": "P1",
@@ -267,7 +296,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.8024691358024691,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 0
   },
   {
     "agent": "P1",
@@ -276,7 +306,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.8024691358024691,
-    "numIterations": 5
+    "numIterations": 5,
+    "runTime": 0
   },
   {
     "agent": "P1",
@@ -285,7 +316,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.8148148148148148,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 0
   },
   {
     "agent": "P1",
@@ -294,7 +326,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.8024691358024691,
-    "numIterations": 4
+    "numIterations": 4,
+    "runTime": 0
   },
   {
     "agent": "P1",
@@ -303,7 +336,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.7407407407407407,
-    "numIterations": 5
+    "numIterations": 5,
+    "runTime": 0
   },
   {
     "agent": "P1",
@@ -312,7 +346,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.4691358024691358,
-    "numIterations": 3
+    "numIterations": 3,
+    "runTime": 0
   },
   {
     "agent": "P1",
@@ -321,7 +356,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.8765432098765432,
-    "numIterations": 4
+    "numIterations": 4,
+    "runTime": 0
   },
   {
     "agent": "P1",
@@ -330,7 +366,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.2222222222222222,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 1
   },
   {
     "agent": "P1",
@@ -339,7 +376,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.72,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 0
   },
   {
     "agent": "P1",
@@ -348,7 +386,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.9591836734693877,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 0
   },
   {
     "agent": "P1",
@@ -357,7 +396,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.2222222222222222,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 0
   },
   {
     "agent": "P1",
@@ -366,7 +406,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.64,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 1
   },
   {
     "agent": "P1",
@@ -375,7 +416,8 @@
     "terminated": true,
     "alive": false,
     "percentageRemaining": 0.4897959183673469,
-    "numIterations": 3
+    "numIterations": 3,
+    "runTime": 0
   },
   {
     "agent": "P2",
@@ -384,7 +426,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.0,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 0
   },
   {
     "agent": "P2",
@@ -393,7 +436,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.0,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 0
   },
   {
     "agent": "P2",
@@ -402,7 +446,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.3333333333333333,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 0
   },
   {
     "agent": "P2",
@@ -411,7 +456,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.3333333333333333,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 0
   },
   {
     "agent": "P2",
@@ -420,7 +466,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.3333333333333333,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 0
   },
   {
     "agent": "P2",
@@ -429,7 +476,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.5555555555555556,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 0
   },
   {
     "agent": "P2",
@@ -438,7 +486,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.24,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 1
   },
   {
     "agent": "P2",
@@ -447,7 +496,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.0,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 0
   },
   {
     "agent": "P2",
@@ -456,7 +506,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.72,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 1
   },
   {
     "agent": "P2",
@@ -465,7 +516,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.32,
-    "numIterations": 3
+    "numIterations": 3,
+    "runTime": 0
   },
   {
     "agent": "P2",
@@ -474,7 +526,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.36,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 0
   },
   {
     "agent": "P2",
@@ -483,7 +536,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.0,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 0
   },
   {
     "agent": "P2",
@@ -492,7 +546,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.0,
-    "numIterations": 5
+    "numIterations": 5,
+    "runTime": 1
   },
   {
     "agent": "P2",
@@ -501,7 +556,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.08,
-    "numIterations": 3
+    "numIterations": 3,
+    "runTime": 0
   },
   {
     "agent": "P2",
@@ -510,7 +566,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.2,
-    "numIterations": 3
+    "numIterations": 3,
+    "runTime": 1
   },
   {
     "agent": "P2",
@@ -519,7 +576,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.04,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 0
   },
   {
     "agent": "P2",
@@ -528,7 +586,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.4489795918367347,
-    "numIterations": 3
+    "numIterations": 3,
+    "runTime": 1
   },
   {
     "agent": "P2",
@@ -537,7 +596,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.32653061224489793,
-    "numIterations": 3
+    "numIterations": 3,
+    "runTime": 1
   },
   {
     "agent": "P2",
@@ -546,7 +606,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.7551020408163265,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 1
   },
   {
     "agent": "P2",
@@ -555,7 +616,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.40816326530612246,
-    "numIterations": 3
+    "numIterations": 3,
+    "runTime": 1
   },
   {
     "agent": "P2",
@@ -564,7 +626,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.7959183673469388,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 0
   },
   {
     "agent": "P2",
@@ -573,7 +636,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.12244897959183673,
-    "numIterations": 7
+    "numIterations": 7,
+    "runTime": 0
   },
   {
     "agent": "P2",
@@ -582,7 +646,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.6326530612244898,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 0
   },
   {
     "agent": "P2",
@@ -591,7 +656,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.5918367346938775,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 0
   },
   {
     "agent": "P2",
@@ -600,7 +666,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.0,
-    "numIterations": 7
+    "numIterations": 7,
+    "runTime": 0
   },
   {
     "agent": "P2",
@@ -609,7 +676,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.20408163265306123,
-    "numIterations": 3
+    "numIterations": 3,
+    "runTime": 0
   },
   {
     "agent": "P2",
@@ -618,7 +686,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.7777777777777778,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 0
   },
   {
     "agent": "P2",
@@ -627,7 +696,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.654320987654321,
-    "numIterations": 3
+    "numIterations": 3,
+    "runTime": 1
   },
   {
     "agent": "P2",
@@ -636,7 +706,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.13580246913580246,
-    "numIterations": 3
+    "numIterations": 3,
+    "runTime": 1
   },
   {
     "agent": "P2",
@@ -645,7 +716,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.8148148148148148,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 1
   },
   {
     "agent": "P2",
@@ -654,7 +726,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.6790123456790124,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 0
   },
   {
     "agent": "P2",
@@ -663,7 +736,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.8148148148148148,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 0
   },
   {
     "agent": "P2",
@@ -672,7 +746,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.49382716049382713,
-    "numIterations": 3
+    "numIterations": 3,
+    "runTime": 1
   },
   {
     "agent": "P2",
@@ -681,7 +756,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.7901234567901234,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 1
   },
   {
     "agent": "P2",
@@ -690,7 +766,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.24691358024691357,
-    "numIterations": 3
+    "numIterations": 3,
+    "runTime": 0
   },
   {
     "agent": "P2",
@@ -699,7 +776,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.12345679012345678,
-    "numIterations": 4
+    "numIterations": 4,
+    "runTime": 0
   },
   {
     "agent": "P2",
@@ -708,7 +786,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.0,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 0
   },
   {
     "agent": "P2",
@@ -717,7 +796,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.52,
-    "numIterations": 3
+    "numIterations": 3,
+    "runTime": 0
   },
   {
     "agent": "P2",
@@ -726,7 +806,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.5102040816326531,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 0
   },
   {
     "agent": "P2",
@@ -735,7 +816,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.0,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 0
   },
   {
     "agent": "P2",
@@ -744,7 +826,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.36,
-    "numIterations": 3
+    "numIterations": 3,
+    "runTime": 0
   },
   {
     "agent": "P2",
@@ -753,7 +836,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.30612244897959184,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 0
   },
   {
     "agent": "P3",
@@ -762,7 +846,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.0,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 0
   },
   {
     "agent": "P3",
@@ -771,7 +856,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.0,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 0
   },
   {
     "agent": "P3",
@@ -780,7 +866,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.0,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 27
   },
   {
     "agent": "P3",
@@ -789,7 +876,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.0,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 3
   },
   {
     "agent": "P3",
@@ -798,7 +886,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.0,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 4
   },
   {
     "agent": "P3",
@@ -807,7 +896,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.5555555555555556,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 11
   },
   {
     "agent": "P3",
@@ -816,7 +906,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.0,
-    "numIterations": 3
+    "numIterations": 3,
+    "runTime": 7
   },
   {
     "agent": "P3",
@@ -825,7 +916,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.0,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 2
   },
   {
     "agent": "P3",
@@ -834,7 +926,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.64,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 24
   },
   {
     "agent": "P3",
@@ -843,7 +936,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.32,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 8
   },
   {
     "agent": "P3",
@@ -852,7 +946,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.0,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 4
   },
   {
     "agent": "P3",
@@ -861,7 +956,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.0,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 0
   },
   {
     "agent": "P3",
@@ -870,7 +966,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.0,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 3
   },
   {
     "agent": "P3",
@@ -879,7 +976,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.08,
-    "numIterations": 3
+    "numIterations": 3,
+    "runTime": 4
   },
   {
     "agent": "P3",
@@ -888,7 +986,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.2,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 6
   },
   {
     "agent": "P3",
@@ -897,7 +996,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.04,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 1
   },
   {
     "agent": "P3",
@@ -906,7 +1006,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.42857142857142855,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 24
   },
   {
     "agent": "P3",
@@ -915,7 +1016,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.32653061224489793,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 6
   },
   {
     "agent": "P3",
@@ -924,7 +1026,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.0,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 8
   },
   {
     "agent": "P3",
@@ -933,7 +1036,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.3673469387755102,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 7
   },
   {
     "agent": "P3",
@@ -942,7 +1046,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.08163265306122448,
-    "numIterations": 4
+    "numIterations": 4,
+    "runTime": 63
   },
   {
     "agent": "P3",
@@ -951,7 +1056,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.04081632653061224,
-    "numIterations": 3
+    "numIterations": 3,
+    "runTime": 5
   },
   {
     "agent": "P3",
@@ -960,7 +1066,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.12244897959183673,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 5
   },
   {
     "agent": "P3",
@@ -969,7 +1076,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.5102040816326531,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 22
   },
   {
     "agent": "P3",
@@ -978,7 +1086,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.0,
-    "numIterations": 3
+    "numIterations": 3,
+    "runTime": 46
   },
   {
     "agent": "P3",
@@ -987,7 +1096,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.0,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 5
   },
   {
     "agent": "P3",
@@ -996,7 +1106,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.7283950617283951,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 151
   },
   {
     "agent": "P3",
@@ -1005,7 +1116,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.41975308641975306,
-    "numIterations": 6
+    "numIterations": 6,
+    "runTime": 84
   },
   {
     "agent": "P3",
@@ -1014,7 +1126,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.13580246913580246,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 9
   },
   {
     "agent": "P3",
@@ -1023,7 +1136,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.7407407407407407,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 633
   },
   {
     "agent": "P3",
@@ -1032,7 +1146,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.35802469135802467,
-    "numIterations": 3
+    "numIterations": 3,
+    "runTime": 52
   },
   {
     "agent": "P3",
@@ -1041,7 +1156,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.1111111111111111,
-    "numIterations": 5
+    "numIterations": 5,
+    "runTime": 84
   },
   {
     "agent": "P3",
@@ -1050,7 +1166,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.07407407407407407,
-    "numIterations": 5
+    "numIterations": 5,
+    "runTime": 33
   },
   {
     "agent": "P3",
@@ -1059,7 +1176,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.2345679012345679,
-    "numIterations": 3
+    "numIterations": 3,
+    "runTime": 97
   },
   {
     "agent": "P3",
@@ -1068,7 +1186,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.24691358024691357,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 10
   },
   {
     "agent": "P3",
@@ -1077,7 +1196,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.1111111111111111,
-    "numIterations": 4
+    "numIterations": 4,
+    "runTime": 11
   },
   {
     "agent": "P3",
@@ -1086,7 +1206,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.0,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 0
   },
   {
     "agent": "P3",
@@ -1095,7 +1216,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.52,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 1
   },
   {
     "agent": "P3",
@@ -1104,7 +1226,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.5102040816326531,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 4
   },
   {
     "agent": "P3",
@@ -1113,7 +1236,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.0,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 0
   },
   {
     "agent": "P3",
@@ -1122,7 +1246,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.36,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 1
   },
   {
     "agent": "P3",
@@ -1131,7 +1256,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.30612244897959184,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 4
   },
   {
     "agent": "P4",
@@ -1140,7 +1266,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.0,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 0
   },
   {
     "agent": "P4",
@@ -1149,7 +1276,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.0,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 0
   },
   {
     "agent": "P4",
@@ -1158,7 +1286,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.0,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 21
   },
   {
     "agent": "P4",
@@ -1167,7 +1296,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.0,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 1
   },
   {
     "agent": "P4",
@@ -1176,7 +1306,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.0,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 1
   },
   {
     "agent": "P4",
@@ -1185,7 +1316,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.5555555555555556,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 3
   },
   {
     "agent": "P4",
@@ -1194,7 +1326,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.0,
-    "numIterations": 3
+    "numIterations": 3,
+    "runTime": 2
   },
   {
     "agent": "P4",
@@ -1203,7 +1336,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.0,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 0
   },
   {
     "agent": "P4",
@@ -1212,7 +1346,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.64,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 16
   },
   {
     "agent": "P4",
@@ -1221,7 +1356,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.32,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 5
   },
   {
     "agent": "P4",
@@ -1230,7 +1366,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.0,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 4
   },
   {
     "agent": "P4",
@@ -1239,7 +1376,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.0,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 0
   },
   {
     "agent": "P4",
@@ -1248,7 +1386,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.0,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 1
   },
   {
     "agent": "P4",
@@ -1257,7 +1396,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.08,
-    "numIterations": 3
+    "numIterations": 3,
+    "runTime": 3
   },
   {
     "agent": "P4",
@@ -1266,7 +1406,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.2,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 3
   },
   {
     "agent": "P4",
@@ -1275,7 +1416,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.04,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 0
   },
   {
     "agent": "P4",
@@ -1284,7 +1426,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.42857142857142855,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 15
   },
   {
     "agent": "P4",
@@ -1293,7 +1436,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.32653061224489793,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 8
   },
   {
     "agent": "P4",
@@ -1302,7 +1446,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.0,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 4
   },
   {
     "agent": "P4",
@@ -1311,7 +1456,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.3673469387755102,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 12
   },
   {
     "agent": "P4",
@@ -1320,7 +1466,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.08163265306122448,
-    "numIterations": 4
+    "numIterations": 4,
+    "runTime": 7
   },
   {
     "agent": "P4",
@@ -1329,7 +1476,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.04081632653061224,
-    "numIterations": 3
+    "numIterations": 3,
+    "runTime": 4
   },
   {
     "agent": "P4",
@@ -1338,7 +1486,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.12244897959183673,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 5
   },
   {
     "agent": "P4",
@@ -1347,7 +1496,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.5102040816326531,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 13
   },
   {
     "agent": "P4",
@@ -1356,7 +1506,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.0,
-    "numIterations": 3
+    "numIterations": 3,
+    "runTime": 5
   },
   {
     "agent": "P4",
@@ -1365,7 +1516,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.0,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 2
   },
   {
     "agent": "P4",
@@ -1374,7 +1526,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.7283950617283951,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 29
   },
   {
     "agent": "P4",
@@ -1383,7 +1536,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.41975308641975306,
-    "numIterations": 6
+    "numIterations": 6,
+    "runTime": 56
   },
   {
     "agent": "P4",
@@ -1392,7 +1546,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.13580246913580246,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 14
   },
   {
     "agent": "P4",
@@ -1401,7 +1556,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.7407407407407407,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 32
   },
   {
     "agent": "P4",
@@ -1410,7 +1566,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.35802469135802467,
-    "numIterations": 3
+    "numIterations": 3,
+    "runTime": 24
   },
   {
     "agent": "P4",
@@ -1419,7 +1576,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.1111111111111111,
-    "numIterations": 5
+    "numIterations": 5,
+    "runTime": 21
   },
   {
     "agent": "P4",
@@ -1428,7 +1586,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.07407407407407407,
-    "numIterations": 5
+    "numIterations": 5,
+    "runTime": 16
   },
   {
     "agent": "P4",
@@ -1437,7 +1596,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.2345679012345679,
-    "numIterations": 3
+    "numIterations": 3,
+    "runTime": 15
   },
   {
     "agent": "P4",
@@ -1446,7 +1606,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.24691358024691357,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 10
   },
   {
     "agent": "P4",
@@ -1455,7 +1616,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.1111111111111111,
-    "numIterations": 4
+    "numIterations": 4,
+    "runTime": 10
   },
   {
     "agent": "P4",
@@ -1464,7 +1626,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.0,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 0
   },
   {
     "agent": "P4",
@@ -1473,7 +1636,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.52,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 4
   },
   {
     "agent": "P4",
@@ -1482,7 +1646,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.5102040816326531,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 8
   },
   {
     "agent": "P4",
@@ -1491,7 +1656,8 @@
     "terminated": true,
     "alive": true,
     "percentageRemaining": 0.0,
-    "numIterations": 1
+    "numIterations": 1,
+    "runTime": 0
   },
   {
     "agent": "P4",
@@ -1500,7 +1666,8 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.36,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 2
   },
   {
     "agent": "P4",
@@ -1509,6 +1676,7 @@
     "terminated": false,
     "alive": true,
     "percentageRemaining": 0.30612244897959184,
-    "numIterations": 2
+    "numIterations": 2,
+    "runTime": 5
   }
 ]

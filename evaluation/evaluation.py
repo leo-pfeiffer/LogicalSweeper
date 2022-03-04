@@ -89,7 +89,7 @@ def get_reindex_indices(values, mode):
     return indices
 
 
-def make_num_iterations_plot(df, mode):
+def make_num_iterations(df, mode):
     df_filter = filter_df(df, 'mode', [mode])[['world', 'agent', 'numIterations']].copy()
     indices = get_reindex_indices(df_filter.world.values, mode)
     df_filter = filter_df(df_filter, 'world', indices).copy()
@@ -97,16 +97,32 @@ def make_num_iterations_plot(df, mode):
     df2 = df_filter.pivot(index='world', columns='agent', values='numIterations')
     df2 = df2.reindex(indices)
 
-    create_plot(df2, mode + '_num_iterations', "Number of iterations", " ")
+    name = mode + '_num_iterations'
+    num_analysis(df2, name)
 
-def make_perc_remaining_plot(df, mode):
+    create_plot(df2, name, "Number of iterations", " ")
+
+def make_perc_remaining(df, mode):
     df_filter = filter_df(df, 'mode', [mode])[['world', 'agent', 'percentageRemaining']].copy()
     indices = get_reindex_indices(df_filter.world.values, mode)
     df_filter = filter_df(df_filter, 'world', indices).copy()
 
     df2 = df_filter.pivot(index='world', columns='agent', values='percentageRemaining')
     df2 = df2.reindex(indices)
-    create_plot(df2, mode + '_perc_remaining', "Percentage remaining", " ")
+
+    name = mode + '_perc_remaining'
+
+    num_analysis(df2, name)
+
+    create_plot(df2, name, "Percentage remaining", " ")
+
+def make_runtime_per_iteration(df, mode):
+    df_filter = filter_df(df, 'mode', [mode])[['world', 'agent', 'runTime', 'numIterations']].copy()
+    df_filter['time_per_it'] = df_filter['runTime'] / df_filter['numIterations']
+    df2 = df_filter.pivot(index='world', columns='agent', values='time_per_it')
+    name = mode + '_runtime_per_iteration'
+    num_analysis(df2, name)
+
 
 def table_analysis(df, mode):
     df_filter = filter_df(df, 'mode', [mode])[['world', 'agent'] + BOOLEANS].copy()
@@ -115,28 +131,28 @@ def table_analysis(df, mode):
     df_piv = df_filter.pivot(index='world', columns='agent', values=BOOLEANS)
     df_piv = df_piv.reindex(indices)
 
-    return df_piv
+    return df_piv.swaplevel(0, 1, 1).sort_index(1)
 
-
-def rank(df):
-    df["rank_cost"] = df.groupby("conf")['pathCost'].rank("dense", ascending=True)
-    df["rank_count"] = df.groupby("conf")['exploredNodeCount'].rank("dense", ascending=True)
-    return df.groupby("algorithm")[['rank_cost', 'rank_count']].agg(['mean', 'median'])
-
+def num_analysis(df, name):
+    agg = pd.concat([df.mean(0), df.std(0)], 1).round(2)
+    agg.columns = ['mean', 'std']
+    agg.to_csv(OUT_FOLDER + name + '.csv')
+    return agg
 
 if __name__ == '__main__':
     set_plt_params()
     data = load(OUT_FOLDER + FILE)
     df = pd.DataFrame(data)
 
-    make_num_iterations_plot(df, 'rect')
-    make_perc_remaining_plot(df, 'rect')
+    make_num_iterations(df, 'rect')
+    make_perc_remaining(df, 'rect')
+    make_runtime_per_iteration(df, 'rect')
 
-    make_num_iterations_plot(df, 'tri')
-    make_perc_remaining_plot(df, 'tri')
+    make_num_iterations(df, 'tri')
+    make_perc_remaining(df, 'tri')
 
-    make_num_iterations_plot(df, 'hex')
-    make_perc_remaining_plot(df, 'hex')
+    make_num_iterations(df, 'hex')
+    make_perc_remaining(df, 'hex')
 
     rect_tab = table_analysis(df, 'rect')
     rect_tab.to_csv(OUT_FOLDER + 'rect_tab.csv')
