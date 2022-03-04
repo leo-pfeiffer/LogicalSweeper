@@ -42,8 +42,6 @@ public class SpsSatAgent extends Agent {
 
             changed = false;
 
-            // changed = sps.checkUnknownCells();
-
             ArrayList<Coord> unknownCells = this.view.getUnknownCells();
             for (Coord cell : unknownCells) {
                 if (sps.check(cell)) {
