@@ -2,13 +2,16 @@
 
 ## Report
 
-The report can be found in `doc/report.pdf`.
+> The report can be found in `doc/report.pdf`.
 
 ## Running the project
 
 Running the project (without tests etc.):
 ```bash
-todo
+./playSweeper.sh <Agent> <World> [verbose] [<world-mode>]
+    
+# or if already compiled
+java A2main <Agent> <World> [verbose] [<world-mode>]
 ```
 
 To run the unit tests and the evaluation, please refer to
@@ -19,7 +22,7 @@ the commands provided in the Makefile (see below).
 ```
 + doc:          Report, test coverage, etc.
 + evaluation:   Evaluation scripts
-+ lib:          Dependencies (for unit testing and evaluation)
++ libs:          Dependencies (for unit testing and evaluation)
 + src:          Source code
 + test:         Unit tests
 ```
