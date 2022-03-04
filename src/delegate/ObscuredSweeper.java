@@ -62,7 +62,7 @@ public class ObscuredSweeper {
 
         int uncoveredCount = agent.getUncoveredCount();
 
-        // TODO THIS IS A HACK PLS FIX
+        // need to differentiate here since the BasicAgent can stop if M cells are left
         if (agent instanceof BasicAgent) {
             int mineCount = agent.getMineCount();
             return uncoveredCount + mineCount == cellCount;
