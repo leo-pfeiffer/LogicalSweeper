@@ -81,6 +81,9 @@ public class CnfEncoder extends Encoder {
 
     /**
      * Generate the binomial combinations ("n Choose k") recursively.
+     *
+     * Adapted from: https://www.baeldung.com/java-combinations-algorithm
+     *
      * @param n number of variables
      * @param k number of True variables
      * */
