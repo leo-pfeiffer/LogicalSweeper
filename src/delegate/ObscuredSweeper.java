@@ -103,11 +103,13 @@ public class ObscuredSweeper {
      * */
     public void run() {
 
+
         printStart();
 
         if (verbose) printView();
 
         try {
+            tracker.startTimer();
             this.agent.playGame();
         } catch (MineFoundException e) {
             // agent died
@@ -116,6 +118,7 @@ public class ObscuredSweeper {
             // agent didn't terminate
             tracker.setNotTerminated();
         }
+        tracker.stopTimer();
 
         trackUncoverCoverage();
         printEnd();

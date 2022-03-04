@@ -51,7 +51,9 @@ public class ExperimentReaderWriter {
                 tracker.isTerminated(),
                 tracker.isAlive(),
                 tracker.getPercentageRemaining(),
-                tracker.getNumIterations());
+                tracker.getNumIterations(),
+                tracker.getRunTime()
+        );
     }
 
     /**

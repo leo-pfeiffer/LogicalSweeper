@@ -17,6 +17,11 @@ public class Tracker {
     // counter to keep track of the number of iterations.
     private int numIterations = 0;
 
+    // run time
+    private long runTime = 0;
+
+    private long startTime;
+
     public boolean isTerminated() {
         return terminated;
     }
@@ -47,5 +52,17 @@ public class Tracker {
 
     public void setPercentageRemaining(double percentageRemaining) {
         this.percentageRemaining = percentageRemaining;
+    }
+
+    public void startTimer() {
+        this.startTime = System.currentTimeMillis();
+    }
+
+    public void stopTimer() {
+        this.runTime = System.currentTimeMillis() - this.startTime;
+    }
+
+    public long getRunTime() {
+        return this.runTime;
     }
 }
