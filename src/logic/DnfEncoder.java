@@ -7,15 +7,15 @@ import org.logicng.formulas.FormulaFactory;
 /**
  * Knowledge Base extension using DNF encoding.
  */
-public class DNFEncoder extends Encoder {
+public class DnfEncoder extends Encoder {
 
     private final FormulaFactory f;
 
-    public DNFEncoder() {
+    public DnfEncoder() {
         this(new FormulaFactory());
     }
 
-    public DNFEncoder(FormulaFactory f) {
+    public DnfEncoder(FormulaFactory f) {
         this.f = f;
     }
 

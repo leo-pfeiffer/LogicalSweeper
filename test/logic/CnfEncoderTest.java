@@ -7,11 +7,11 @@ import java.util.Arrays;
 import java.util.HashSet;
 import org.junit.Test;
 
-public class CNFEncoderTest {
+public class CnfEncoderTest {
 
     @Test
     public void testSetup() {
-        new CNFEncoder();
+        new CnfEncoder();
     }
 
     private boolean combinationsUnique(int[][] combs) {
@@ -21,7 +21,7 @@ public class CNFEncoderTest {
 
     @Test
     public void testExactlyNoneTrue() {
-        CNFEncoder cnf = new CNFEncoder();
+        CnfEncoder cnf = new CnfEncoder();
         int numTrueExpected = 0;
         int[] arr = new int[]{1, 2, 3};
         int[][] actual = cnf.exactly(arr, numTrueExpected);
@@ -34,7 +34,7 @@ public class CNFEncoderTest {
 
     @Test
     public void testExactlyOneTrue() {
-        CNFEncoder cnf = new CNFEncoder();
+        CnfEncoder cnf = new CnfEncoder();
         int numTrueExpected = 1;
         int[] arr = new int[]{1, 2, 3};
         int[][] actual = cnf.exactly(arr, numTrueExpected);
@@ -44,7 +44,7 @@ public class CNFEncoderTest {
 
     @Test
     public void testExactlySomeTrue() {
-        CNFEncoder cnf = new CNFEncoder();
+        CnfEncoder cnf = new CnfEncoder();
         int numTrueExpected = 2;
         int[] arr = new int[]{1, 2, 3, 4};
         int[][] actual = cnf.exactly(arr, numTrueExpected);
@@ -54,7 +54,7 @@ public class CNFEncoderTest {
 
     @Test
     public void testExactlyAllTrue() {
-        CNFEncoder cnf = new CNFEncoder();
+        CnfEncoder cnf = new CnfEncoder();
         int numTrueExpected = 3;
         int[] arr = new int[]{1, 2, 3};
         int[][] actual = cnf.exactly(arr, numTrueExpected);
@@ -64,7 +64,7 @@ public class CNFEncoderTest {
 
     @Test
     public void testAtMostNegates() {
-        CNFEncoder cnf = new CNFEncoder();
+        CnfEncoder cnf = new CnfEncoder();
         int numTrueExpected = 0;
         int[] arr = new int[]{1, 2, 3};
         int[][] actual = cnf.atMost(arr, numTrueExpected);
@@ -77,7 +77,7 @@ public class CNFEncoderTest {
 
     @Test
     public void testAtLeastDoesNotNegate() {
-        CNFEncoder cnf = new CNFEncoder();
+        CnfEncoder cnf = new CnfEncoder();
         int numTrueExpected = 3;
         int[] arr = new int[]{1, 2, 3};
         int[][] actual = cnf.atLeast(arr, numTrueExpected);

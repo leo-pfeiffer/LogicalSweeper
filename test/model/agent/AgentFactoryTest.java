@@ -22,7 +22,7 @@ public class AgentFactoryTest {
     @Test
     public void testBeginnerAgent() {
         Agent agent = AgentFactory.createAgent(beginner, new ObscuredSweeper(world, beginner), world.createNewView());
-        assert(agent instanceof BeginnerAgent);
+        assert(agent instanceof SpsAgent);
     }
 
     @Test

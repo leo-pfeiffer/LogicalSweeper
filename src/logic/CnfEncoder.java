@@ -3,7 +3,7 @@ package logic;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CNFEncoder extends Encoder {
+public class CnfEncoder extends Encoder {
 
     /**
      * Create CNF clause for an exactly-k constraint by conjunction of

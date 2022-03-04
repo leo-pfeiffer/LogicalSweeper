@@ -7,7 +7,7 @@ import model.agent.exceptions.MineFoundException;
 import model.agent.exceptions.NothingToProbeException;
 import model.board.Coord;
 import model.board.View;
-import logic.SATStrategy;
+import logic.SatStrategy;
 import logic.SinglePointStrategy;
 
 /**
@@ -17,15 +17,15 @@ import logic.SinglePointStrategy;
  *
  * The type of encoding for the SAT Strategy depends on the KnowledgeBase provided
  * */
-public class IntermediateAgent extends Agent {
+public class SpsSatAgent extends Agent {
 
     private final SinglePointStrategy sps;
-    private final SATStrategy sat;
+    private final SatStrategy sat;
 
-    public IntermediateAgent(ObscuredSweeper game, View view, KnowledgeBase kb) {
+    public SpsSatAgent(ObscuredSweeper game, View view, KnowledgeBase kb) {
         super(game, view);
         sps = new SinglePointStrategy(this);
-        sat = new SATStrategy(this, kb);
+        sat = new SatStrategy(this, kb);
     }
 
     @Override

@@ -1,12 +1,12 @@
 import delegate.ObscuredSweeperTest;
 import logic.BooleanArrayTest;
-import logic.CNFEncoderTest;
-import logic.DNFEncoderTest;
+import logic.CnfEncoderTest;
+import logic.DnfEncoderTest;
 import logic.KnowledgeBaseTest;
 import model.agent.AgentFactoryTest;
 import model.agent.BasicAgentTest;
-import model.agent.BeginnerAgentTest;
-import model.agent.IntermediateAgentTest;
+import model.agent.SpsAgentTest;
+import model.agent.SpsSatAgentTest;
 import model.board.ViewTest;
 import model.board.RectWorldTest;
 import org.junit.runner.RunWith;
@@ -19,12 +19,12 @@ import org.junit.runners.Suite;
 @Suite.SuiteClasses({
         AgentFactoryTest.class,
         BasicAgentTest.class,
-        BeginnerAgentTest.class,
+        SpsAgentTest.class,
         BooleanArrayTest.class,
-        CNFEncoderTest.class,
-        DNFEncoderTest.class,
+        CnfEncoderTest.class,
+        DnfEncoderTest.class,
         ObscuredSweeperTest.class,
-        IntermediateAgentTest.class,
+        SpsSatAgentTest.class,
         KnowledgeBaseTest.class,
         ViewTest.class,
         RectWorldTest.class,

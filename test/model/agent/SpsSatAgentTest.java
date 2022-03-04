@@ -4,13 +4,13 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import delegate.ObscuredSweeper;
-import logic.CNFKnowledgeBase;
-import logic.DNFKnowledgeBase;
+import logic.CnfKnowledgeBase;
+import logic.DnfKnowledgeBase;
 import model.board.View;
 import model.board.RectWorld;
 import org.junit.Test;
 
-public class IntermediateAgentTest {
+public class SpsSatAgentTest {
 
     String agentNameP3 = "P3";
     String agentNameP4 = "P4";
@@ -19,14 +19,14 @@ public class IntermediateAgentTest {
     public void testSetupDNF() {
         ObscuredSweeper game = new ObscuredSweeper(RectWorld.TEST1, agentNameP3);
         View v = RectWorld.TEST1.createNewView();
-        new IntermediateAgent(game, v, new DNFKnowledgeBase(v));
+        new SpsSatAgent(game, v, new DnfKnowledgeBase(v));
     }
 
     @Test
     public void testSetupCNF() {
         ObscuredSweeper game = new ObscuredSweeper(RectWorld.TEST1, agentNameP3);
         View v = RectWorld.TEST1.createNewView();
-        new IntermediateAgent(game, v, new CNFKnowledgeBase(v));
+        new SpsSatAgent(game, v, new CnfKnowledgeBase(v));
     }
 
     /**

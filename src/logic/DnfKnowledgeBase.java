@@ -12,12 +12,12 @@ import org.logicng.solvers.SATSolver;
 /**
  * Knowledge Base extension using DNF encoding.
  */
-public class DNFKnowledgeBase extends KnowledgeBase {
+public class DnfKnowledgeBase extends KnowledgeBase {
 
     private final FormulaFactory f = new FormulaFactory();
-    private final DNFEncoder encoder = new DNFEncoder(f);
+    private final DnfEncoder encoder = new DnfEncoder(f);
 
-    public DNFKnowledgeBase(View view) {
+    public DnfKnowledgeBase(View view) {
         super(view);
     }
 

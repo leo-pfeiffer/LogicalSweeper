@@ -1,10 +1,8 @@
 package model.agent;
 
 import delegate.ObscuredSweeper;
-import logic.CNFKnowledgeBase;
-import logic.DNFKnowledgeBase;
-import model.board.HexWorld;
-import model.board.TriWorld;
+import logic.CnfKnowledgeBase;
+import logic.DnfKnowledgeBase;
 import model.board.View;
 
 /**
@@ -25,11 +23,11 @@ public class AgentFactory {
             case "P1":
                 return new BasicAgent(game, view);
             case "P2":
-                return new BeginnerAgent(game, view);
+                return new SpsAgent(game, view);
             case "P3":
-                return new IntermediateAgent(game, view, new DNFKnowledgeBase(view));
+                return new SpsSatAgent(game, view, new DnfKnowledgeBase(view));
             case "P4":
-                return new IntermediateAgent(game, view, new CNFKnowledgeBase(view));
+                return new SpsSatAgent(game, view, new CnfKnowledgeBase(view));
             default:
                 throw new IllegalArgumentException("Unknown agent type: " + agentName);
         }

@@ -9,11 +9,11 @@ import org.junit.Test;
 import org.logicng.formulas.Formula;
 import org.logicng.formulas.FormulaFactory;
 
-public class DNFEncoderTest {
+public class DnfEncoderTest {
 
     @Test
     public void testSetup() {
-        new DNFEncoder();
+        new DnfEncoder();
     }
 
     @Test
@@ -64,7 +64,7 @@ public class DNFEncoderTest {
 
     @Test
     public void testEncodeBooleanArray() {
-        DNFEncoder dnf = new DNFEncoder();
+        DnfEncoder dnf = new DnfEncoder();
         BooleanArray array = new BooleanArray(new boolean[]{true, true, false});
         String[] variables = {"X", "Y", "Z"};
         FormulaFactory f = dnf.getFormulaFactory();
@@ -74,7 +74,7 @@ public class DNFEncoderTest {
 
     @Test
     public void testEncodeBooleanArrayAllTrue() {
-        DNFEncoder dnf = new DNFEncoder();
+        DnfEncoder dnf = new DnfEncoder();
         BooleanArray array = new BooleanArray(new boolean[]{true, true, true});
         String[] variables = {"X", "Y", "Z"};
         FormulaFactory f = dnf.getFormulaFactory();
@@ -84,7 +84,7 @@ public class DNFEncoderTest {
 
     @Test
     public void testEncodeBooleanArrayAllFalse() {
-        DNFEncoder dnf = new DNFEncoder();
+        DnfEncoder dnf = new DnfEncoder();
         BooleanArray array = new BooleanArray(new boolean[]{false, false, false});
         String[] variables = {"X", "Y", "Z"};
         FormulaFactory f = dnf.getFormulaFactory();
@@ -98,7 +98,7 @@ public class DNFEncoderTest {
 
     @Test
     public void testEncodeOneTrue() {
-        DNFEncoder dnf = new DNFEncoder();
+        DnfEncoder dnf = new DnfEncoder();
         int numTrueExpected = 1;
         String[] variables = {"Y", "Z"};
         FormulaFactory f = dnf.getFormulaFactory();
@@ -111,7 +111,7 @@ public class DNFEncoderTest {
 
     @Test
     public void testEncodeSomeTrue() {
-        DNFEncoder dnf = new DNFEncoder();
+        DnfEncoder dnf = new DnfEncoder();
         int numTrueExpected = 2;
         String[] variables = {"X", "Y", "Z"};
         FormulaFactory f = dnf.getFormulaFactory();
@@ -126,7 +126,7 @@ public class DNFEncoderTest {
 
     @Test
     public void testEncodeAllTrue() {
-        DNFEncoder dnf = new DNFEncoder();
+        DnfEncoder dnf = new DnfEncoder();
         int numTrueExpected = 2;
         String[] variables = {"Y", "Z"};
         FormulaFactory f = dnf.getFormulaFactory();
@@ -137,7 +137,7 @@ public class DNFEncoderTest {
 
     @Test
     public void testEncodeNoneTrue() {
-        DNFEncoder dnf = new DNFEncoder();
+        DnfEncoder dnf = new DnfEncoder();
         int numTrueExpected = 0;
         String[] variables = {"Y", "Z"};
         FormulaFactory f = dnf.getFormulaFactory();

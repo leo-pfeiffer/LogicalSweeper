@@ -7,14 +7,14 @@ import delegate.ObscuredSweeper;
 import model.board.RectWorld;
 import org.junit.Test;
 
-public class BeginnerAgentTest {
+public class SpsAgentTest {
 
     String agentName = "P2";
 
     @Test
     public void testSetup() {
         ObscuredSweeper game = new ObscuredSweeper(RectWorld.TEST1, agentName);
-        new BeginnerAgent(game, RectWorld.TEST1.createNewView());
+        new SpsAgent(game, RectWorld.TEST1.createNewView());
     }
 
     /**

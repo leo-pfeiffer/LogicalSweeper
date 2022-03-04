@@ -6,11 +6,11 @@ import model.board.Coord;
 /**
  * Class representing the SAT Strategy.
  * */
-public class SATStrategy extends Strategy {
+public class SatStrategy extends Strategy {
 
     private final KnowledgeBase kb;
 
-    public SATStrategy(Agent agent, KnowledgeBase kb) {
+    public SatStrategy(Agent agent, KnowledgeBase kb) {
         super(agent);
         this.kb = kb;
     }

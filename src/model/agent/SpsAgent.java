@@ -12,11 +12,11 @@ import logic.SinglePointStrategy;
  * BeginnerAgent uses
  * - Single Point Strategy
  * */
-public class BeginnerAgent extends Agent {
+public class SpsAgent extends Agent {
 
     private final SinglePointStrategy sps;
 
-    public BeginnerAgent(ObscuredSweeper game, View view) {
+    public SpsAgent(ObscuredSweeper game, View view) {
         super(game, view);
         sps = new SinglePointStrategy(this);
     }

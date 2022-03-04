@@ -14,14 +14,14 @@ public class KnowledgeBaseTest {
     public void testSetup() {
         char[][] board = {{'0', '1', '?'}, {'0', '1', '?'}, {'0', '1', '?'}};
         View view = new View(board, 1, new RectGBU(board));
-        DNFKnowledgeBase kb = new DNFKnowledgeBase(view);
+        DnfKnowledgeBase kb = new DnfKnowledgeBase(view);
     }
 
     @Test
     public void testEntailment() {
         char[][] board = {{'0', '1', '?'}, {'0', '1', '?'}, {'0', '1', '?'}};
         View view = new View(board, 1, new RectGBU(board));
-        DNFKnowledgeBase kb = new DNFKnowledgeBase(view);
+        DnfKnowledgeBase kb = new DnfKnowledgeBase(view);
 
         assertFalse(kb.checkEntailment(new Coord(0, 2), true));
         assertTrue(kb.checkEntailment(new Coord(1, 2), true));

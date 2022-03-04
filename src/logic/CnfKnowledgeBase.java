@@ -13,11 +13,11 @@ import org.sat4j.specs.TimeoutException;
 /**
  * Knowledge Base extension using CNF encoding.
  */
-public class CNFKnowledgeBase extends KnowledgeBase {
+public class CnfKnowledgeBase extends KnowledgeBase {
 
-    private final CNFEncoder encoder = new CNFEncoder();
+    private final CnfEncoder encoder = new CnfEncoder();
 
-    public CNFKnowledgeBase(View view) {
+    public CnfKnowledgeBase(View view) {
         super(view);
     }
 
